@@ -18,7 +18,7 @@ or
   
 We have just implemented these two methods, we'll implements the remaint methods in the near future.
 
-Note: that component needs QuartCore.framework and CoreGraphic.framework to work.
+Note: that component needs QuartCore.framework and CoreGraphic.framework to work. It doesn't work fine with autosizing :(.
 
 ## Example
 
