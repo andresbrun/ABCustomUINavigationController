@@ -16,15 +16,15 @@
 		3CF16BC817930123006E912F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF16BC717930123006E912F /* Default.png */; };
 		3CF16BCA17930123006E912F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF16BC917930123006E912F /* Default@2x.png */; };
 		3CF16BCC17930123006E912F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF16BCB17930123006E912F /* Default-568h@2x.png */; };
-		3CF16BCF17930123006E912F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF16BCE17930123006E912F /* ViewController.m */; };
-		3CF16BD217930123006E912F /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CF16BD017930123006E912F /* ViewController.xib */; };
-		3CF16BDA179301C7006E912F /* FlipSquaresNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF16BD9179301C7006E912F /* FlipSquaresNavigationController.m */; };
 		3CF16BDC179309B1006E912F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF16BDB179309B1006E912F /* QuartzCore.framework */; };
-		3CF16BE017931427006E912F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF16BDE17931427006E912F /* SecondViewController.m */; };
-		3CF16BE117931427006E912F /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CF16BDF17931427006E912F /* SecondViewController.xib */; };
-		3CF16BE5179482AE006E912F /* NSObject+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF16BE4179482AE006E912F /* NSObject+Extras.m */; };
 		3CF16CF1179C198C006E912F /* bg_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CF16CEF179C198C006E912F /* bg_1.jpg */; };
 		3CF16CF2179C198C006E912F /* bg_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CF16CF0179C198C006E912F /* bg_2.jpg */; };
+		3CF16D13179C4877006E912F /* NSObject+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF16D09179C4877006E912F /* NSObject+Extras.m */; };
+		3CF16D14179C4877006E912F /* FlipSquaresNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF16D0B179C4877006E912F /* FlipSquaresNavigationController.m */; };
+		3CF16D15179C4877006E912F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF16D0E179C4877006E912F /* SecondViewController.m */; };
+		3CF16D16179C4877006E912F /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CF16D0F179C4877006E912F /* SecondViewController.xib */; };
+		3CF16D17179C4877006E912F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF16D11179C4877006E912F /* ViewController.m */; };
+		3CF16D18179C4877006E912F /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CF16D12179C4877006E912F /* ViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,19 +41,19 @@
 		3CF16BC717930123006E912F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		3CF16BC917930123006E912F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		3CF16BCB17930123006E912F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		3CF16BCD17930123006E912F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3CF16BCE17930123006E912F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		3CF16BD117930123006E912F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
-		3CF16BD8179301C7006E912F /* FlipSquaresNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipSquaresNavigationController.h; sourceTree = "<group>"; };
-		3CF16BD9179301C7006E912F /* FlipSquaresNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipSquaresNavigationController.m; sourceTree = "<group>"; };
 		3CF16BDB179309B1006E912F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		3CF16BDD17931427006E912F /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		3CF16BDE17931427006E912F /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		3CF16BDF17931427006E912F /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
-		3CF16BE3179482AE006E912F /* NSObject+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Extras.h"; sourceTree = "<group>"; };
-		3CF16BE4179482AE006E912F /* NSObject+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Extras.m"; sourceTree = "<group>"; };
 		3CF16CEF179C198C006E912F /* bg_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_1.jpg; sourceTree = "<group>"; };
 		3CF16CF0179C198C006E912F /* bg_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_2.jpg; sourceTree = "<group>"; };
+		3CF16D08179C4877006E912F /* NSObject+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Extras.h"; sourceTree = "<group>"; };
+		3CF16D09179C4877006E912F /* NSObject+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Extras.m"; sourceTree = "<group>"; };
+		3CF16D0A179C4877006E912F /* FlipSquaresNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipSquaresNavigationController.h; sourceTree = "<group>"; };
+		3CF16D0B179C4877006E912F /* FlipSquaresNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipSquaresNavigationController.m; sourceTree = "<group>"; };
+		3CF16D0D179C4877006E912F /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		3CF16D0E179C4877006E912F /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		3CF16D0F179C4877006E912F /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
+		3CF16D10179C4877006E912F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3CF16D11179C4877006E912F /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3CF16D12179C4877006E912F /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,18 +102,11 @@
 		3CF16BBB17930123006E912F /* SquaresFlipNavigationExample */ = {
 			isa = PBXGroup;
 			children = (
+				3CF16D06179C4877006E912F /* SquaresFlipNavigation */,
+				3CF16D0C179C4877006E912F /* ViewControllers */,
 				3CF16CEE179C198A006E912F /* assets */,
-				3CF16BE2179482AE006E912F /* Extras */,
-				3CF16BD8179301C7006E912F /* FlipSquaresNavigationController.h */,
-				3CF16BD9179301C7006E912F /* FlipSquaresNavigationController.m */,
 				3CF16BC417930123006E912F /* AppDelegate.h */,
 				3CF16BC517930123006E912F /* AppDelegate.m */,
-				3CF16BCD17930123006E912F /* ViewController.h */,
-				3CF16BCE17930123006E912F /* ViewController.m */,
-				3CF16BD017930123006E912F /* ViewController.xib */,
-				3CF16BDD17931427006E912F /* SecondViewController.h */,
-				3CF16BDE17931427006E912F /* SecondViewController.m */,
-				3CF16BDF17931427006E912F /* SecondViewController.xib */,
 				3CF16BBC17930123006E912F /* Supporting Files */,
 			);
 			path = SquaresFlipNavigationExample;
@@ -133,15 +126,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3CF16BE2179482AE006E912F /* Extras */ = {
-			isa = PBXGroup;
-			children = (
-				3CF16BE3179482AE006E912F /* NSObject+Extras.h */,
-				3CF16BE4179482AE006E912F /* NSObject+Extras.m */,
-			);
-			path = Extras;
-			sourceTree = "<group>";
-		};
 		3CF16CEE179C198A006E912F /* assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +133,38 @@
 				3CF16CF0179C198C006E912F /* bg_2.jpg */,
 			);
 			path = assets;
+			sourceTree = "<group>";
+		};
+		3CF16D06179C4877006E912F /* SquaresFlipNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				3CF16D07179C4877006E912F /* Extras */,
+				3CF16D0A179C4877006E912F /* FlipSquaresNavigationController.h */,
+				3CF16D0B179C4877006E912F /* FlipSquaresNavigationController.m */,
+			);
+			path = SquaresFlipNavigation;
+			sourceTree = "<group>";
+		};
+		3CF16D07179C4877006E912F /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				3CF16D08179C4877006E912F /* NSObject+Extras.h */,
+				3CF16D09179C4877006E912F /* NSObject+Extras.m */,
+			);
+			path = Extras;
+			sourceTree = "<group>";
+		};
+		3CF16D0C179C4877006E912F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3CF16D0D179C4877006E912F /* SecondViewController.h */,
+				3CF16D0E179C4877006E912F /* SecondViewController.m */,
+				3CF16D0F179C4877006E912F /* SecondViewController.xib */,
+				3CF16D10179C4877006E912F /* ViewController.h */,
+				3CF16D11179C4877006E912F /* ViewController.m */,
+				3CF16D12179C4877006E912F /* ViewController.xib */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,10 +222,10 @@
 				3CF16BC817930123006E912F /* Default.png in Resources */,
 				3CF16BCA17930123006E912F /* Default@2x.png in Resources */,
 				3CF16BCC17930123006E912F /* Default-568h@2x.png in Resources */,
-				3CF16BD217930123006E912F /* ViewController.xib in Resources */,
-				3CF16BE117931427006E912F /* SecondViewController.xib in Resources */,
 				3CF16CF1179C198C006E912F /* bg_1.jpg in Resources */,
 				3CF16CF2179C198C006E912F /* bg_2.jpg in Resources */,
+				3CF16D16179C4877006E912F /* SecondViewController.xib in Resources */,
+				3CF16D18179C4877006E912F /* ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,10 +238,10 @@
 			files = (
 				3CF16BC217930123006E912F /* main.m in Sources */,
 				3CF16BC617930123006E912F /* AppDelegate.m in Sources */,
-				3CF16BCF17930123006E912F /* ViewController.m in Sources */,
-				3CF16BDA179301C7006E912F /* FlipSquaresNavigationController.m in Sources */,
-				3CF16BE017931427006E912F /* SecondViewController.m in Sources */,
-				3CF16BE5179482AE006E912F /* NSObject+Extras.m in Sources */,
+				3CF16D13179C4877006E912F /* NSObject+Extras.m in Sources */,
+				3CF16D14179C4877006E912F /* FlipSquaresNavigationController.m in Sources */,
+				3CF16D15179C4877006E912F /* SecondViewController.m in Sources */,
+				3CF16D17179C4877006E912F /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,14 +254,6 @@
 				3CF16BBF17930123006E912F /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		3CF16BD017930123006E912F /* ViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3CF16BD117930123006E912F /* en */,
-			);
-			name = ViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
