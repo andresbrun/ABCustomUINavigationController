@@ -5,20 +5,20 @@ Class inherate from UINavigationController for overwrite push and pop methods in
 
 For using that component you only have to copy the SquaresFlipNavigation folder into your project and create the navigation controller as:
 
-  import "FlipSquaresNavigationController.h"
-  [[FlipSquaresNavigationController alloc] initWithRootViewController:self.viewController];
+    import "FlipSquaresNavigationController.h"
+    [[FlipSquaresNavigationController alloc] initWithRootViewController:self.viewController];
   
 and pushing and pop normally:
 
-  [self.navigationController pushViewController:self.secondVC animated:YES];
+    [self.navigationController pushViewController:self.secondVC animated:YES];
   
 or
   
-  [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
   
 We have just implemented these two methods, we'll implements the remaint methods in the near future.
 
-Note: that components needs QuartCore.framework and CoreGraphic.framework to work.
+Note: that component needs QuartCore.framework and CoreGraphic.framework to work.
 
 ## Example
 
