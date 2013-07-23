@@ -14,8 +14,8 @@
 #define ARC4RANDOM_MAX 0x100000000
 
 //Configure params
-#define SQUARE_ROWS 7
-#define SQUARE_COLUMNS 5
+#define SQUARE_ROWS 5
+#define SQUARE_COLUMNS 8
 #define TIME_ANIMATION 1.0
 
 @interface FlipSquaresNavigationController (){
