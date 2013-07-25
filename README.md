@@ -22,6 +22,5 @@ Note: that component needs QuartCore.framework and CoreGraphic.framework to work
 
 ## Example
 
-![alt tag](https://raw.github.com/andresbrun/SquaresFlipNavigation/origin/example_images/example_1.png)
-![alt tag](https://raw.github.com/andresbrun/SquaresFlipNavigation/origin/example_images/example_2.png)
-![alt tag](https://raw.github.com/andresbrun/SquaresFlipNavigation/origin/example_images/example_3.png)
+![alt tag](https://raw.github.com/andresbrun/SquaresFlipNavigation/origin/example_images/example.gif)
+
