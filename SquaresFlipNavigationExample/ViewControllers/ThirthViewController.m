@@ -1,19 +1,19 @@
 //
-//  SecondViewController.m
+//  ThirthViewController.m
 //  SquaresFlipNavigationExample
 //
-//  Created by Andrés Brun on 7/14/13.
+//  Created by Andrés Brun on 7/25/13.
 //  Copyright (c) 2013 Andrés Brun. All rights reserved.
 //
 
-#import "SecondViewController.h"
 #import "ThirthViewController.h"
+#import "ViewController.h"
 
-@interface SecondViewController ()
-- (IBAction)popViewController:(id)sender;
+@interface ThirthViewController ()
+
 @end
 
-@implementation SecondViewController
+@implementation ThirthViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,13 +36,20 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)popViewController:(id)sender {
+- (IBAction)popViewController:(id)sender
+{
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction)pushViewController:(id)sender {
-    ThirthViewController *thirthVC = [[ThirthViewController alloc] initWithNibName:@"ThirthViewController" bundle:nil];
-    [self.navigationController pushViewController:thirthVC animated:YES];
+- (IBAction)popToFirstViewController:(id)sender
+{
+    ViewController *firstVC = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    [self.navigationController pushViewController:firstVC animated:YES];
+}
+
+- (IBAction)popToRootViewController:(id)sender
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end

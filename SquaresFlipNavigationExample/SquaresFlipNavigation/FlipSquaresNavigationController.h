@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum {FSNavSortMethodRandom, FSNavSortMethodRightToLeft} FSNavSortMethod;
+
 @interface FlipSquaresNavigationController : UINavigationController
+
+@property (nonatomic, assign) FSNavSortMethod sortMethod;
 
 @end

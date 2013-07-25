@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C8548B417A187D500B4D4ED /* ThirthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8548B217A187D500B4D4ED /* ThirthViewController.m */; };
+		3C8548B517A187D500B4D4ED /* ThirthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C8548B317A187D500B4D4ED /* ThirthViewController.xib */; };
+		3C8548B717A1886700B4D4ED /* bg_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C8548B617A1886700B4D4ED /* bg_3.png */; };
 		3CF16BB617930123006E912F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF16BB517930123006E912F /* UIKit.framework */; };
 		3CF16BB817930123006E912F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF16BB717930123006E912F /* Foundation.framework */; };
 		3CF16BBA17930123006E912F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF16BB917930123006E912F /* CoreGraphics.framework */; };
@@ -28,6 +31,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C8548B117A187D400B4D4ED /* ThirthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirthViewController.h; sourceTree = "<group>"; };
+		3C8548B217A187D500B4D4ED /* ThirthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirthViewController.m; sourceTree = "<group>"; };
+		3C8548B317A187D500B4D4ED /* ThirthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirthViewController.xib; sourceTree = "<group>"; };
+		3C8548B617A1886700B4D4ED /* bg_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_3.png; sourceTree = "<group>"; };
 		3CF16BB217930123006E912F /* SquaresFlipNavigationExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SquaresFlipNavigationExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CF16BB517930123006E912F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3CF16BB717930123006E912F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -129,6 +136,7 @@
 		3CF16CEE179C198A006E912F /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				3C8548B617A1886700B4D4ED /* bg_3.png */,
 				3CF16CEF179C198C006E912F /* bg_1.jpg */,
 				3CF16CF0179C198C006E912F /* bg_2.jpg */,
 			);
@@ -157,12 +165,15 @@
 		3CF16D0C179C4877006E912F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3CF16D0D179C4877006E912F /* SecondViewController.h */,
-				3CF16D0E179C4877006E912F /* SecondViewController.m */,
-				3CF16D0F179C4877006E912F /* SecondViewController.xib */,
 				3CF16D10179C4877006E912F /* ViewController.h */,
 				3CF16D11179C4877006E912F /* ViewController.m */,
 				3CF16D12179C4877006E912F /* ViewController.xib */,
+				3CF16D0D179C4877006E912F /* SecondViewController.h */,
+				3CF16D0E179C4877006E912F /* SecondViewController.m */,
+				3CF16D0F179C4877006E912F /* SecondViewController.xib */,
+				3C8548B117A187D400B4D4ED /* ThirthViewController.h */,
+				3C8548B217A187D500B4D4ED /* ThirthViewController.m */,
+				3C8548B317A187D500B4D4ED /* ThirthViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -226,6 +237,8 @@
 				3CF16CF2179C198C006E912F /* bg_2.jpg in Resources */,
 				3CF16D16179C4877006E912F /* SecondViewController.xib in Resources */,
 				3CF16D18179C4877006E912F /* ViewController.xib in Resources */,
+				3C8548B517A187D500B4D4ED /* ThirthViewController.xib in Resources */,
+				3C8548B717A1886700B4D4ED /* bg_3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +255,7 @@
 				3CF16D14179C4877006E912F /* FlipSquaresNavigationController.m in Sources */,
 				3CF16D15179C4877006E912F /* SecondViewController.m in Sources */,
 				3CF16D17179C4877006E912F /* ViewController.m in Sources */,
+				3C8548B417A187D500B4D4ED /* ThirthViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

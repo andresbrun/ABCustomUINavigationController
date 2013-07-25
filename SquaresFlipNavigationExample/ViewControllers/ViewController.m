@@ -8,9 +8,9 @@
 
 #import "ViewController.h"
 #import "SecondViewController.h"
+#import "ThirthViewController.h"
 
 @interface ViewController ()
-@property (nonatomic, retain) SecondViewController *secondVC;
 - (IBAction)pushViewController:(id)sender;
 @end
 
@@ -29,8 +29,12 @@
 }
 
 - (IBAction)pushViewController:(id)sender {
-    self.secondVC = [[SecondViewController alloc] initWithNibName:@"SecondViewController" bundle:nil];
-    [self.navigationController pushViewController:self.secondVC animated:YES];
+    SecondViewController *secondVC = [[SecondViewController alloc] initWithNibName:@"SecondViewController" bundle:nil];
+    [self.navigationController pushViewController:secondVC animated:YES];
+}
+- (IBAction)pushToThirthViewController:(id)sender {
+    ThirthViewController *thirthVC = [[ThirthViewController alloc] initWithNibName:@"ThirthViewController" bundle:nil];
+    [self.navigationController pushViewController:thirthVC animated:YES];
 }
 
 @end

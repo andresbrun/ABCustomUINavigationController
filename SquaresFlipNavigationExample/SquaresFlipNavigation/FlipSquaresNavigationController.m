@@ -43,6 +43,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.sortMethod = FSNavSortMethodRandom;
     }
     return self;
 }
@@ -100,18 +101,68 @@
 
 -(UIViewController *)popViewControllerAnimated:(BOOL)animated
 {
-    //Find the preious vc in stack
+    //Find the previous vc in stack
     if([self.viewControllers count]>1){
         if (animated) {
             UIViewController *currentVC = [self visibleViewController];
             
             UIImageView *currentView = [self imageWithView: currentVC.view];
             
-            UIImageView *newView = [self imageWithView: ((UIViewController *)[self.viewControllers objectAtIndex:0]).view];
+            int index = [self.viewControllers indexOfObject:currentVC];
+            
+            if (index>0) {
+                UIImageView *newView = [self imageWithView: ((UIViewController *)[self.viewControllers objectAtIndex:index-1]).view];
+                
+                [currentVC.view setAlpha:0.0];
+                
+                __block UIViewController *returnedVC;
+                [self makeSquaresFlipAnimationFrom:currentView to:newView option:UIViewAnimationOptionTransitionFlipFromRight withCompletion:^{
+                    
+                    //Clean the others view
+                    for (UIImageView *currentViewR in fromViewImagesArray) {
+                        [currentViewR removeFromSuperview];
+                    }
+                    for (UIImageView *currentViewR in toViewImagesArray) {
+                        [UIView animateWithDuration:0.3 animations:^{
+                            [currentViewR setAlpha:0.0];
+                        }completion:^(BOOL finished) {
+                            [currentViewR removeFromSuperview];
+                        }];
+                        
+                    }
+                    
+                    returnedVC = [super popViewControllerAnimated:NO];
+                    
+                }];
+                
+                return returnedVC;
+            }else{
+                return [super popViewControllerAnimated:NO];
+            }
+            
+        }else{
+            return [super popViewControllerAnimated:NO];
+        }
+    }else{
+        return [super popViewControllerAnimated:animated];
+    }
+
+}
+
+- (NSArray *)popToRootViewControllerAnimated:(BOOL)animated
+{
+    //Find the root view controller
+    if([self.viewControllers count]>1){
+        if (animated) {
+            UIViewController *currentVC = [self visibleViewController];
+            UIViewController *rootVC = [self.viewControllers objectAtIndex:0];
+            
+            UIImageView *currentView = [self imageWithView: currentVC.view];
+            UIImageView *newView = [self imageWithView: rootVC.view];
             
             [currentVC.view setAlpha:0.0];
             
-            __block UIViewController *returnedVC;
+            __block NSArray *stackVCs;
             [self makeSquaresFlipAnimationFrom:currentView to:newView option:UIViewAnimationOptionTransitionFlipFromRight withCompletion:^{
                 
                 //Clean the others view
@@ -126,20 +177,57 @@
                     }];
                     
                 }
-                
-                returnedVC = [super popViewControllerAnimated:NO];
-
+                stackVCs = [super popToRootViewControllerAnimated:NO];
             }];
             
-            return returnedVC;
+            return stackVCs;
             
         }else{
-            return [super popViewControllerAnimated:NO];
+            return [super popToRootViewControllerAnimated:NO];
         }
     }else{
-        return [super popViewControllerAnimated:NO];
+        return [super popToRootViewControllerAnimated:animated];
     }
+}
 
+- (NSArray *)popToViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    //Find the root view controller
+    if([self.viewControllers count]>1){
+        if (animated) {
+            UIViewController *currentVC = [self visibleViewController];
+            
+            UIImageView *currentView = [self imageWithView: currentVC.view];
+            UIImageView *newView = [self imageWithView: viewController.view];
+            
+            [currentVC.view setAlpha:0.0];
+            
+            __block NSArray *stackVCs;
+            [self makeSquaresFlipAnimationFrom:currentView to:newView option:UIViewAnimationOptionTransitionFlipFromRight withCompletion:^{
+                
+                //Clean the others view
+                for (UIImageView *currentViewR in fromViewImagesArray) {
+                    [currentViewR removeFromSuperview];
+                }
+                for (UIImageView *currentViewR in toViewImagesArray) {
+                    [UIView animateWithDuration:0.3 animations:^{
+                        [currentViewR setAlpha:0.0];
+                    }completion:^(BOOL finished) {
+                        [currentViewR removeFromSuperview];
+                    }];
+                    
+                }
+                stackVCs = [super popToViewController:viewController animated:NO];
+            }];
+            
+            return stackVCs;
+            
+        }else{
+            return [super popToViewController:viewController animated:NO];
+        }
+    }else{
+        return [super popToViewController:viewController animated:animated];
+    }
 }
 
 
@@ -223,8 +311,9 @@
 #pragma mark - Images methods
 
 - (UIImageView *) imageWithView:(UIView *)view
-{
-    [view setContentScaleFactor:2.0];
+{    
+    //[view setContentScaleFactor:2.0];
+    [view.layer setContentsScale:2.0];
     
     UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 1.0);
     [view.layer renderInContext:UIGraphicsGetCurrentContext()];
@@ -234,6 +323,7 @@
     
     UIImageView *currentView = [[UIImageView alloc] initWithImage: img];
     
+    //Fix the position to handle status bar and navigation bar
     float yPosition = self.view.frame.size.height - view.frame.size.height;
     [currentView setFrame:CGRectMake(0, yPosition, currentView.frame.size.width, currentView.frame.size.height)];
     
@@ -292,21 +382,28 @@
 #pragma mark - Auxiliar methods
 - (void)shuffleArray: (NSMutableArray *)array
 {
-    
-    static BOOL seeded = NO;
-    if(!seeded)
-    {
-        seeded = YES;
-        srandom(time(NULL));
+    switch (self.sortMethod) {
+        case FSNavSortMethodRandom:{
+            static BOOL seeded = NO;
+            if(!seeded)
+            {
+                seeded = YES;
+                srandom(time(NULL));
+            }
+            
+            NSUInteger count = [array count];
+            for (NSUInteger i = 0; i < count; ++i) {
+                // Select a random element between i and end of array to swap with.
+                int nElements = count - i;
+                int n = (random() % nElements) + i;
+                [array exchangeObjectAtIndex:i withObjectAtIndex:n];
+            }
+        }break;
+            
+        default:
+            break;
     }
     
-    NSUInteger count = [array count];
-    for (NSUInteger i = 0; i < count; ++i) {
-        // Select a random element between i and end of array to swap with.
-        int nElements = count - i;
-        int n = (random() % nElements) + i;
-        [array exchangeObjectAtIndex:i withObjectAtIndex:n];
-    }
 }
 
 - (UIView *)createViewWithImageView: (UIImageView *)imageView
