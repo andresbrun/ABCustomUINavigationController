@@ -30,8 +30,9 @@
 //Auxiliar methods
 - (UIImageView *) imageWithView:(UIView *)view;
 - (UIImageView *) createCrop: (CGRect) crop withImage: (UIImageView *)imageView;
-- (void)shuffleArray: (NSMutableArray *)array;
-
+- (void) shuffleArray: (NSMutableArray *)array;
+- (void) sortFromLeftToRightArray: (NSMutableArray *) array;
+- (void) sortRandomArray:(NSMutableArray *)array;
 - (float) getRandomFloat01;
 
 @end
@@ -43,7 +44,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.sortMethod = FSNavSortMethodRandom;
+        self.sortMethod = FSNavSortMethodLeftToRight;
     }
     return self;
 }
@@ -273,10 +274,14 @@
     
     float maxDelay=0;
     for (NSNumber *currentPos in orderArray) {
+        int posIndex = [orderArray indexOfObject:currentPos];
+        
         UIView *fromViewCrop = [fromViewImagesArray objectAtIndex:[currentPos intValue]];
         UIView *toViewCrop = [toViewImagesArray objectAtIndex:[currentPos intValue]];
     
-        float delay = [self getRandomFloat01]*TIME_ANIMATION*0.7;
+        //we "order" the delays for sort the animation in time
+        float ratio = posIndex/([orderArray count]*1.0);
+        float delay = [self getRandomFloat01]*TIME_ANIMATION*0.4*ratio + TIME_ANIMATION*0.3*ratio;//Random + Fix -> MAX 70% of TIME_ANIMATION
         maxDelay = MAX(delay, maxDelay);
         [self performBlock:^{
             
@@ -301,7 +306,7 @@
         
     }
     
-    //Perform the completion when the animation is finished
+    //Perform the completion when the animation is finished. Calculate that with the 30% remain of TIME_ANIMATION
     [self performBlock:^{
         completion();
     } afterDelay:maxDelay+TIME_ANIMATION*0.3];
@@ -379,33 +384,6 @@
     return gradient;
 }
 
-#pragma mark - Auxiliar methods
-- (void)shuffleArray: (NSMutableArray *)array
-{
-    switch (self.sortMethod) {
-        case FSNavSortMethodRandom:{
-            static BOOL seeded = NO;
-            if(!seeded)
-            {
-                seeded = YES;
-                srandom(time(NULL));
-            }
-            
-            NSUInteger count = [array count];
-            for (NSUInteger i = 0; i < count; ++i) {
-                // Select a random element between i and end of array to swap with.
-                int nElements = count - i;
-                int n = (random() % nElements) + i;
-                [array exchangeObjectAtIndex:i withObjectAtIndex:n];
-            }
-        }break;
-            
-        default:
-            break;
-    }
-    
-}
-
 - (UIView *)createViewWithImageView: (UIImageView *)imageView
 {
     UIView *newView = [[UIView alloc] initWithFrame:imageView.frame];
@@ -416,9 +394,72 @@
     return newView;
 }
 
+#pragma mark - Auxiliar methods
 - (float) getRandomFloat01
 {
     return ((double)arc4random() / ARC4RANDOM_MAX);
+}
+
+#pragma mark - Sort Array methods
+- (void)shuffleArray: (NSMutableArray *)array
+{
+    switch (self.sortMethod) {
+        case FSNavSortMethodRandom:{
+            [self sortRandomArray:array];
+        }break;
+            
+        case FSNavSortMethodLeftToRight:
+            [self sortFromLeftToRightArray:array];
+            break;
+            
+        default:
+            break;
+    }
+    
+}
+
+/**
+ Sort the elements randomly
+ */
+- (void) sortRandomArray:(NSMutableArray *)array
+{
+    static BOOL seeded = NO;
+    if(!seeded)
+    {
+        seeded = YES;
+        srandom(time(NULL));
+    }
+    
+    NSUInteger count = [array count];
+    for (NSUInteger i = 0; i < count; ++i) {
+        // Select a random element between i and end of array to swap with.
+        int nElements = count - i;
+        int n = (random() % nElements) + i;
+        [array exchangeObjectAtIndex:i withObjectAtIndex:n];
+    }
+}
+
+/**
+ Sort the elements for colums
+ */
+- (void) sortFromLeftToRightArray: (NSMutableArray *) array
+{
+    int elementIndex=0;
+    int offset=0;
+    NSMutableArray *sortedArray = [NSMutableArray array];
+    
+    do {
+        [sortedArray addObject:[array objectAtIndex:elementIndex]];
+        
+        elementIndex+=SQUARE_ROWS;
+        
+        if (elementIndex>=[array count]) {
+            offset++;
+            elementIndex=offset;
+        }
+    } while (offset<SQUARE_COLUMNS);
+    
+    array = sortedArray;
 }
 
 @end

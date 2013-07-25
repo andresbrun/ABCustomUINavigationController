@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "SecondViewController.h"
 #import "ThirthViewController.h"
+#import "FlipSquaresNavigationController.h"
 
 @interface ViewController ()
 - (IBAction)pushViewController:(id)sender;

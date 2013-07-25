@@ -8,6 +8,7 @@
 
 #import "SecondViewController.h"
 #import "ThirthViewController.h"
+#import "FlipSquaresNavigationController.h"
 
 @interface SecondViewController ()
 - (IBAction)popViewController:(id)sender;
