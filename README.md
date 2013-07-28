@@ -16,7 +16,7 @@ and pushing and pop normally with navigation methods:
     - (NSArray *)popToViewController:(UIViewController *)viewController animated:(BOOL)animated
   
 Also it have differents ways to sort the squares animations:
-- Ramdomly
+- Randomly
 - FromLeftToRight
 
 ##Requirements
