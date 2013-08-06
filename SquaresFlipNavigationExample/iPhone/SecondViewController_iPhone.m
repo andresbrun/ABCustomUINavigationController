@@ -6,15 +6,15 @@
 //  Copyright (c) 2013 Andrés Brun. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "SecondViewController_iPhone.h"
 #import "ThirthViewController.h"
 #import "FlipSquaresNavigationController.h"
 
-@interface SecondViewController ()
+@interface SecondViewController_iPhone ()
 - (IBAction)popViewController:(id)sender;
 @end
 
-@implementation SecondViewController
+@implementation SecondViewController_iPhone
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

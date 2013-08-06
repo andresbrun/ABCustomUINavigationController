@@ -6,16 +6,16 @@
 //  Copyright (c) 2013 Andrés Brun. All rights reserved.
 //
 
-#import "ViewController.h"
-#import "SecondViewController.h"
-#import "ThirthViewController.h"
+#import "ViewController_iPad.h"
+#import "SecondViewController_iPad.h"
+#import "ThirthViewController_iPad.h"
 #import "FlipSquaresNavigationController.h"
 
-@interface ViewController ()
+@interface ViewController_iPad ()
 - (IBAction)pushViewController:(id)sender;
 @end
 
-@implementation ViewController
+@implementation ViewController_iPad
 
 - (void)viewDidLoad
 {
@@ -30,11 +30,11 @@
 }
 
 - (IBAction)pushViewController:(id)sender {
-    SecondViewController *secondVC = [[SecondViewController alloc] initWithNibName:@"SecondViewController" bundle:nil];
+    SecondViewController_iPad *secondVC = [[SecondViewController_iPad alloc] initWithNibName:@"SecondViewController" bundle:nil];
     [self.navigationController pushViewController:secondVC animated:YES];
 }
 - (IBAction)pushToThirthViewController:(id)sender {
-    ThirthViewController *thirthVC = [[ThirthViewController alloc] initWithNibName:@"ThirthViewController" bundle:nil];
+    ThirthViewController_iPad *thirthVC = [[ThirthViewController_iPad alloc] initWithNibName:@"ThirthViewController" bundle:nil];
     [self.navigationController pushViewController:thirthVC animated:YES];
 }
 

@@ -21,6 +21,7 @@
 @interface FlipSquaresNavigationController (){
     NSMutableArray *fromViewImagesArray;
     NSMutableArray *toViewImagesArray;
+    BOOL pushingVC;
 }
 
 - (void) makeSquaresFlipAnimationFrom: (UIImageView *) fromImage to: (UIImageView *) toImage option: (UIViewAnimationOptions) options withCompletion: (void(^)(void))completion;
@@ -31,7 +32,7 @@
 - (UIImageView *) imageWithView:(UIView *)view;
 - (UIImageView *) createCrop: (CGRect) crop withImage: (UIImageView *)imageView;
 - (void) shuffleArray: (NSMutableArray *)array;
-- (void) sortFromLeftToRightArray: (NSMutableArray *) array;
+- (void) sortFrom: (BOOL) leftToRight array: (NSMutableArray *) array;
 - (void) sortRandomArray:(NSMutableArray *)array;
 - (float) getRandomFloat01;
 
@@ -44,7 +45,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.sortMethod = FSNavSortMethodLeftToRight;
+        self.sortMethod = FSNavSortMethodHorizontal;
     }
     return self;
 }
@@ -67,6 +68,8 @@
 
 -(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
+    pushingVC=YES;
+    
     if (animated) {
         UIViewController *currentVC = [self visibleViewController];
 
@@ -102,6 +105,8 @@
 
 -(UIViewController *)popViewControllerAnimated:(BOOL)animated
 {
+    pushingVC=NO;
+    
     //Find the previous vc in stack
     if([self.viewControllers count]>1){
         if (animated) {
@@ -152,6 +157,8 @@
 
 - (NSArray *)popToRootViewControllerAnimated:(BOOL)animated
 {
+    pushingVC=NO;
+    
     //Find the root view controller
     if([self.viewControllers count]>1){
         if (animated) {
@@ -193,6 +200,8 @@
 
 - (NSArray *)popToViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
+    pushingVC=NO;
+    
     //Find the root view controller
     if([self.viewControllers count]>1){
         if (animated) {
@@ -408,8 +417,8 @@
             [self sortRandomArray:array];
         }break;
             
-        case FSNavSortMethodLeftToRight:
-            [self sortFromLeftToRightArray:array];
+        case FSNavSortMethodHorizontal:
+            [self sortFrom:pushingVC array:array];
             break;
             
         default:
@@ -442,24 +451,32 @@
 /**
  Sort the elements for colums
  */
-- (void) sortFromLeftToRightArray: (NSMutableArray *) array
+- (void) sortFrom: (BOOL) leftToRight array: (NSMutableArray *) array
 {
     int elementIndex=0;
     int offset=0;
     NSMutableArray *sortedArray = [NSMutableArray array];
     
-    do {
-        [sortedArray addObject:[array objectAtIndex:elementIndex]];
-        
-        elementIndex+=SQUARE_ROWS;
-        
-        if (elementIndex>=[array count]) {
-            offset++;
-            elementIndex=offset;
-        }
-    } while (offset<SQUARE_COLUMNS);
+    for (int index=0; index<[array count]; index++) {
+        [sortedArray addObject:[array objectAtIndex:index%SQUARE_COLUMNS+index/SQUARE_COLUMNS]];
+    }
+//    do {
+//        [sortedArray addObject:[array objectAtIndex:elementIndex]];
+//        
+//        elementIndex+=SQUARE_ROWS;
+//        
+//        if (elementIndex>=[array count]) {
+//            offset++;
+//            elementIndex=offset;
+//        }
+//    } while (offset<SQUARE_COLUMNS);
     
-    array = sortedArray;
+    if (leftToRight) {
+        array = sortedArray;
+    }else{
+        array = [NSMutableArray arrayWithArray:[[sortedArray reverseObjectEnumerator] allObjects]];
+    }
+    
 }
 
 @end

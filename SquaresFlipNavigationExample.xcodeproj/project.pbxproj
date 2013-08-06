@@ -7,8 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C8548B417A187D500B4D4ED /* ThirthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8548B217A187D500B4D4ED /* ThirthViewController.m */; };
-		3C8548B517A187D500B4D4ED /* ThirthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C8548B317A187D500B4D4ED /* ThirthViewController.xib */; };
+		3C11C77517B1413A00125C76 /* SecondViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C11C76D17B1413A00125C76 /* SecondViewController_iPhone.m */; };
+		3C11C77617B1413A00125C76 /* SecondViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C11C76E17B1413A00125C76 /* SecondViewController_iPhone.xib */; };
+		3C11C77717B1413A00125C76 /* ThirthViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C11C77017B1413A00125C76 /* ThirthViewController_iPhone.m */; };
+		3C11C77817B1413A00125C76 /* ThirthViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C11C77117B1413A00125C76 /* ThirthViewController_iPhone.xib */; };
+		3C11C77917B1413A00125C76 /* ViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C11C77317B1413A00125C76 /* ViewController_iPhone.m */; };
+		3C11C77A17B1413A00125C76 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C11C77417B1413A00125C76 /* ViewController_iPhone.xib */; };
+		3C11C78417B1427D00125C76 /* SecondViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C11C77C17B1427D00125C76 /* SecondViewController_iPad.m */; };
+		3C11C78517B1427D00125C76 /* SecondViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C11C77D17B1427D00125C76 /* SecondViewController_iPad.xib */; };
+		3C11C78617B1427D00125C76 /* ThirthViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C11C77F17B1427D00125C76 /* ThirthViewController_iPad.m */; };
+		3C11C78717B1427D00125C76 /* ThirthViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C11C78017B1427D00125C76 /* ThirthViewController_iPad.xib */; };
+		3C11C78817B1427D00125C76 /* ViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C11C78217B1427D00125C76 /* ViewController_iPad.m */; };
+		3C11C78917B1427D00125C76 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C11C78317B1427D00125C76 /* ViewController_iPad.xib */; };
 		3C8548B717A1886700B4D4ED /* bg_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C8548B617A1886700B4D4ED /* bg_3.png */; };
 		3CF16BB617930123006E912F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF16BB517930123006E912F /* UIKit.framework */; };
 		3CF16BB817930123006E912F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF16BB717930123006E912F /* Foundation.framework */; };
@@ -24,16 +34,27 @@
 		3CF16CF2179C198C006E912F /* bg_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CF16CF0179C198C006E912F /* bg_2.jpg */; };
 		3CF16D13179C4877006E912F /* NSObject+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF16D09179C4877006E912F /* NSObject+Extras.m */; };
 		3CF16D14179C4877006E912F /* FlipSquaresNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF16D0B179C4877006E912F /* FlipSquaresNavigationController.m */; };
-		3CF16D15179C4877006E912F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF16D0E179C4877006E912F /* SecondViewController.m */; };
-		3CF16D16179C4877006E912F /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CF16D0F179C4877006E912F /* SecondViewController.xib */; };
-		3CF16D17179C4877006E912F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF16D11179C4877006E912F /* ViewController.m */; };
-		3CF16D18179C4877006E912F /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CF16D12179C4877006E912F /* ViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3C8548B117A187D400B4D4ED /* ThirthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirthViewController.h; sourceTree = "<group>"; };
-		3C8548B217A187D500B4D4ED /* ThirthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirthViewController.m; sourceTree = "<group>"; };
-		3C8548B317A187D500B4D4ED /* ThirthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirthViewController.xib; sourceTree = "<group>"; };
+		3C11C76C17B1413A00125C76 /* SecondViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController_iPhone.h; sourceTree = "<group>"; };
+		3C11C76D17B1413A00125C76 /* SecondViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController_iPhone.m; sourceTree = "<group>"; };
+		3C11C76E17B1413A00125C76 /* SecondViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController_iPhone.xib; sourceTree = "<group>"; };
+		3C11C76F17B1413A00125C76 /* ThirthViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirthViewController_iPhone.h; sourceTree = "<group>"; };
+		3C11C77017B1413A00125C76 /* ThirthViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirthViewController_iPhone.m; sourceTree = "<group>"; };
+		3C11C77117B1413A00125C76 /* ThirthViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirthViewController_iPhone.xib; sourceTree = "<group>"; };
+		3C11C77217B1413A00125C76 /* ViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController_iPhone.h; sourceTree = "<group>"; };
+		3C11C77317B1413A00125C76 /* ViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController_iPhone.m; sourceTree = "<group>"; };
+		3C11C77417B1413A00125C76 /* ViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController_iPhone.xib; sourceTree = "<group>"; };
+		3C11C77B17B1427D00125C76 /* SecondViewController_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController_iPad.h; sourceTree = "<group>"; };
+		3C11C77C17B1427D00125C76 /* SecondViewController_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController_iPad.m; sourceTree = "<group>"; };
+		3C11C77D17B1427D00125C76 /* SecondViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController_iPad.xib; sourceTree = "<group>"; };
+		3C11C77E17B1427D00125C76 /* ThirthViewController_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirthViewController_iPad.h; sourceTree = "<group>"; };
+		3C11C77F17B1427D00125C76 /* ThirthViewController_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirthViewController_iPad.m; sourceTree = "<group>"; };
+		3C11C78017B1427D00125C76 /* ThirthViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirthViewController_iPad.xib; sourceTree = "<group>"; };
+		3C11C78117B1427D00125C76 /* ViewController_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController_iPad.h; sourceTree = "<group>"; };
+		3C11C78217B1427D00125C76 /* ViewController_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController_iPad.m; sourceTree = "<group>"; };
+		3C11C78317B1427D00125C76 /* ViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController_iPad.xib; sourceTree = "<group>"; };
 		3C8548B617A1886700B4D4ED /* bg_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_3.png; sourceTree = "<group>"; };
 		3CF16BB217930123006E912F /* SquaresFlipNavigationExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SquaresFlipNavigationExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CF16BB517930123006E912F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -55,12 +76,6 @@
 		3CF16D09179C4877006E912F /* NSObject+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Extras.m"; sourceTree = "<group>"; };
 		3CF16D0A179C4877006E912F /* FlipSquaresNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipSquaresNavigationController.h; sourceTree = "<group>"; };
 		3CF16D0B179C4877006E912F /* FlipSquaresNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipSquaresNavigationController.m; sourceTree = "<group>"; };
-		3CF16D0D179C4877006E912F /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		3CF16D0E179C4877006E912F /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		3CF16D0F179C4877006E912F /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
-		3CF16D10179C4877006E912F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3CF16D11179C4877006E912F /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		3CF16D12179C4877006E912F /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +93,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C11C76A17B1413900125C76 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				3C11C77B17B1427D00125C76 /* SecondViewController_iPad.h */,
+				3C11C77C17B1427D00125C76 /* SecondViewController_iPad.m */,
+				3C11C77D17B1427D00125C76 /* SecondViewController_iPad.xib */,
+				3C11C77E17B1427D00125C76 /* ThirthViewController_iPad.h */,
+				3C11C77F17B1427D00125C76 /* ThirthViewController_iPad.m */,
+				3C11C78017B1427D00125C76 /* ThirthViewController_iPad.xib */,
+				3C11C78117B1427D00125C76 /* ViewController_iPad.h */,
+				3C11C78217B1427D00125C76 /* ViewController_iPad.m */,
+				3C11C78317B1427D00125C76 /* ViewController_iPad.xib */,
+			);
+			path = iPad;
+			sourceTree = "<group>";
+		};
+		3C11C76B17B1413A00125C76 /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				3C11C76C17B1413A00125C76 /* SecondViewController_iPhone.h */,
+				3C11C76D17B1413A00125C76 /* SecondViewController_iPhone.m */,
+				3C11C76E17B1413A00125C76 /* SecondViewController_iPhone.xib */,
+				3C11C76F17B1413A00125C76 /* ThirthViewController_iPhone.h */,
+				3C11C77017B1413A00125C76 /* ThirthViewController_iPhone.m */,
+				3C11C77117B1413A00125C76 /* ThirthViewController_iPhone.xib */,
+				3C11C77217B1413A00125C76 /* ViewController_iPhone.h */,
+				3C11C77317B1413A00125C76 /* ViewController_iPhone.m */,
+				3C11C77417B1413A00125C76 /* ViewController_iPhone.xib */,
+			);
+			path = iPhone;
+			sourceTree = "<group>";
+		};
 		3CF16BA917930123006E912F = {
 			isa = PBXGroup;
 			children = (
@@ -109,8 +156,9 @@
 		3CF16BBB17930123006E912F /* SquaresFlipNavigationExample */ = {
 			isa = PBXGroup;
 			children = (
+				3C11C76A17B1413900125C76 /* iPad */,
+				3C11C76B17B1413A00125C76 /* iPhone */,
 				3CF16D06179C4877006E912F /* SquaresFlipNavigation */,
-				3CF16D0C179C4877006E912F /* ViewControllers */,
 				3CF16CEE179C198A006E912F /* assets */,
 				3CF16BC417930123006E912F /* AppDelegate.h */,
 				3CF16BC517930123006E912F /* AppDelegate.m */,
@@ -160,22 +208,6 @@
 				3CF16D09179C4877006E912F /* NSObject+Extras.m */,
 			);
 			path = Extras;
-			sourceTree = "<group>";
-		};
-		3CF16D0C179C4877006E912F /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				3CF16D10179C4877006E912F /* ViewController.h */,
-				3CF16D11179C4877006E912F /* ViewController.m */,
-				3CF16D12179C4877006E912F /* ViewController.xib */,
-				3CF16D0D179C4877006E912F /* SecondViewController.h */,
-				3CF16D0E179C4877006E912F /* SecondViewController.m */,
-				3CF16D0F179C4877006E912F /* SecondViewController.xib */,
-				3C8548B117A187D400B4D4ED /* ThirthViewController.h */,
-				3C8548B217A187D500B4D4ED /* ThirthViewController.m */,
-				3C8548B317A187D500B4D4ED /* ThirthViewController.xib */,
-			);
-			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,10 +267,13 @@
 				3CF16BCC17930123006E912F /* Default-568h@2x.png in Resources */,
 				3CF16CF1179C198C006E912F /* bg_1.jpg in Resources */,
 				3CF16CF2179C198C006E912F /* bg_2.jpg in Resources */,
-				3CF16D16179C4877006E912F /* SecondViewController.xib in Resources */,
-				3CF16D18179C4877006E912F /* ViewController.xib in Resources */,
-				3C8548B517A187D500B4D4ED /* ThirthViewController.xib in Resources */,
 				3C8548B717A1886700B4D4ED /* bg_3.png in Resources */,
+				3C11C77617B1413A00125C76 /* SecondViewController_iPhone.xib in Resources */,
+				3C11C77817B1413A00125C76 /* ThirthViewController_iPhone.xib in Resources */,
+				3C11C77A17B1413A00125C76 /* ViewController_iPhone.xib in Resources */,
+				3C11C78517B1427D00125C76 /* SecondViewController_iPad.xib in Resources */,
+				3C11C78717B1427D00125C76 /* ThirthViewController_iPad.xib in Resources */,
+				3C11C78917B1427D00125C76 /* ViewController_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,9 +288,12 @@
 				3CF16BC617930123006E912F /* AppDelegate.m in Sources */,
 				3CF16D13179C4877006E912F /* NSObject+Extras.m in Sources */,
 				3CF16D14179C4877006E912F /* FlipSquaresNavigationController.m in Sources */,
-				3CF16D15179C4877006E912F /* SecondViewController.m in Sources */,
-				3CF16D17179C4877006E912F /* ViewController.m in Sources */,
-				3C8548B417A187D500B4D4ED /* ThirthViewController.m in Sources */,
+				3C11C77517B1413A00125C76 /* SecondViewController_iPhone.m in Sources */,
+				3C11C77717B1413A00125C76 /* ThirthViewController_iPhone.m in Sources */,
+				3C11C77917B1413A00125C76 /* ViewController_iPhone.m in Sources */,
+				3C11C78417B1427D00125C76 /* SecondViewController_iPad.m in Sources */,
+				3C11C78617B1427D00125C76 /* ThirthViewController_iPad.m in Sources */,
+				3C11C78817B1427D00125C76 /* ViewController_iPad.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +339,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "68B2C7B7-7594-4F99-8EAD-177C658DDCC5";
+				PROVISIONING_PROFILE = "AF9FBB6F-40DA-4DDC-B334-3C3889D55A43";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -327,7 +365,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "68B2C7B7-7594-4F99-8EAD-177C658DDCC5";
+				PROVISIONING_PROFILE = "AF9FBB6F-40DA-4DDC-B334-3C3889D55A43";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -339,7 +377,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SquaresFlipNavigationExample/SquaresFlipNavigationExample-Prefix.pch";
 				INFOPLIST_FILE = "SquaresFlipNavigationExample/SquaresFlipNavigationExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -350,7 +390,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SquaresFlipNavigationExample/SquaresFlipNavigationExample-Prefix.pch";
 				INFOPLIST_FILE = "SquaresFlipNavigationExample/SquaresFlipNavigationExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 Andrés Brun. All rights reserved.
 //
 
-#import "ThirthViewController.h"
-#import "ViewController.h"
+#import "ThirthViewController_iPad.h"
+#import "ViewController_iPad.h"
 
-@interface ThirthViewController ()
+@interface ThirthViewController_iPad ()
 
 @end
 
-@implementation ThirthViewController
+@implementation ThirthViewController_iPad
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,7 +43,7 @@
 
 - (IBAction)popToFirstViewController:(id)sender
 {
-    ViewController *firstVC = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    ViewController_iPad *firstVC = [[ViewController_iPad alloc] initWithNibName:@"ViewController" bundle:nil];
     [self.navigationController pushViewController:firstVC animated:YES];
 }
 
