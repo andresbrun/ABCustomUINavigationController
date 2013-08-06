@@ -1,13 +1,15 @@
 //
-//  ViewController.h
+//  SecondViewController.h
 //  SquaresFlipNavigationExample
 //
 //  Created by Andrés Brun on 7/14/13.
 //  Copyright (c) 2013 Andrés Brun. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ViewController.h"
 
-@interface ViewController_iPad : UIViewController
+@interface SecondViewController : UIViewController
+
+- (id)initViewController;
 
 @end

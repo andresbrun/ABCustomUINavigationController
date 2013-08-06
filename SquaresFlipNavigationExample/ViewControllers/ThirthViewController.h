@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ThirthViewController_iPad : UIViewController
+@interface ThirthViewController : UIViewController
+
+- (id)initViewController;
 
 @end

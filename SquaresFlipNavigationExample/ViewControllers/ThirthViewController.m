@@ -6,21 +6,23 @@
 //  Copyright (c) 2013 Andrés Brun. All rights reserved.
 //
 
-#import "ThirthViewController_iPad.h"
-#import "ViewController_iPad.h"
+#import "ThirthViewController.h"
+#import "ViewController.h"
 
-@interface ThirthViewController_iPad ()
+@interface ThirthViewController ()
 
 @end
 
-@implementation ThirthViewController_iPad
+@implementation ThirthViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initViewController
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        self = [[ThirthViewController alloc] initWithNibName:@"ThirthViewController_iPhone" bundle:nil];
+    } else {
+        self = [[ThirthViewController alloc] initWithNibName:@"ThirthViewController_iPad" bundle:nil];
     }
+    
     return self;
 }
 
@@ -36,6 +38,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)shouldAutorotate
+{
+    return YES;
+}
+
+-(NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskAll;
+}
+
 - (IBAction)popViewController:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
@@ -43,7 +55,7 @@
 
 - (IBAction)popToFirstViewController:(id)sender
 {
-    ViewController_iPad *firstVC = [[ViewController_iPad alloc] initWithNibName:@"ViewController" bundle:nil];
+    ViewController *firstVC = [[ViewController alloc] initViewController];
     [self.navigationController pushViewController:firstVC animated:YES];
 }
 

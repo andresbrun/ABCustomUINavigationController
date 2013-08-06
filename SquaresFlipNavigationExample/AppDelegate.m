@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "ViewController_iPhone.h"
+#import "ViewController.h"
 #import "FlipSquaresNavigationController.h"
 
 @implementation AppDelegate
@@ -17,7 +17,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[ViewController_iPhone alloc] initWithNibName:@"ViewController" bundle:nil];
+    self.viewController = [[ViewController alloc] initViewController];
     self.window.rootViewController = [[FlipSquaresNavigationController alloc] initWithRootViewController:self.viewController];
     [self.window makeKeyAndVisible];
     return YES;
