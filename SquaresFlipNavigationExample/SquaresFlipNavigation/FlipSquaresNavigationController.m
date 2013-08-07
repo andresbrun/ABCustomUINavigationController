@@ -18,6 +18,10 @@
 #define SQUARE_COLUMNS 8
 #define TIME_ANIMATION 1.0
 
+//IOS7
+#define CURRENT_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
+#define IS_EARLIER_IOS7 ( CURRENT_VERSION < 7.0)
+
 @interface FlipSquaresNavigationController (){
     NSMutableArray *fromViewImagesArray;
     NSMutableArray *toViewImagesArray;
@@ -336,7 +340,7 @@
     //Perform the completion when the animation is finished. Calculate that with the 30% remain of TIME_ANIMATION
     [self performBlock:^{
         completion();
-    } afterDelay:maxDelay+TIME_ANIMATION*0.3];
+    } afterDelay:maxDelay+TIME_ANIMATION*0.5];
 
 }
 
@@ -441,7 +445,7 @@
         }
     }
     
-    if (![UIApplication sharedApplication].statusBarHidden){
+    if (IS_EARLIER_IOS7 && ![UIApplication sharedApplication].statusBarHidden){
         if (UIInterfaceOrientationIsPortrait(interfaceOrientation)){
             yPosition += [UIApplication sharedApplication].statusBarFrame.size.height;
         }else{
