@@ -8,17 +8,24 @@ For using that component you only have to copy the SquaresFlipNavigation folder 
     import "FlipSquaresNavigationController.h"
     [[FlipSquaresNavigationController alloc] initWithRootViewController:self.viewController];
   
-and pushing and pop normally:
+and pushing and pop normally with navigation methods:
 
-    [self.navigationController pushViewController:self.secondVC animated:YES];
+    - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
+    - (UIViewController *)popViewControllerAnimated:(BOOL)animated
+    - (NSArray *)popToRootViewControllerAnimated:(BOOL)animated
+    - (NSArray *)popToViewController:(UIViewController *)viewController animated:(BOOL)animated
   
-or
-  
-    [self.navigationController popViewControllerAnimated:YES];
-  
-We have just implemented these two methods, we'll implements the remaint methods in the near future.
+Also it have differents ways to sort the squares animations:
+- Randomly
+- FromLeftToRight
 
-Note: that component needs QuartCore.framework and CoreGraphic.framework to work. It doesn't work fine with autosizing :(.
+##Requirements
+This component need these two frameworks to work:
+- QuartCore.framework 
+- CoreGraphic.framework
+
+##Limitations
+It doesn't work fine with autosizing :(.
 
 ## Example
 
