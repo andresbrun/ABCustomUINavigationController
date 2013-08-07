@@ -14,13 +14,14 @@
 #define ARC4RANDOM_MAX 0x100000000
 
 //Configure params
-#define SQUARE_ROWS 7
-#define SQUARE_COLUMNS 5
+#define SQUARE_ROWS 5
+#define SQUARE_COLUMNS 8
 #define TIME_ANIMATION 1.0
 
 @interface FlipSquaresNavigationController (){
     NSMutableArray *fromViewImagesArray;
     NSMutableArray *toViewImagesArray;
+    BOOL pushingVC;
 }
 
 - (void) makeSquaresFlipAnimationFrom: (UIImageView *) fromImage to: (UIImageView *) toImage option: (UIViewAnimationOptions) options withCompletion: (void(^)(void))completion;
@@ -30,8 +31,9 @@
 //Auxiliar methods
 - (UIImageView *) imageWithView:(UIView *)view;
 - (UIImageView *) createCrop: (CGRect) crop withImage: (UIImageView *)imageView;
-- (void)shuffleArray: (NSMutableArray *)array;
-
+- (NSMutableArray *) shuffleArray: (NSMutableArray *)array;
+- (NSMutableArray *) sortFrom: (BOOL) leftToRight array: (NSMutableArray *) array;
+- (NSMutableArray *) sortRandomArray:(NSMutableArray *)array;
 - (float) getRandomFloat01;
 
 @end
@@ -43,6 +45,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.sortMethod = FSNavSortMethodHorizontal;
     }
     return self;
 }
@@ -65,11 +68,14 @@
 
 -(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
+    pushingVC=YES;
+    
     if (animated) {
         UIViewController *currentVC = [self visibleViewController];
 
         UIImageView *currentView = [self imageWithView: currentVC.view];
         
+        //TODO: problem with autosizing, it hasn't been initialized yet
         UIImageView *newView = [self imageWithView: viewController.view];
         
         [currentVC.view setAlpha:0.0];
@@ -100,18 +106,72 @@
 
 -(UIViewController *)popViewControllerAnimated:(BOOL)animated
 {
-    //Find the preious vc in stack
+    pushingVC=NO;
+    
+    //Find the previous vc in stack
     if([self.viewControllers count]>1){
         if (animated) {
             UIViewController *currentVC = [self visibleViewController];
             
             UIImageView *currentView = [self imageWithView: currentVC.view];
             
-            UIImageView *newView = [self imageWithView: ((UIViewController *)[self.viewControllers objectAtIndex:0]).view];
+            int index = [self.viewControllers indexOfObject:currentVC];
+            
+            if (index>0) {
+                UIImageView *newView = [self imageWithView: ((UIViewController *)[self.viewControllers objectAtIndex:index-1]).view];
+                
+                [currentVC.view setAlpha:0.0];
+                
+                __block UIViewController *returnedVC;
+                [self makeSquaresFlipAnimationFrom:currentView to:newView option:UIViewAnimationOptionTransitionFlipFromRight withCompletion:^{
+                    
+                    //Clean the others view
+                    for (UIImageView *currentViewR in fromViewImagesArray) {
+                        [currentViewR removeFromSuperview];
+                    }
+                    for (UIImageView *currentViewR in toViewImagesArray) {
+                        [UIView animateWithDuration:0.3 animations:^{
+                            [currentViewR setAlpha:0.0];
+                        }completion:^(BOOL finished) {
+                            [currentViewR removeFromSuperview];
+                        }];
+                        
+                    }
+                    
+                    returnedVC = [super popViewControllerAnimated:NO];
+                    
+                }];
+                
+                return returnedVC;
+            }else{
+                return [super popViewControllerAnimated:NO];
+            }
+            
+        }else{
+            return [super popViewControllerAnimated:NO];
+        }
+    }else{
+        return [super popViewControllerAnimated:animated];
+    }
+
+}
+
+- (NSArray *)popToRootViewControllerAnimated:(BOOL)animated
+{
+    pushingVC=NO;
+    
+    //Find the root view controller
+    if([self.viewControllers count]>1){
+        if (animated) {
+            UIViewController *currentVC = [self visibleViewController];
+            UIViewController *rootVC = [self.viewControllers objectAtIndex:0];
+            
+            UIImageView *currentView = [self imageWithView: currentVC.view];
+            UIImageView *newView = [self imageWithView: rootVC.view];
             
             [currentVC.view setAlpha:0.0];
             
-            __block UIViewController *returnedVC;
+            __block NSArray *stackVCs;
             [self makeSquaresFlipAnimationFrom:currentView to:newView option:UIViewAnimationOptionTransitionFlipFromRight withCompletion:^{
                 
                 //Clean the others view
@@ -126,20 +186,59 @@
                     }];
                     
                 }
-                
-                returnedVC = [super popViewControllerAnimated:NO];
-
+                stackVCs = [super popToRootViewControllerAnimated:NO];
             }];
             
-            return returnedVC;
+            return stackVCs;
             
         }else{
-            return [super popViewControllerAnimated:NO];
+            return [super popToRootViewControllerAnimated:NO];
         }
     }else{
-        return [super popViewControllerAnimated:NO];
+        return [super popToRootViewControllerAnimated:animated];
     }
+}
 
+- (NSArray *)popToViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    pushingVC=NO;
+    
+    //Find the root view controller
+    if([self.viewControllers count]>1){
+        if (animated) {
+            UIViewController *currentVC = [self visibleViewController];
+            
+            UIImageView *currentView = [self imageWithView: currentVC.view];
+            UIImageView *newView = [self imageWithView: viewController.view];
+            
+            [currentVC.view setAlpha:0.0];
+            
+            __block NSArray *stackVCs;
+            [self makeSquaresFlipAnimationFrom:currentView to:newView option:UIViewAnimationOptionTransitionFlipFromRight withCompletion:^{
+                
+                //Clean the others view
+                for (UIImageView *currentViewR in fromViewImagesArray) {
+                    [currentViewR removeFromSuperview];
+                }
+                for (UIImageView *currentViewR in toViewImagesArray) {
+                    [UIView animateWithDuration:0.3 animations:^{
+                        [currentViewR setAlpha:0.0];
+                    }completion:^(BOOL finished) {
+                        [currentViewR removeFromSuperview];
+                    }];
+                    
+                }
+                stackVCs = [super popToViewController:viewController animated:NO];
+            }];
+            
+            return stackVCs;
+            
+        }else{
+            return [super popToViewController:viewController animated:NO];
+        }
+    }else{
+        return [super popToViewController:viewController animated:animated];
+    }
 }
 
 
@@ -154,8 +253,9 @@
     float columnsHeight = fromImage.frame.size.height / SQUARE_COLUMNS;
     
     //Create the cropped images
-    for (int row=0; row<SQUARE_ROWS; row++) {
-        for (int col=0; col<SQUARE_COLUMNS; col++) {
+    
+    for (int col=0; col<SQUARE_COLUMNS; col++) {
+        for (int row=0; row<SQUARE_ROWS; row++) {
             UIView *fromView = [self createViewWithImageView:[self createCrop:CGRectMake(row*rowsWidth,
                                                                                          col*columnsHeight,
                                                                                          rowsWidth,
@@ -181,14 +281,20 @@
     for (int i=0; i<[toViewImagesArray count]; i++) {
         [orderArray addObject:[NSNumber numberWithInt:i]];
     }
-    [self shuffleArray:orderArray];
+    
+    orderArray=[self shuffleArray:orderArray];
     
     float maxDelay=0;
     for (NSNumber *currentPos in orderArray) {
+        int posIndex = [orderArray indexOfObject:currentPos];
+        
         UIView *fromViewCrop = [fromViewImagesArray objectAtIndex:[currentPos intValue]];
         UIView *toViewCrop = [toViewImagesArray objectAtIndex:[currentPos intValue]];
     
-        float delay = [self getRandomFloat01]*TIME_ANIMATION*0.7;
+        //we "order" the delays for sort the animation in time
+        float ratio = posIndex/([orderArray count]*1.0);
+        float delay = [self getRandomFloat01]*TIME_ANIMATION*0.4*ratio + TIME_ANIMATION*0.3*ratio;//Random + Fix -> MAX 70% of TIME_ANIMATION
+        //NSLog(@"PosIndex: %d Element: %d delay: %f", posIndex, [currentPos intValue], delay);
         maxDelay = MAX(delay, maxDelay);
         [self performBlock:^{
             
@@ -213,7 +319,7 @@
         
     }
     
-    //Perform the completion when the animation is finished
+    //Perform the completion when the animation is finished. Calculate that with the 30% remain of TIME_ANIMATION
     [self performBlock:^{
         completion();
     } afterDelay:maxDelay+TIME_ANIMATION*0.3];
@@ -223,8 +329,8 @@
 #pragma mark - Images methods
 
 - (UIImageView *) imageWithView:(UIView *)view
-{
-    [view setContentScaleFactor:2.0];
+{    
+    [view.layer setContentsScale:[[UIScreen mainScreen] scale]];
     
     UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 1.0);
     [view.layer renderInContext:UIGraphicsGetCurrentContext()];
@@ -234,6 +340,8 @@
     
     UIImageView *currentView = [[UIImageView alloc] initWithImage: img];
     
+    //Fix the position to handle status bar and navigation bar
+    //float yPosition = 20;
     float yPosition = self.view.frame.size.height - view.frame.size.height;
     [currentView setFrame:CGRectMake(0, yPosition, currentView.frame.size.width, currentView.frame.size.height)];
     
@@ -289,10 +397,45 @@
     return gradient;
 }
 
-#pragma mark - Auxiliar methods
-- (void)shuffleArray: (NSMutableArray *)array
+- (UIView *)createViewWithImageView: (UIImageView *)imageView
 {
+    UIView *newView = [[UIView alloc] initWithFrame:imageView.frame];
+    [imageView setTag:TAG_IMAGE_VIEW];
+    [imageView setFrame:imageView.bounds];
+    [newView addSubview:imageView];
     
+    return newView;
+}
+
+#pragma mark - Auxiliar methods
+- (float) getRandomFloat01
+{
+    return ((double)arc4random() / ARC4RANDOM_MAX);
+}
+
+#pragma mark - Sort Array methods
+- (NSMutableArray *)shuffleArray: (NSMutableArray *)array
+{
+    switch (self.sortMethod) {
+        case FSNavSortMethodRandom:{
+            array=[self sortRandomArray:array];
+        }break;
+            
+        case FSNavSortMethodHorizontal:
+            array=[self sortFrom:pushingVC array:array];
+            break;
+            
+        default:
+            break;
+    }
+    return array;
+}
+
+/**
+ Sort the elements randomly
+ */
+- (NSMutableArray *) sortRandomArray:(NSMutableArray *)array
+{
     static BOOL seeded = NO;
     if(!seeded)
     {
@@ -307,21 +450,30 @@
         int n = (random() % nElements) + i;
         [array exchangeObjectAtIndex:i withObjectAtIndex:n];
     }
-}
-
-- (UIView *)createViewWithImageView: (UIImageView *)imageView
-{
-    UIView *newView = [[UIView alloc] initWithFrame:imageView.frame];
-    [imageView setTag:TAG_IMAGE_VIEW];
-    [imageView setFrame:imageView.bounds];
-    [newView addSubview:imageView];
     
-    return newView;
+    return array;
 }
 
-- (float) getRandomFloat01
+/**
+ Sort the elements for colums
+ */
+- (NSMutableArray *) sortFrom: (BOOL) leftToRight array: (NSMutableArray *) array
 {
-    return ((double)arc4random() / ARC4RANDOM_MAX);
+    NSMutableArray *sortedArray = [NSMutableArray array];
+    
+    //Get an array sort the elements by columns
+    for (int index=0; index<[array count]; index++) {
+        int auxPos = ((index%SQUARE_COLUMNS)*SQUARE_ROWS) + index/SQUARE_COLUMNS;       
+        [sortedArray addObject:[array objectAtIndex:auxPos]];
+    }
+    
+    if (leftToRight) {
+        array = sortedArray;
+    }else{
+        array = [NSMutableArray arrayWithArray:[[sortedArray reverseObjectEnumerator] allObjects]];
+    }
+    
+    return array;
 }
 
 @end

@@ -1,27 +1,26 @@
 //
-//  SecondViewController.m
+//  ThirthViewController.m
 //  SquaresFlipNavigationExample
 //
-//  Created by Andrés Brun on 7/14/13.
+//  Created by Andrés Brun on 7/25/13.
 //  Copyright (c) 2013 Andrés Brun. All rights reserved.
 //
 
-#import "SecondViewController.h"
 #import "ThirthViewController.h"
-#import "FlipSquaresNavigationController.h"
+#import "ViewController.h"
 
-@interface SecondViewController ()
-- (IBAction)popViewController:(id)sender;
+@interface ThirthViewController ()
+
 @end
 
-@implementation SecondViewController
+@implementation ThirthViewController
 
 - (id)initViewController
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self = [[SecondViewController alloc] initWithNibName:@"SecondViewController_iPhone" bundle:nil];
+        self = [[ThirthViewController alloc] initWithNibName:@"ThirthViewController_iPhone" bundle:nil];
     } else {
-        self = [[SecondViewController alloc] initWithNibName:@"SecondViewController_iPad" bundle:nil];
+        self = [[ThirthViewController alloc] initWithNibName:@"ThirthViewController_iPad" bundle:nil];
     }
     
     return self;
@@ -49,13 +48,20 @@
     return UIInterfaceOrientationMaskPortrait;
 }
 
-- (IBAction)popViewController:(id)sender {
+- (IBAction)popViewController:(id)sender
+{
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction)pushViewController:(id)sender {
-    ThirthViewController *thirthVC = [[ThirthViewController alloc] initViewController];
-    [self.navigationController pushViewController:thirthVC animated:YES];
+- (IBAction)popToFirstViewController:(id)sender
+{
+    ViewController *firstVC = [self.navigationController.viewControllers objectAtIndex:0];
+    [self.navigationController popToViewController:firstVC animated:YES];
+}
+
+- (IBAction)popToRootViewController:(id)sender
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end

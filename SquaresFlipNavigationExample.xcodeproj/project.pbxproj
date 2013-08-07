@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C11C7CA17B1481100125C76 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C11C7BE17B1481100125C76 /* SecondViewController.m */; };
+		3C11C7CB17B1481100125C76 /* ThirthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C11C7C017B1481100125C76 /* ThirthViewController.m */; };
+		3C11C7CC17B1481100125C76 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C11C7C217B1481100125C76 /* ViewController.m */; };
+		3C11C7CD17B1481100125C76 /* SecondViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C11C7C417B1481100125C76 /* SecondViewController_iPad.xib */; };
+		3C11C7CE17B1481100125C76 /* SecondViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C11C7C517B1481100125C76 /* SecondViewController_iPhone.xib */; };
+		3C11C7CF17B1481100125C76 /* ThirthViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C11C7C617B1481100125C76 /* ThirthViewController_iPad.xib */; };
+		3C11C7D017B1481100125C76 /* ThirthViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C11C7C717B1481100125C76 /* ThirthViewController_iPhone.xib */; };
+		3C11C7D117B1481100125C76 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C11C7C817B1481100125C76 /* ViewController_iPad.xib */; };
+		3C11C7D217B1481100125C76 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C11C7C917B1481100125C76 /* ViewController_iPhone.xib */; };
+		3C11C7D617B14DF800125C76 /* bg_1_iPad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3C11C7D317B14DF800125C76 /* bg_1_iPad.jpg */; };
+		3C11C7D717B14DF800125C76 /* bg_2_iPad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3C11C7D417B14DF800125C76 /* bg_2_iPad.jpg */; };
+		3C11C7D817B14DF800125C76 /* bg_3_iPad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3C11C7D517B14DF800125C76 /* bg_3_iPad.jpg */; };
+		3C8548B717A1886700B4D4ED /* bg_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C8548B617A1886700B4D4ED /* bg_3.png */; };
 		3CF16BB617930123006E912F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF16BB517930123006E912F /* UIKit.framework */; };
 		3CF16BB817930123006E912F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF16BB717930123006E912F /* Foundation.framework */; };
 		3CF16BBA17930123006E912F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF16BB917930123006E912F /* CoreGraphics.framework */; };
@@ -21,13 +34,25 @@
 		3CF16CF2179C198C006E912F /* bg_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CF16CF0179C198C006E912F /* bg_2.jpg */; };
 		3CF16D13179C4877006E912F /* NSObject+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF16D09179C4877006E912F /* NSObject+Extras.m */; };
 		3CF16D14179C4877006E912F /* FlipSquaresNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF16D0B179C4877006E912F /* FlipSquaresNavigationController.m */; };
-		3CF16D15179C4877006E912F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF16D0E179C4877006E912F /* SecondViewController.m */; };
-		3CF16D16179C4877006E912F /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CF16D0F179C4877006E912F /* SecondViewController.xib */; };
-		3CF16D17179C4877006E912F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF16D11179C4877006E912F /* ViewController.m */; };
-		3CF16D18179C4877006E912F /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CF16D12179C4877006E912F /* ViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C11C7BD17B1481100125C76 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		3C11C7BE17B1481100125C76 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		3C11C7BF17B1481100125C76 /* ThirthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirthViewController.h; sourceTree = "<group>"; };
+		3C11C7C017B1481100125C76 /* ThirthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirthViewController.m; sourceTree = "<group>"; };
+		3C11C7C117B1481100125C76 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3C11C7C217B1481100125C76 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3C11C7C417B1481100125C76 /* SecondViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController_iPad.xib; sourceTree = "<group>"; };
+		3C11C7C517B1481100125C76 /* SecondViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController_iPhone.xib; sourceTree = "<group>"; };
+		3C11C7C617B1481100125C76 /* ThirthViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirthViewController_iPad.xib; sourceTree = "<group>"; };
+		3C11C7C717B1481100125C76 /* ThirthViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirthViewController_iPhone.xib; sourceTree = "<group>"; };
+		3C11C7C817B1481100125C76 /* ViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController_iPad.xib; sourceTree = "<group>"; };
+		3C11C7C917B1481100125C76 /* ViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController_iPhone.xib; sourceTree = "<group>"; };
+		3C11C7D317B14DF800125C76 /* bg_1_iPad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_1_iPad.jpg; sourceTree = "<group>"; };
+		3C11C7D417B14DF800125C76 /* bg_2_iPad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_2_iPad.jpg; sourceTree = "<group>"; };
+		3C11C7D517B14DF800125C76 /* bg_3_iPad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_3_iPad.jpg; sourceTree = "<group>"; };
+		3C8548B617A1886700B4D4ED /* bg_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_3.png; sourceTree = "<group>"; };
 		3CF16BB217930123006E912F /* SquaresFlipNavigationExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SquaresFlipNavigationExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CF16BB517930123006E912F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3CF16BB717930123006E912F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -48,12 +73,6 @@
 		3CF16D09179C4877006E912F /* NSObject+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Extras.m"; sourceTree = "<group>"; };
 		3CF16D0A179C4877006E912F /* FlipSquaresNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipSquaresNavigationController.h; sourceTree = "<group>"; };
 		3CF16D0B179C4877006E912F /* FlipSquaresNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipSquaresNavigationController.m; sourceTree = "<group>"; };
-		3CF16D0D179C4877006E912F /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		3CF16D0E179C4877006E912F /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		3CF16D0F179C4877006E912F /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
-		3CF16D10179C4877006E912F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3CF16D11179C4877006E912F /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		3CF16D12179C4877006E912F /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +90,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C11C7BC17B1481100125C76 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3C11C7BD17B1481100125C76 /* SecondViewController.h */,
+				3C11C7BE17B1481100125C76 /* SecondViewController.m */,
+				3C11C7BF17B1481100125C76 /* ThirthViewController.h */,
+				3C11C7C017B1481100125C76 /* ThirthViewController.m */,
+				3C11C7C117B1481100125C76 /* ViewController.h */,
+				3C11C7C217B1481100125C76 /* ViewController.m */,
+				3C11C7C317B1481100125C76 /* Views */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3C11C7C317B1481100125C76 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3C11C7C417B1481100125C76 /* SecondViewController_iPad.xib */,
+				3C11C7C517B1481100125C76 /* SecondViewController_iPhone.xib */,
+				3C11C7C617B1481100125C76 /* ThirthViewController_iPad.xib */,
+				3C11C7C717B1481100125C76 /* ThirthViewController_iPhone.xib */,
+				3C11C7C817B1481100125C76 /* ViewController_iPad.xib */,
+				3C11C7C917B1481100125C76 /* ViewController_iPhone.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		3CF16BA917930123006E912F = {
 			isa = PBXGroup;
 			children = (
@@ -103,7 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				3CF16D06179C4877006E912F /* SquaresFlipNavigation */,
-				3CF16D0C179C4877006E912F /* ViewControllers */,
+				3C11C7BC17B1481100125C76 /* ViewControllers */,
 				3CF16CEE179C198A006E912F /* assets */,
 				3CF16BC417930123006E912F /* AppDelegate.h */,
 				3CF16BC517930123006E912F /* AppDelegate.m */,
@@ -129,6 +175,10 @@
 		3CF16CEE179C198A006E912F /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				3C11C7D317B14DF800125C76 /* bg_1_iPad.jpg */,
+				3C11C7D417B14DF800125C76 /* bg_2_iPad.jpg */,
+				3C11C7D517B14DF800125C76 /* bg_3_iPad.jpg */,
+				3C8548B617A1886700B4D4ED /* bg_3.png */,
 				3CF16CEF179C198C006E912F /* bg_1.jpg */,
 				3CF16CF0179C198C006E912F /* bg_2.jpg */,
 			);
@@ -152,19 +202,6 @@
 				3CF16D09179C4877006E912F /* NSObject+Extras.m */,
 			);
 			path = Extras;
-			sourceTree = "<group>";
-		};
-		3CF16D0C179C4877006E912F /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				3CF16D0D179C4877006E912F /* SecondViewController.h */,
-				3CF16D0E179C4877006E912F /* SecondViewController.m */,
-				3CF16D0F179C4877006E912F /* SecondViewController.xib */,
-				3CF16D10179C4877006E912F /* ViewController.h */,
-				3CF16D11179C4877006E912F /* ViewController.m */,
-				3CF16D12179C4877006E912F /* ViewController.xib */,
-			);
-			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,8 +261,16 @@
 				3CF16BCC17930123006E912F /* Default-568h@2x.png in Resources */,
 				3CF16CF1179C198C006E912F /* bg_1.jpg in Resources */,
 				3CF16CF2179C198C006E912F /* bg_2.jpg in Resources */,
-				3CF16D16179C4877006E912F /* SecondViewController.xib in Resources */,
-				3CF16D18179C4877006E912F /* ViewController.xib in Resources */,
+				3C8548B717A1886700B4D4ED /* bg_3.png in Resources */,
+				3C11C7CD17B1481100125C76 /* SecondViewController_iPad.xib in Resources */,
+				3C11C7CE17B1481100125C76 /* SecondViewController_iPhone.xib in Resources */,
+				3C11C7CF17B1481100125C76 /* ThirthViewController_iPad.xib in Resources */,
+				3C11C7D017B1481100125C76 /* ThirthViewController_iPhone.xib in Resources */,
+				3C11C7D117B1481100125C76 /* ViewController_iPad.xib in Resources */,
+				3C11C7D217B1481100125C76 /* ViewController_iPhone.xib in Resources */,
+				3C11C7D617B14DF800125C76 /* bg_1_iPad.jpg in Resources */,
+				3C11C7D717B14DF800125C76 /* bg_2_iPad.jpg in Resources */,
+				3C11C7D817B14DF800125C76 /* bg_3_iPad.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,8 +285,9 @@
 				3CF16BC617930123006E912F /* AppDelegate.m in Sources */,
 				3CF16D13179C4877006E912F /* NSObject+Extras.m in Sources */,
 				3CF16D14179C4877006E912F /* FlipSquaresNavigationController.m in Sources */,
-				3CF16D15179C4877006E912F /* SecondViewController.m in Sources */,
-				3CF16D17179C4877006E912F /* ViewController.m in Sources */,
+				3C11C7CA17B1481100125C76 /* SecondViewController.m in Sources */,
+				3C11C7CB17B1481100125C76 /* ThirthViewController.m in Sources */,
+				3C11C7CC17B1481100125C76 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +333,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "68B2C7B7-7594-4F99-8EAD-177C658DDCC5";
+				PROVISIONING_PROFILE = "AF9FBB6F-40DA-4DDC-B334-3C3889D55A43";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -313,7 +359,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "68B2C7B7-7594-4F99-8EAD-177C658DDCC5";
+				PROVISIONING_PROFILE = "AF9FBB6F-40DA-4DDC-B334-3C3889D55A43";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -325,7 +371,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SquaresFlipNavigationExample/SquaresFlipNavigationExample-Prefix.pch";
 				INFOPLIST_FILE = "SquaresFlipNavigationExample/SquaresFlipNavigationExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -336,7 +384,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SquaresFlipNavigationExample/SquaresFlipNavigationExample-Prefix.pch";
 				INFOPLIST_FILE = "SquaresFlipNavigationExample/SquaresFlipNavigationExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
