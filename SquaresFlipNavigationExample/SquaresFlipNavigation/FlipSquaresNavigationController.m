@@ -35,6 +35,7 @@
 - (NSMutableArray *) sortFrom: (BOOL) leftToRight array: (NSMutableArray *) array;
 - (NSMutableArray *) sortRandomArray:(NSMutableArray *)array;
 - (float) getRandomFloat01;
+- (float) calculateYPosition;
 
 @end
 
@@ -55,7 +56,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    [self setNavigationBarHidden:YES];
+    //[self setNavigationBarHidden:YES];
+    //[self setToolbarHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,11 +73,13 @@
     pushingVC=YES;
     
     if (animated) {
+        
         UIViewController *currentVC = [self visibleViewController];
 
         UIImageView *currentView = [self imageWithView: currentVC.view];
         
-        //TODO: problem with autosizing, it hasn't been initialized yet
+        //Issue with autosizing, we nned to set the frame before take the image
+        [viewController.view setFrame:currentVC.view.frame];    //Resize new view manually
         UIImageView *newView = [self imageWithView: viewController.view];
         
         [currentVC.view setAlpha:0.0];
@@ -341,8 +345,8 @@
     UIImageView *currentView = [[UIImageView alloc] initWithImage: img];
     
     //Fix the position to handle status bar and navigation bar
-    //float yPosition = 20;
-    float yPosition = self.view.frame.size.height - view.frame.size.height;
+    float yPosition = [self calculateYPosition];
+    //float yPosition = self.view.frame.size.height - view.frame.size.height;
     [currentView setFrame:CGRectMake(0, yPosition, currentView.frame.size.width, currentView.frame.size.height)];
     
     return currentView;
@@ -411,6 +415,26 @@
 - (float) getRandomFloat01
 {
     return ((double)arc4random() / ARC4RANDOM_MAX);
+}
+
+- (float) calculateYPosition
+{
+    float yPosition=0;
+    
+    if (!self.navigationBarHidden) {
+        yPosition += self.navigationBar.frame.size.height;
+    }
+    
+//    if (!self.toolbarHidden) {
+//        yPosition += self.toolbar.frame.size.height;
+//    }
+//    
+    if (![UIApplication sharedApplication].statusBarHidden){
+        yPosition += [UIApplication sharedApplication].statusBarFrame.size.height;
+    }
+    
+    return yPosition;
+    
 }
 
 #pragma mark - Sort Array methods

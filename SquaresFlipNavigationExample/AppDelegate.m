@@ -20,6 +20,7 @@
     self.viewController = [[ViewController alloc] initViewController];
     self.window.rootViewController = [[FlipSquaresNavigationController alloc] initWithRootViewController:self.viewController];
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
