@@ -31,9 +31,9 @@
 //Auxiliar methods
 - (UIImageView *) imageWithView:(UIView *)view;
 - (UIImageView *) createCrop: (CGRect) crop withImage: (UIImageView *)imageView;
-- (void) shuffleArray: (NSMutableArray *)array;
-- (void) sortFrom: (BOOL) leftToRight array: (NSMutableArray *) array;
-- (void) sortRandomArray:(NSMutableArray *)array;
+- (NSMutableArray *) shuffleArray: (NSMutableArray *)array;
+- (NSMutableArray *) sortFrom: (BOOL) leftToRight array: (NSMutableArray *) array;
+- (NSMutableArray *) sortRandomArray:(NSMutableArray *)array;
 - (float) getRandomFloat01;
 
 @end
@@ -75,6 +75,7 @@
 
         UIImageView *currentView = [self imageWithView: currentVC.view];
         
+        //TODO: problem with autosizing, it hasn't been initialized yet
         UIImageView *newView = [self imageWithView: viewController.view];
         
         [currentVC.view setAlpha:0.0];
@@ -252,8 +253,9 @@
     float columnsHeight = fromImage.frame.size.height / SQUARE_COLUMNS;
     
     //Create the cropped images
-    for (int row=0; row<SQUARE_ROWS; row++) {
-        for (int col=0; col<SQUARE_COLUMNS; col++) {
+    
+    for (int col=0; col<SQUARE_COLUMNS; col++) {
+        for (int row=0; row<SQUARE_ROWS; row++) {
             UIView *fromView = [self createViewWithImageView:[self createCrop:CGRectMake(row*rowsWidth,
                                                                                          col*columnsHeight,
                                                                                          rowsWidth,
@@ -279,7 +281,8 @@
     for (int i=0; i<[toViewImagesArray count]; i++) {
         [orderArray addObject:[NSNumber numberWithInt:i]];
     }
-    [self shuffleArray:orderArray];
+    
+    orderArray=[self shuffleArray:orderArray];
     
     float maxDelay=0;
     for (NSNumber *currentPos in orderArray) {
@@ -291,6 +294,7 @@
         //we "order" the delays for sort the animation in time
         float ratio = posIndex/([orderArray count]*1.0);
         float delay = [self getRandomFloat01]*TIME_ANIMATION*0.4*ratio + TIME_ANIMATION*0.3*ratio;//Random + Fix -> MAX 70% of TIME_ANIMATION
+        //NSLog(@"PosIndex: %d Element: %d delay: %f", posIndex, [currentPos intValue], delay);
         maxDelay = MAX(delay, maxDelay);
         [self performBlock:^{
             
@@ -326,8 +330,7 @@
 
 - (UIImageView *) imageWithView:(UIView *)view
 {    
-    //[view setContentScaleFactor:2.0];
-    [view.layer setContentsScale:2.0];
+    [view.layer setContentsScale:[[UIScreen mainScreen] scale]];
     
     UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 1.0);
     [view.layer renderInContext:UIGraphicsGetCurrentContext()];
@@ -338,6 +341,7 @@
     UIImageView *currentView = [[UIImageView alloc] initWithImage: img];
     
     //Fix the position to handle status bar and navigation bar
+    //float yPosition = 20;
     float yPosition = self.view.frame.size.height - view.frame.size.height;
     [currentView setFrame:CGRectMake(0, yPosition, currentView.frame.size.width, currentView.frame.size.height)];
     
@@ -410,27 +414,27 @@
 }
 
 #pragma mark - Sort Array methods
-- (void)shuffleArray: (NSMutableArray *)array
+- (NSMutableArray *)shuffleArray: (NSMutableArray *)array
 {
     switch (self.sortMethod) {
         case FSNavSortMethodRandom:{
-            [self sortRandomArray:array];
+            array=[self sortRandomArray:array];
         }break;
             
         case FSNavSortMethodHorizontal:
-            [self sortFrom:pushingVC array:array];
+            array=[self sortFrom:pushingVC array:array];
             break;
             
         default:
             break;
     }
-    
+    return array;
 }
 
 /**
  Sort the elements randomly
  */
-- (void) sortRandomArray:(NSMutableArray *)array
+- (NSMutableArray *) sortRandomArray:(NSMutableArray *)array
 {
     static BOOL seeded = NO;
     if(!seeded)
@@ -446,30 +450,22 @@
         int n = (random() % nElements) + i;
         [array exchangeObjectAtIndex:i withObjectAtIndex:n];
     }
+    
+    return array;
 }
 
 /**
  Sort the elements for colums
  */
-- (void) sortFrom: (BOOL) leftToRight array: (NSMutableArray *) array
+- (NSMutableArray *) sortFrom: (BOOL) leftToRight array: (NSMutableArray *) array
 {
-    int elementIndex=0;
-    int offset=0;
     NSMutableArray *sortedArray = [NSMutableArray array];
     
+    //Get an array sort the elements by columns
     for (int index=0; index<[array count]; index++) {
-        [sortedArray addObject:[array objectAtIndex:index%SQUARE_COLUMNS+index/SQUARE_COLUMNS]];
+        int auxPos = ((index%SQUARE_COLUMNS)*SQUARE_ROWS) + index/SQUARE_COLUMNS;       
+        [sortedArray addObject:[array objectAtIndex:auxPos]];
     }
-//    do {
-//        [sortedArray addObject:[array objectAtIndex:elementIndex]];
-//        
-//        elementIndex+=SQUARE_ROWS;
-//        
-//        if (elementIndex>=[array count]) {
-//            offset++;
-//            elementIndex=offset;
-//        }
-//    } while (offset<SQUARE_COLUMNS);
     
     if (leftToRight) {
         array = sortedArray;
@@ -477,6 +473,7 @@
         array = [NSMutableArray arrayWithArray:[[sortedArray reverseObjectEnumerator] allObjects]];
     }
     
+    return array;
 }
 
 @end

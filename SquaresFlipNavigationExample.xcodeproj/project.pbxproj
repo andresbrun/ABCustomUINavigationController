@@ -148,8 +148,8 @@
 		3CF16BBB17930123006E912F /* SquaresFlipNavigationExample */ = {
 			isa = PBXGroup;
 			children = (
-				3C11C7BC17B1481100125C76 /* ViewControllers */,
 				3CF16D06179C4877006E912F /* SquaresFlipNavigation */,
+				3C11C7BC17B1481100125C76 /* ViewControllers */,
 				3CF16CEE179C198A006E912F /* assets */,
 				3CF16BC417930123006E912F /* AppDelegate.h */,
 				3CF16BC517930123006E912F /* AppDelegate.m */,

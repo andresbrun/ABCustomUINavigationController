@@ -40,12 +40,12 @@
 
 - (BOOL)shouldAutorotate
 {
-    return YES;
+    return NO;
 }
 
 -(NSUInteger)supportedInterfaceOrientations
 {
-    return UIInterfaceOrientationMaskAll;
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 - (IBAction)popViewController:(id)sender
@@ -55,8 +55,8 @@
 
 - (IBAction)popToFirstViewController:(id)sender
 {
-    ViewController *firstVC = [[ViewController alloc] initViewController];
-    [self.navigationController pushViewController:firstVC animated:YES];
+    ViewController *firstVC = [self.navigationController.viewControllers objectAtIndex:0];
+    [self.navigationController popToViewController:firstVC animated:YES];
 }
 
 - (IBAction)popToRootViewController:(id)sender
