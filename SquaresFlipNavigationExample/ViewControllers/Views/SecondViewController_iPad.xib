@@ -59,13 +59,4 @@
     <resources>
         <image name="bg_2_iPad.jpg" width="1024" height="1024"/>
     </resources>
-    <classes>
-        <class className="SecondViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SecondViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="popViewController:"/>
-                <relationship kind="action" name="pushViewController:"/>
-            </relationships>
-        </class>
-    </classes>
 </document>
