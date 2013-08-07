@@ -37,6 +37,8 @@
 - (float) getRandomFloat01;
 - (float) calculateYPosition;
 
+- (void) releaseImagesArray;
+
 @end
 
 @implementation FlipSquaresNavigationController
@@ -90,18 +92,10 @@
             [super pushViewController:viewController animated:NO];
             
             //Clean the others views
-            for (UIImageView *currentView in fromViewImagesArray) {
-                [currentView removeFromSuperview];
-            }
-            for (UIImageView *currentView in toViewImagesArray) {
-                [UIView animateWithDuration:0.1 animations:^{
-                    [currentView setAlpha:0.0];
-                }completion:^(BOOL finished) {
-                    [currentView removeFromSuperview];
-                }];
-
-            }
+            [self releaseImagesArray];
+            
             [currentVC.view setAlpha:1.0];
+            
         }];
     }else{
         [super pushViewController:viewController animated:NO];
@@ -133,18 +127,8 @@
                 __block UIViewController *returnedVC;
                 [self makeSquaresFlipAnimationFrom:currentView to:newView option:UIViewAnimationOptionTransitionFlipFromRight withCompletion:^{
                     
-                    //Clean the others view
-                    for (UIImageView *currentViewR in fromViewImagesArray) {
-                        [currentViewR removeFromSuperview];
-                    }
-                    for (UIImageView *currentViewR in toViewImagesArray) {
-                        [UIView animateWithDuration:0.3 animations:^{
-                            [currentViewR setAlpha:0.0];
-                        }completion:^(BOOL finished) {
-                            [currentViewR removeFromSuperview];
-                        }];
-                        
-                    }
+                    //Clean the others views
+                    [self releaseImagesArray];
                     
                     returnedVC = [super popViewControllerAnimated:NO];
                     
@@ -185,18 +169,9 @@
             __block NSArray *stackVCs;
             [self makeSquaresFlipAnimationFrom:currentView to:newView option:UIViewAnimationOptionTransitionFlipFromRight withCompletion:^{
                 
-                //Clean the others view
-                for (UIImageView *currentViewR in fromViewImagesArray) {
-                    [currentViewR removeFromSuperview];
-                }
-                for (UIImageView *currentViewR in toViewImagesArray) {
-                    [UIView animateWithDuration:0.3 animations:^{
-                        [currentViewR setAlpha:0.0];
-                    }completion:^(BOOL finished) {
-                        [currentViewR removeFromSuperview];
-                    }];
-                    
-                }
+                //Clean the others views
+                [self releaseImagesArray];
+                
                 stackVCs = [super popToRootViewControllerAnimated:NO];
             }];
             
@@ -230,18 +205,9 @@
             __block NSArray *stackVCs;
             [self makeSquaresFlipAnimationFrom:currentView to:newView option:UIViewAnimationOptionTransitionFlipFromRight withCompletion:^{
                 
-                //Clean the others view
-                for (UIImageView *currentViewR in fromViewImagesArray) {
-                    [currentViewR removeFromSuperview];
-                }
-                for (UIImageView *currentViewR in toViewImagesArray) {
-                    [UIView animateWithDuration:0.3 animations:^{
-                        [currentViewR setAlpha:0.0];
-                    }completion:^(BOOL finished) {
-                        [currentViewR removeFromSuperview];
-                    }];
-                    
-                }
+                //Clean the others views
+                [self releaseImagesArray];
+                
                 stackVCs = [super popToViewController:viewController animated:NO];
             }];
             
@@ -349,6 +315,7 @@
     UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 1.0);
     [view.layer renderInContext:UIGraphicsGetCurrentContext()];
     
+    CGContextSetInterpolationQuality(UIGraphicsGetCurrentContext(), kCGInterpolationHigh);
     UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
@@ -365,7 +332,6 @@
 - (UIImageView *) createCrop: (CGRect) crop withImage: (UIImageView *)imageView
 {
     CGImageRef imageRef = CGImageCreateWithImageInRect(imageView.image.CGImage, crop);
-    // or use the UIImage wherever you like
     UIImageView *imageViewCropped = [[UIImageView alloc] initWithImage:[UIImage imageWithCGImage:imageRef]];
     [imageViewCropped setFrame:crop];
     
@@ -373,7 +339,7 @@
                                           imageViewCropped.frame.origin.y+imageView.frame.origin.y,
                                           imageViewCropped.frame.size.width,
                                           imageViewCropped.frame.size.height)];
-    
+    CGImageRelease(imageRef);
     return imageViewCropped;
 }
 
@@ -451,6 +417,26 @@
     
     return yPosition;
     
+}
+
+- (void) releaseImagesArray
+{
+    //Clean the others views
+    for (UIImageView *currentView in fromViewImagesArray) {
+        [[currentView viewWithTag:TAG_IMAGE_VIEW] removeFromSuperview];
+        [currentView removeFromSuperview];
+    }
+    for (UIImageView *currentView in toViewImagesArray) {
+        [UIView animateWithDuration:0.1 animations:^{
+            [currentView setAlpha:0.0];
+        }completion:^(BOOL finished) {
+            [[currentView viewWithTag:TAG_IMAGE_VIEW] removeFromSuperview];
+            [currentView removeFromSuperview];
+        }];
+    }
+    
+    [fromViewImagesArray removeAllObjects];
+    [toViewImagesArray removeAllObjects];
 }
 
 #pragma mark - Sort Array methods
