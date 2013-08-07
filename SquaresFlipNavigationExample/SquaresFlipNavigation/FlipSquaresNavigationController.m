@@ -122,7 +122,11 @@
             int index = [self.viewControllers indexOfObject:currentVC];
             
             if (index>0) {
-                UIImageView *newView = [self imageWithView: ((UIViewController *)[self.viewControllers objectAtIndex:index-1]).view];
+                
+                //Issue with autosizing, we nned to set the frame before take the image
+                UIViewController *toViewController = [self.viewControllers objectAtIndex:index-1];
+                [toViewController.view setFrame:currentVC.view.frame];    //Resize new view manually
+                UIImageView *newView = [self imageWithView: toViewController.view];
                 
                 [currentVC.view setAlpha:0.0];
                 
@@ -170,6 +174,9 @@
             UIViewController *currentVC = [self visibleViewController];
             UIViewController *rootVC = [self.viewControllers objectAtIndex:0];
             
+            //Issue with autosizing, we nned to set the frame before take the image
+            [rootVC.view setFrame:currentVC.view.frame];    //Resize new view manually
+            
             UIImageView *currentView = [self imageWithView: currentVC.view];
             UIImageView *newView = [self imageWithView: rootVC.view];
             
@@ -211,6 +218,9 @@
     if([self.viewControllers count]>1){
         if (animated) {
             UIViewController *currentVC = [self visibleViewController];
+            
+            //Issue with autosizing, we nned to set the frame before take the image
+            [viewController.view setFrame:currentVC.view.frame];    //Resize new view manually
             
             UIImageView *currentView = [self imageWithView: currentVC.view];
             UIImageView *newView = [self imageWithView: viewController.view];
@@ -421,16 +431,22 @@
 {
     float yPosition=0;
     
+    UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+    
     if (!self.navigationBarHidden) {
-        yPosition += self.navigationBar.frame.size.height;
+        if (UIInterfaceOrientationIsPortrait(interfaceOrientation)){
+            yPosition += self.navigationBar.frame.size.height;
+        }else{
+            yPosition += self.navigationBar.frame.size.width;
+        }
     }
     
-//    if (!self.toolbarHidden) {
-//        yPosition += self.toolbar.frame.size.height;
-//    }
-//    
     if (![UIApplication sharedApplication].statusBarHidden){
-        yPosition += [UIApplication sharedApplication].statusBarFrame.size.height;
+        if (UIInterfaceOrientationIsPortrait(interfaceOrientation)){
+            yPosition += [UIApplication sharedApplication].statusBarFrame.size.height;
+        }else{
+            yPosition += [UIApplication sharedApplication].statusBarFrame.size.width;
+        }
     }
     
     return yPosition;
