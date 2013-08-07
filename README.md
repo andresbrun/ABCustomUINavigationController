@@ -17,15 +17,14 @@ and pushing and pop normally with navigation methods:
   
 Also it have differents ways to sort the squares animations:
 - Randomly
-- FromLeftToRight
+- Horizontally
+
+It works with every screen size in iPhone and iPad. Also it supports rotations. And it supports Statusbar, NavigationBar and NavigationToolbar.
 
 ##Requirements
 This component need these two frameworks to work:
 - QuartCore.framework 
 - CoreGraphic.framework
-
-##Limitations
-It doesn't work fine with autosizing :(.
 
 ## Example
 
