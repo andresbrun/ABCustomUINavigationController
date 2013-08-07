@@ -38,7 +38,7 @@
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="IBUIImageView" id="975975880">
 						<reference key="NSNextResponder" ref="515074964"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">274</int>
 						<string key="NSFrameSize">{320, 460}</string>
 						<reference key="NSSuperview" ref="515074964"/>
 						<reference key="NSWindow"/>
@@ -53,11 +53,10 @@
 					</object>
 					<object class="IBUIButton" id="1042885091">
 						<reference key="NSNextResponder" ref="515074964"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">266</int>
 						<string key="NSFrame">{{0, 370}, {320, 44}}</string>
 						<reference key="NSSuperview" ref="515074964"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>
@@ -89,7 +88,7 @@
 					</object>
 					<object class="IBUIButton" id="773875087">
 						<reference key="NSNextResponder" ref="515074964"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">266</int>
 						<string key="NSFrame">{{0, 324}, {320, 44}}</string>
 						<reference key="NSSuperview" ref="515074964"/>
 						<reference key="NSWindow"/>
@@ -112,7 +111,7 @@
 					</object>
 					<object class="IBUIButton" id="430371463">
 						<reference key="NSNextResponder" ref="515074964"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">266</int>
 						<string key="NSFrame">{{0, 278}, {320, 44}}</string>
 						<reference key="NSSuperview" ref="515074964"/>
 						<reference key="NSWindow"/>
@@ -4669,11 +4668,16 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="popToFirstViewController:">id</string>
+						<string key="popToRootViewController:">id</string>
 						<string key="popViewController:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="popToFirstViewController:">
 							<string key="name">popToFirstViewController:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="popToRootViewController:">
+							<string key="name">popToRootViewController:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="popViewController:">
