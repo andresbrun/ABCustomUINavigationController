@@ -1,5 +1,5 @@
 //
-//  UIImageView+Capture.h
+//  UIImageView+ABExtras.h
 //  SquaresFlipNavigationExample
 //
 //  Created by Andrés Brun on 8/8/13.
@@ -10,9 +10,15 @@
 
 #define TAG_IMAGE_VIEW 999
 
-@interface UIImageView (Capture)
+@interface UIImageView (ABExtras)
 
+/**
+ Methot that create a crop image from that imageView
+ */
 - (UIImageView *) createCrop: (CGRect) crop;
+/**
+ Method that crates a view that contains that ImageView
+ */
 - (UIView *)createView;
 
 @end

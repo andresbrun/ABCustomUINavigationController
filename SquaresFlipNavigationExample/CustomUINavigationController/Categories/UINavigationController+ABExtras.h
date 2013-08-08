@@ -1,5 +1,5 @@
 //
-//  UINavigationController+Extras.h
+//  UINavigationController+ABExtras.h
 //  SquaresFlipNavigationExample
 //
 //  Created by Andrés Brun on 8/8/13.
@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UINavigationController (Extras)
+@interface UINavigationController (ABExtras)
 
+/**
+ Method that calculate the origin.y of the contain view
+ */
 - (float) calculateYPosition;
 
 @end

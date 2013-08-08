@@ -7,11 +7,12 @@
 //
 
 #import "CubeNavigationController.h"
-#import "UIView+Extras.h"
-#import "UIImageView+Capture.h"
-#import "UINavigationController+Extras.h"
+#import "UIView+ABExtras.h"
+#import "UIImageView+ABExtras.h"
+#import "UINavigationController+ABExtras.h"
 
 #define TIME_ANIMATION 1.0
+#define PERSPECTIVE -1.0 / 200.0
 
 @interface CubeNavigationController (){
     BOOL pushingVC;
@@ -184,9 +185,13 @@
 }
 
 
-#pragma mark - animate methods
+#pragma mark - Cube animating methods
+/**
+ Function that creates the cube animation transition between fromImage and toImage
+ */
 - (void) makeCubeAnimationFrom: (UIImageView *) fromImage to: (UIImageView *) toImage direction: (CubeAnimationType) animationType withCompletion: (void(^)(void))completion
 {
+    //We need to calculate the animation direcction
     int dir=pushingVC?1:-1;
     
     //We create a content view for do the translate animation
@@ -219,23 +224,22 @@
             break;
     }
     
-    viewFromTransform.m34 = -1.0 / 200.0;
-    viewToTransform.m34 = -1.0 / 200.0;
+    viewFromTransform.m34 = PERSPECTIVE;
+    viewToTransform.m34 = PERSPECTIVE;
     
     toImage.layer.transform = viewToTransform;
     
     //Add the subviews
     [generalContentView addSubview:fromImage];
     [generalContentView addSubview:toImage];
-    
     [self.view addSubview:generalContentView];
     
     //Create the shadow
-    UIView *fromGradient = [fromImage addOpacityWithColor:[UIColor blackColor]];
-    UIView *toGradient = [toImage addOpacityWithColor:[UIColor blackColor]];
+    UIView *fromShadow = [fromImage addOpacityWithColor:[UIColor blackColor]];
+    UIView *toShadow = [toImage addOpacityWithColor:[UIColor blackColor]];
     
-    [fromGradient setAlpha:0.0];
-    [toGradient setAlpha:1.0];
+    [fromShadow setAlpha:0.0];
+    [toShadow setAlpha:1.0];
         
     //Make the animation
     [UIView animateWithDuration:TIME_ANIMATION animations:^{
@@ -253,12 +257,11 @@
                 break;
         }
         
-        
         fromImage.layer.transform = viewFromTransform;
         toImage.layer.transform = CATransform3DIdentity;
         
-        [fromGradient setAlpha:1.0];
-        [toGradient setAlpha:0.0];
+        [fromShadow setAlpha:1.0];
+        [toShadow setAlpha:0.0];
         
     }completion:^(BOOL finished) {
                 

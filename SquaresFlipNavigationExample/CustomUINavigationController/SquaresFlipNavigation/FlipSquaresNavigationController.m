@@ -9,10 +9,10 @@
 #import "FlipSquaresNavigationController.h"
 #import <QuartzCore/QuartzCore.h>
 
-#import "NSObject+Extras.h"
-#import "UIImageView+Capture.h"
-#import "UIView+Extras.h"
-#import "UINavigationController+Extras.h"
+#import "NSObject+ABExtras.h"
+#import "UIImageView+ABExtras.h"
+#import "UIView+ABExtras.h"
+#import "UINavigationController+ABExtras.h"
 
 #define ARC4RANDOM_MAX 0x100000000
 
@@ -84,10 +84,7 @@
             
             //Do the push
             [super pushViewController:viewController animated:NO];
-            
-            //Clean the others views
-            [self releaseImagesArray];
-            
+
             [currentVC.view setAlpha:1.0];
             
         }];
@@ -120,9 +117,6 @@
                 
                 __block UIViewController *returnedVC;
                 [self makeSquaresFlipAnimationFrom:currentView to:newView option:UIViewAnimationOptionTransitionFlipFromRight withCompletion:^{
-                    
-                    //Clean the others views
-                    [self releaseImagesArray];
                     
                     returnedVC = [super popViewControllerAnimated:NO];
                     
@@ -162,10 +156,6 @@
             
             __block NSArray *stackVCs;
             [self makeSquaresFlipAnimationFrom:currentView to:newView option:UIViewAnimationOptionTransitionFlipFromRight withCompletion:^{
-                
-                //Clean the others views
-                [self releaseImagesArray];
-                
                 stackVCs = [super popToRootViewControllerAnimated:NO];
             }];
             
@@ -198,10 +188,6 @@
             
             __block NSArray *stackVCs;
             [self makeSquaresFlipAnimationFrom:currentView to:newView option:UIViewAnimationOptionTransitionFlipFromRight withCompletion:^{
-                
-                //Clean the others views
-                [self releaseImagesArray];
-                
                 stackVCs = [super popToViewController:viewController animated:NO];
             }];
             
@@ -289,6 +275,9 @@
     
     //Perform the completion when the animation is finished. Calculate that with the 30% remain of TIME_ANIMATION
     [self performBlock:^{
+        //Clean the others views
+        [self releaseImagesArray];
+        
         completion();
     } afterDelay:maxDelay+TIME_ANIMATION*0.3];
 

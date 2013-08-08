@@ -1,15 +1,15 @@
 //
-//  UIView+Extras.m
+//  UIView+ABExtras.m
 //  SquaresFlipNavigationExample
 //
 //  Created by Andrés Brun on 8/8/13.
 //  Copyright (c) 2013 Andrés Brun. All rights reserved.
 //
 
-#import "UIView+Extras.h"
-#import "UINavigationController+Extras.h"
+#import "UIView+ABExtras.h"
+#import "UINavigationController+ABExtras.h"
 
-@implementation UIView (Extras)
+@implementation UIView (ABExtras)
 
 - (CAGradientLayer *)addLinearGradientWithColor:(UIColor *)theColor transparentToOpaque:(BOOL)transparentToOpaque
 {

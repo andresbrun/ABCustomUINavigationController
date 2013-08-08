@@ -1,14 +1,14 @@
 //
-//  UINavigationController+Extras.m
+//  UINavigationController+ABExtras.m
 //  SquaresFlipNavigationExample
 //
 //  Created by Andrés Brun on 8/8/13.
 //  Copyright (c) 2013 Andrés Brun. All rights reserved.
 //
 
-#import "UINavigationController+Extras.h"
+#import "UINavigationController+ABExtras.h"
 
-@implementation UINavigationController (Extras)
+@implementation UINavigationController (ABExtras)
 
 
 - (float) calculateYPosition

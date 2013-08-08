@@ -1,18 +1,16 @@
 //
-//  UIImageView+Capture.m
+//  UIImageView+ABExtras.m
 //  SquaresFlipNavigationExample
 //
 //  Created by Andrés Brun on 8/8/13.
 //  Copyright (c) 2013 Andrés Brun. All rights reserved.
 //
 
-#import "UIImageView+Capture.h"
+#import "UIImageView+ABExtras.h"
 #import <QuartzCore/QuartzCore.h>
-#import "UINavigationController+Extras.h"
+#import "UINavigationController+ABExtras.h"
 
-@implementation UIImageView (Capture)
-
-
+@implementation UIImageView (ABExtras)
 
 - (UIImageView *) createCrop: (CGRect) crop
 {
