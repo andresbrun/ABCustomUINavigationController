@@ -40,9 +40,20 @@
     //apply the colors and the gradient to the view
     gradient.colors = colors;
     
-    [self.layer insertSublayer:gradient atIndex:0];
+    [self.layer insertSublayer:gradient atIndex:[self.layer.sublayers count]];
     
     return gradient;
+}
+
+- (UIView *)addOpacityWithColor:(UIColor *)theColor
+{
+    UIView *shadowView = [[UIView alloc] initWithFrame:self.bounds];
+    
+    [shadowView setBackgroundColor:[theColor colorWithAlphaComponent:0.8]];
+    
+    [self addSubview:shadowView];
+    
+    return shadowView;
 }
 
 - (UIImageView *) imageInNavController: (UINavigationController *) navController

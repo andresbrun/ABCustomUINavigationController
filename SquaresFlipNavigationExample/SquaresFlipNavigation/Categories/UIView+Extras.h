@@ -13,5 +13,6 @@
 
 - (CAGradientLayer *)addLinearGradientWithColor:(UIColor *)theColor transparentToOpaque:(BOOL)transparentToOpaque;
 - (UIImageView *) imageInNavController: (UINavigationController *) navController;
+- (UIView *)addOpacityWithColor:(UIColor *)theColor;
 
 @end

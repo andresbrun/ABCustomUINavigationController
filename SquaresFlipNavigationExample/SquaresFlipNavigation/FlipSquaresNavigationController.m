@@ -62,7 +62,7 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - Overwrite UINAvigationController methods
+#pragma mark - Overwrite UINavigationController methods
 
 -(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
