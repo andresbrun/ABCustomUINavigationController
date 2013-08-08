@@ -8,9 +8,12 @@
 
 #import "FlipSquaresNavigationController.h"
 #import <QuartzCore/QuartzCore.h>
-#import "NSObject+Extras.h"
 
-#define TAG_IMAGE_VIEW 999
+#import "NSObject+Extras.h"
+#import "UIImageView+Capture.h"
+#import "UIView+Extras.h"
+#import "UINavigationController+Extras.h"
+
 #define ARC4RANDOM_MAX 0x100000000
 
 //Configure params
@@ -26,17 +29,13 @@
 
 - (void) makeSquaresFlipAnimationFrom: (UIImageView *) fromImage to: (UIImageView *) toImage option: (UIViewAnimationOptions) options withCompletion: (void(^)(void))completion;
 
-- (CAGradientLayer *)addLinearGradientToView:(UIView *)theView withColor:(UIColor *)theColor transparentToOpaque:(BOOL)transparentToOpaque;
-
-//Auxiliar methods
-- (UIImageView *) imageWithView:(UIView *)view;
-- (UIImageView *) createCrop: (CGRect) crop withImage: (UIImageView *)imageView;
+//Array methods
 - (NSMutableArray *) shuffleArray: (NSMutableArray *)array;
 - (NSMutableArray *) sortFrom: (BOOL) leftToRight array: (NSMutableArray *) array;
 - (NSMutableArray *) sortRandomArray:(NSMutableArray *)array;
 - (float) getRandomFloat01;
-- (float) calculateYPosition;
 
+//Aux methods
 - (void) releaseImagesArray;
 
 @end
@@ -56,16 +55,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    
-    //[self setNavigationBarHidden:YES];
-    //[self setToolbarHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Overwrite UINAvigationController methods
@@ -78,15 +72,15 @@
         
         UIViewController *currentVC = [self visibleViewController];
 
-        UIImageView *currentView = [self imageWithView: currentVC.view];
+        UIImageView *fromImageView = [currentVC.view imageInNavController:self];
         
         //Issue with autosizing, we nned to set the frame before take the image
         [viewController.view setFrame:currentVC.view.frame];    //Resize new view manually
-        UIImageView *newView = [self imageWithView: viewController.view];
+        UIImageView *toImageView = [viewController.view imageInNavController:self];
         
         [currentVC.view setAlpha:0.0];
         
-        [self makeSquaresFlipAnimationFrom:currentView to:newView option:UIViewAnimationOptionTransitionFlipFromLeft withCompletion:^{
+        [self makeSquaresFlipAnimationFrom:fromImageView to:toImageView option:UIViewAnimationOptionTransitionFlipFromLeft withCompletion:^{
             
             //Do the push
             [super pushViewController:viewController animated:NO];
@@ -111,7 +105,7 @@
         if (animated) {
             UIViewController *currentVC = [self visibleViewController];
             
-            UIImageView *currentView = [self imageWithView: currentVC.view];
+            UIImageView *currentView = [currentVC.view imageInNavController:self];
             
             int index = [self.viewControllers indexOfObject:currentVC];
             
@@ -120,7 +114,7 @@
                 //Issue with autosizing, we nned to set the frame before take the image
                 UIViewController *toViewController = [self.viewControllers objectAtIndex:index-1];
                 [toViewController.view setFrame:currentVC.view.frame];    //Resize new view manually
-                UIImageView *newView = [self imageWithView: toViewController.view];
+                UIImageView *newView = [toViewController.view imageInNavController:self];
                 
                 [currentVC.view setAlpha:0.0];
                 
@@ -161,8 +155,8 @@
             //Issue with autosizing, we nned to set the frame before take the image
             [rootVC.view setFrame:currentVC.view.frame];    //Resize new view manually
             
-            UIImageView *currentView = [self imageWithView: currentVC.view];
-            UIImageView *newView = [self imageWithView: rootVC.view];
+            UIImageView *currentView = [currentVC.view imageInNavController:self];
+            UIImageView *newView = [rootVC.view imageInNavController:self];
             
             [currentVC.view setAlpha:0.0];
             
@@ -197,8 +191,8 @@
             //Issue with autosizing, we nned to set the frame before take the image
             [viewController.view setFrame:currentVC.view.frame];    //Resize new view manually
             
-            UIImageView *currentView = [self imageWithView: currentVC.view];
-            UIImageView *newView = [self imageWithView: viewController.view];
+            UIImageView *currentView = [currentVC.view imageInNavController:self];
+            UIImageView *newView = [viewController.view imageInNavController:self];
             
             [currentVC.view setAlpha:0.0];
             
@@ -236,16 +230,10 @@
     
     for (int col=0; col<SQUARE_COLUMNS; col++) {
         for (int row=0; row<SQUARE_ROWS; row++) {
-            UIView *fromView = [self createViewWithImageView:[self createCrop:CGRectMake(row*rowsWidth,
-                                                                                         col*columnsHeight,
-                                                                                         rowsWidth,
-                                                                                         columnsHeight)
-                                                                    withImage:fromImage]];
-            UIView *toView = [self createViewWithImageView:[self createCrop:CGRectMake(row*rowsWidth,
-                                                                                       col*columnsHeight,
-                                                                                       rowsWidth,
-                                                                                       columnsHeight)
-                                                                  withImage:toImage]];
+            CGRect currentRect = CGRectMake(row*rowsWidth,col*columnsHeight,rowsWidth,columnsHeight);
+            UIView *fromView =[[fromImage createCrop:currentRect] createView];
+            UIView *toView =[[toImage createCrop:currentRect] createView];
+
             [fromViewImagesArray addObject:fromView];
             [toViewImagesArray addObject:toView];
         }
@@ -278,8 +266,8 @@
         maxDelay = MAX(delay, maxDelay);
         [self performBlock:^{
             
-            CAGradientLayer *fromGradient = [self addLinearGradientToView:fromViewCrop withColor:[UIColor blackColor] transparentToOpaque:YES];
-            CAGradientLayer *toGradient = [self addLinearGradientToView:fromViewCrop withColor:[UIColor blackColor] transparentToOpaque:YES];
+            CAGradientLayer *fromGradient = [fromViewCrop addLinearGradientWithColor:[UIColor blackColor] transparentToOpaque:YES];
+            CAGradientLayer *toGradient = [fromViewCrop addLinearGradientWithColor:[UIColor blackColor] transparentToOpaque:YES];
             
             [fromGradient setOpacity:1.0];
             [toGradient setOpacity:0.0];
@@ -306,86 +294,6 @@
 
 }
 
-#pragma mark - Images methods
-
-- (UIImageView *) imageWithView:(UIView *)view
-{    
-    [view.layer setContentsScale:[[UIScreen mainScreen] scale]];
-    
-    UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 1.0);
-    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
-    
-    CGContextSetInterpolationQuality(UIGraphicsGetCurrentContext(), kCGInterpolationHigh);
-    UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    UIImageView *currentView = [[UIImageView alloc] initWithImage: img];
-    
-    //Fix the position to handle status bar and navigation bar
-    float yPosition = [self calculateYPosition];
-    //float yPosition = self.view.frame.size.height - view.frame.size.height;
-    [currentView setFrame:CGRectMake(0, yPosition, currentView.frame.size.width, currentView.frame.size.height)];
-    
-    return currentView;
-}
-
-- (UIImageView *) createCrop: (CGRect) crop withImage: (UIImageView *)imageView
-{
-    CGImageRef imageRef = CGImageCreateWithImageInRect(imageView.image.CGImage, crop);
-    UIImageView *imageViewCropped = [[UIImageView alloc] initWithImage:[UIImage imageWithCGImage:imageRef]];
-    [imageViewCropped setFrame:crop];
-    
-    [imageViewCropped setFrame:CGRectMake(imageViewCropped.frame.origin.x,
-                                          imageViewCropped.frame.origin.y+imageView.frame.origin.y,
-                                          imageViewCropped.frame.size.width,
-                                          imageViewCropped.frame.size.height)];
-    CGImageRelease(imageRef);
-    return imageViewCropped;
-}
-
-- (CAGradientLayer *)addLinearGradientToView:(UIView *)theView withColor:(UIColor *)theColor transparentToOpaque:(BOOL)transparentToOpaque
-{
-    CAGradientLayer *gradient = [CAGradientLayer layer];
-    
-    //the gradient layer must be positioned at the origin of the view
-    CGRect gradientFrame = theView.frame;
-    gradientFrame.origin.x = 0;
-    gradientFrame.origin.y = 0;
-    gradient.frame = gradientFrame;
-    
-    //build the colors array for the gradient
-    NSArray *colors = [NSArray arrayWithObjects:
-                       (id)[theColor CGColor],
-                       (id)[[theColor colorWithAlphaComponent:0.9f] CGColor],
-                       (id)[[theColor colorWithAlphaComponent:0.6f] CGColor],
-                       (id)[[theColor colorWithAlphaComponent:0.4f] CGColor],
-                       (id)[[theColor colorWithAlphaComponent:0.3f] CGColor],
-                       (id)[[theColor colorWithAlphaComponent:0.1f] CGColor],
-                       (id)[[UIColor clearColor] CGColor],
-                       nil];
-    
-    //reverse the color array if needed
-    if(transparentToOpaque) {
-        colors = [[colors reverseObjectEnumerator] allObjects];
-    }
-    
-    //apply the colors and the gradient to the view
-    gradient.colors = colors;
-    
-    [theView.layer insertSublayer:gradient atIndex:0];
-    
-    return gradient;
-}
-
-- (UIView *)createViewWithImageView: (UIImageView *)imageView
-{
-    UIView *newView = [[UIView alloc] initWithFrame:imageView.frame];
-    [imageView setTag:TAG_IMAGE_VIEW];
-    [imageView setFrame:imageView.bounds];
-    [newView addSubview:imageView];
-    
-    return newView;
-}
 
 #pragma mark - Auxiliar methods
 - (float) getRandomFloat01
@@ -393,31 +301,6 @@
     return ((double)arc4random() / ARC4RANDOM_MAX);
 }
 
-- (float) calculateYPosition
-{
-    float yPosition=0;
-    
-    UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
-    
-    if (!self.navigationBarHidden) {
-        if (UIInterfaceOrientationIsPortrait(interfaceOrientation)){
-            yPosition += self.navigationBar.frame.size.height;
-        }else{
-            yPosition += self.navigationBar.frame.size.width;
-        }
-    }
-    
-    if (![UIApplication sharedApplication].statusBarHidden){
-        if (UIInterfaceOrientationIsPortrait(interfaceOrientation)){
-            yPosition += [UIApplication sharedApplication].statusBarFrame.size.height;
-        }else{
-            yPosition += [UIApplication sharedApplication].statusBarFrame.size.width;
-        }
-    }
-    
-    return yPosition;
-    
-}
 
 - (void) releaseImagesArray
 {

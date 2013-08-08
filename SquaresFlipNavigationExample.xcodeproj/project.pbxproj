@@ -20,6 +20,11 @@
 		3C11C7D717B14DF800125C76 /* bg_2_iPad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3C11C7D417B14DF800125C76 /* bg_2_iPad.jpg */; };
 		3C11C7D817B14DF800125C76 /* bg_3_iPad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3C11C7D517B14DF800125C76 /* bg_3_iPad.jpg */; };
 		3C8548B717A1886700B4D4ED /* bg_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C8548B617A1886700B4D4ED /* bg_3.png */; };
+		3CCCEA9E17B3947300750A12 /* CubeNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCEA9D17B3947300750A12 /* CubeNavigationController.m */; };
+		3CCCEAA217B395B000750A12 /* NSObject+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCEAA117B395B000750A12 /* NSObject+Extras.m */; };
+		3CCCEAA817B3961E00750A12 /* UIImageView+Capture.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCEAA717B3961E00750A12 /* UIImageView+Capture.m */; };
+		3CCCEAAB17B3966600750A12 /* UIView+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCEAAA17B3966600750A12 /* UIView+Extras.m */; };
+		3CCCEAAE17B396B800750A12 /* UINavigationController+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCEAAD17B396B800750A12 /* UINavigationController+Extras.m */; };
 		3CF16BB617930123006E912F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF16BB517930123006E912F /* UIKit.framework */; };
 		3CF16BB817930123006E912F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF16BB717930123006E912F /* Foundation.framework */; };
 		3CF16BBA17930123006E912F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF16BB917930123006E912F /* CoreGraphics.framework */; };
@@ -32,7 +37,6 @@
 		3CF16BDC179309B1006E912F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF16BDB179309B1006E912F /* QuartzCore.framework */; };
 		3CF16CF1179C198C006E912F /* bg_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CF16CEF179C198C006E912F /* bg_1.jpg */; };
 		3CF16CF2179C198C006E912F /* bg_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CF16CF0179C198C006E912F /* bg_2.jpg */; };
-		3CF16D13179C4877006E912F /* NSObject+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF16D09179C4877006E912F /* NSObject+Extras.m */; };
 		3CF16D14179C4877006E912F /* FlipSquaresNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF16D0B179C4877006E912F /* FlipSquaresNavigationController.m */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +57,16 @@
 		3C11C7D417B14DF800125C76 /* bg_2_iPad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_2_iPad.jpg; sourceTree = "<group>"; };
 		3C11C7D517B14DF800125C76 /* bg_3_iPad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_3_iPad.jpg; sourceTree = "<group>"; };
 		3C8548B617A1886700B4D4ED /* bg_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_3.png; sourceTree = "<group>"; };
+		3CCCEA9C17B3947300750A12 /* CubeNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubeNavigationController.h; sourceTree = "<group>"; };
+		3CCCEA9D17B3947300750A12 /* CubeNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CubeNavigationController.m; sourceTree = "<group>"; };
+		3CCCEAA017B395B000750A12 /* NSObject+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Extras.h"; sourceTree = "<group>"; };
+		3CCCEAA117B395B000750A12 /* NSObject+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Extras.m"; sourceTree = "<group>"; };
+		3CCCEAA617B3961E00750A12 /* UIImageView+Capture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Capture.h"; sourceTree = "<group>"; };
+		3CCCEAA717B3961E00750A12 /* UIImageView+Capture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Capture.m"; sourceTree = "<group>"; };
+		3CCCEAA917B3966600750A12 /* UIView+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extras.h"; sourceTree = "<group>"; };
+		3CCCEAAA17B3966600750A12 /* UIView+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extras.m"; sourceTree = "<group>"; };
+		3CCCEAAC17B396B800750A12 /* UINavigationController+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Extras.h"; sourceTree = "<group>"; };
+		3CCCEAAD17B396B800750A12 /* UINavigationController+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Extras.m"; sourceTree = "<group>"; };
 		3CF16BB217930123006E912F /* SquaresFlipNavigationExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SquaresFlipNavigationExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CF16BB517930123006E912F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3CF16BB717930123006E912F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -69,8 +83,6 @@
 		3CF16BDB179309B1006E912F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3CF16CEF179C198C006E912F /* bg_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_1.jpg; sourceTree = "<group>"; };
 		3CF16CF0179C198C006E912F /* bg_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_2.jpg; sourceTree = "<group>"; };
-		3CF16D08179C4877006E912F /* NSObject+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Extras.h"; sourceTree = "<group>"; };
-		3CF16D09179C4877006E912F /* NSObject+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Extras.m"; sourceTree = "<group>"; };
 		3CF16D0A179C4877006E912F /* FlipSquaresNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipSquaresNavigationController.h; sourceTree = "<group>"; };
 		3CF16D0B179C4877006E912F /* FlipSquaresNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipSquaresNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +129,30 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		3CCCEA9B17B3940400750A12 /* CubeNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				3CCCEA9C17B3947300750A12 /* CubeNavigationController.h */,
+				3CCCEA9D17B3947300750A12 /* CubeNavigationController.m */,
+			);
+			path = CubeNavigation;
+			sourceTree = "<group>";
+		};
+		3CCCEA9F17B395B000750A12 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				3CCCEAA017B395B000750A12 /* NSObject+Extras.h */,
+				3CCCEAA117B395B000750A12 /* NSObject+Extras.m */,
+				3CCCEAA617B3961E00750A12 /* UIImageView+Capture.h */,
+				3CCCEAA717B3961E00750A12 /* UIImageView+Capture.m */,
+				3CCCEAA917B3966600750A12 /* UIView+Extras.h */,
+				3CCCEAAA17B3966600750A12 /* UIView+Extras.m */,
+				3CCCEAAC17B396B800750A12 /* UINavigationController+Extras.h */,
+				3CCCEAAD17B396B800750A12 /* UINavigationController+Extras.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		3CF16BA917930123006E912F = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +184,7 @@
 		3CF16BBB17930123006E912F /* SquaresFlipNavigationExample */ = {
 			isa = PBXGroup;
 			children = (
+				3CCCEA9B17B3940400750A12 /* CubeNavigation */,
 				3CF16D06179C4877006E912F /* SquaresFlipNavigation */,
 				3C11C7BC17B1481100125C76 /* ViewControllers */,
 				3CF16CEE179C198A006E912F /* assets */,
@@ -188,20 +225,11 @@
 		3CF16D06179C4877006E912F /* SquaresFlipNavigation */ = {
 			isa = PBXGroup;
 			children = (
-				3CF16D07179C4877006E912F /* Extras */,
+				3CCCEA9F17B395B000750A12 /* Categories */,
 				3CF16D0A179C4877006E912F /* FlipSquaresNavigationController.h */,
 				3CF16D0B179C4877006E912F /* FlipSquaresNavigationController.m */,
 			);
 			path = SquaresFlipNavigation;
-			sourceTree = "<group>";
-		};
-		3CF16D07179C4877006E912F /* Extras */ = {
-			isa = PBXGroup;
-			children = (
-				3CF16D08179C4877006E912F /* NSObject+Extras.h */,
-				3CF16D09179C4877006E912F /* NSObject+Extras.m */,
-			);
-			path = Extras;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,11 +311,15 @@
 			files = (
 				3CF16BC217930123006E912F /* main.m in Sources */,
 				3CF16BC617930123006E912F /* AppDelegate.m in Sources */,
-				3CF16D13179C4877006E912F /* NSObject+Extras.m in Sources */,
 				3CF16D14179C4877006E912F /* FlipSquaresNavigationController.m in Sources */,
 				3C11C7CA17B1481100125C76 /* SecondViewController.m in Sources */,
 				3C11C7CB17B1481100125C76 /* ThirthViewController.m in Sources */,
 				3C11C7CC17B1481100125C76 /* ViewController.m in Sources */,
+				3CCCEA9E17B3947300750A12 /* CubeNavigationController.m in Sources */,
+				3CCCEAA217B395B000750A12 /* NSObject+Extras.m in Sources */,
+				3CCCEAA817B3961E00750A12 /* UIImageView+Capture.m in Sources */,
+				3CCCEAAB17B3966600750A12 /* UIView+Extras.m in Sources */,
+				3CCCEAAE17B396B800750A12 /* UINavigationController+Extras.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
