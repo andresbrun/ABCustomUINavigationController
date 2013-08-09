@@ -13,6 +13,7 @@
 
 #define TIME_ANIMATION 1.0
 #define PERSPECTIVE -1.0 / 200.0
+#define ROTATION_ANGLE M_PI_2
 
 @interface CubeNavigationController (){
     BOOL pushingVC;
@@ -203,8 +204,8 @@
     
     switch (animationType) {
         case CubeAnimationTypeHorizontal:
-            viewFromTransform = CATransform3DMakeRotation(dir*M_PI_2, 0.0, 1.0, 0.0);
-            viewToTransform = CATransform3DMakeRotation(-dir*M_PI_2, 0.0, 1.0, 0.0);
+            viewFromTransform = CATransform3DMakeRotation(dir*ROTATION_ANGLE, 0.0, 1.0, 0.0);
+            viewToTransform = CATransform3DMakeRotation(-dir*ROTATION_ANGLE, 0.0, 1.0, 0.0);
             [toImage.layer setAnchorPoint:CGPointMake(pushingVC?0:1, 0.5)];
             [fromImage.layer setAnchorPoint:CGPointMake(pushingVC?1:0, 0.5)];
             
@@ -212,8 +213,8 @@
             break;
             
         case CubeAnimationTypeVertical:
-            viewFromTransform = CATransform3DMakeRotation(-dir*M_PI_2, 1.0, 0.0, 0.0);
-            viewToTransform = CATransform3DMakeRotation(dir*M_PI_2, 1.0, 0.0, 0.0);
+            viewFromTransform = CATransform3DMakeRotation(-dir*ROTATION_ANGLE, 1.0, 0.0, 0.0);
+            viewToTransform = CATransform3DMakeRotation(dir*ROTATION_ANGLE, 1.0, 0.0, 0.0);
             [toImage.layer setAnchorPoint:CGPointMake(0.5, pushingVC?0:1)];
             [fromImage.layer setAnchorPoint:CGPointMake(0.5, pushingVC?1:0)];
             
