@@ -19,8 +19,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.viewController = [[ViewController alloc] initViewController];
-    //self.window.rootViewController = [[FlipSquaresNavigationController alloc] initWithRootViewController:self.viewController];
-    self.window.rootViewController = [[CubeNavigationController alloc] initWithRootViewController:self.viewController];
+    self.window.rootViewController = [[FlipSquaresNavigationController alloc] initWithRootViewController:self.viewController];
+    //self.window.rootViewController = [[CubeNavigationController alloc] initWithRootViewController:self.viewController];
     [self.window makeKeyAndVisible];
     
     return YES;

@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3CF16BB117930123006E912F"
                BuildableName = "SquaresFlipNavigationExample.app"
-               BlueprintName = "SquaresFlipNavigationExample"
-               ReferencedContainer = "container:SquaresFlipNavigationExample.xcodeproj">
+               BlueprintName = "ABCustomUINavigationController"
+               ReferencedContainer = "container:ABCustomUINavigationController.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3CF16BB117930123006E912F"
             BuildableName = "SquaresFlipNavigationExample.app"
-            BlueprintName = "SquaresFlipNavigationExample"
-            ReferencedContainer = "container:SquaresFlipNavigationExample.xcodeproj">
+            BlueprintName = "ABCustomUINavigationController"
+            ReferencedContainer = "container:ABCustomUINavigationController.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -53,8 +53,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3CF16BB117930123006E912F"
             BuildableName = "SquaresFlipNavigationExample.app"
-            BlueprintName = "SquaresFlipNavigationExample"
-            ReferencedContainer = "container:SquaresFlipNavigationExample.xcodeproj">
+            BlueprintName = "ABCustomUINavigationController"
+            ReferencedContainer = "container:ABCustomUINavigationController.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -71,8 +71,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3CF16BB117930123006E912F"
             BuildableName = "SquaresFlipNavigationExample.app"
-            BlueprintName = "SquaresFlipNavigationExample"
-            ReferencedContainer = "container:SquaresFlipNavigationExample.xcodeproj">
+            BlueprintName = "ABCustomUINavigationController"
+            ReferencedContainer = "container:ABCustomUINavigationController.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

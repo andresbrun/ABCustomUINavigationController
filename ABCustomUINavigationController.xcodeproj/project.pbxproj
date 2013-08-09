@@ -1,0 +1,452 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3CCCEAE117B4E0A800750A12 /* NSObject+ABExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCEAD417B4E0A800750A12 /* NSObject+ABExtras.m */; };
+		3CCCEAE217B4E0A800750A12 /* UIImageView+ABExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCEAD617B4E0A800750A12 /* UIImageView+ABExtras.m */; };
+		3CCCEAE317B4E0A800750A12 /* UINavigationController+ABExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCEAD817B4E0A800750A12 /* UINavigationController+ABExtras.m */; };
+		3CCCEAE417B4E0A800750A12 /* UIView+ABExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCEADA17B4E0A800750A12 /* UIView+ABExtras.m */; };
+		3CCCEAE517B4E0A800750A12 /* CubeNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCEADD17B4E0A800750A12 /* CubeNavigationController.m */; };
+		3CCCEAE617B4E0A800750A12 /* FlipSquaresNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCEAE017B4E0A800750A12 /* FlipSquaresNavigationController.m */; };
+		3CCCEB0817B4E0F800750A12 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCEAEB17B4E0F800750A12 /* AppDelegate.m */; };
+		3CCCEB0917B4E0F800750A12 /* bg_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCEAED17B4E0F800750A12 /* bg_1.jpg */; };
+		3CCCEB0A17B4E0F800750A12 /* bg_1_iPad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCEAEE17B4E0F800750A12 /* bg_1_iPad.jpg */; };
+		3CCCEB0B17B4E0F800750A12 /* bg_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCEAEF17B4E0F800750A12 /* bg_2.jpg */; };
+		3CCCEB0C17B4E0F800750A12 /* bg_2_iPad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCEAF017B4E0F800750A12 /* bg_2_iPad.jpg */; };
+		3CCCEB0D17B4E0F800750A12 /* bg_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCEAF117B4E0F800750A12 /* bg_3.png */; };
+		3CCCEB0E17B4E0F800750A12 /* bg_3_iPad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCEAF217B4E0F800750A12 /* bg_3_iPad.jpg */; };
+		3CCCEB0F17B4E0F800750A12 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCEAF317B4E0F800750A12 /* Default-568h@2x.png */; };
+		3CCCEB1017B4E0F800750A12 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCEAF417B4E0F800750A12 /* Default.png */; };
+		3CCCEB1117B4E0F800750A12 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCEAF517B4E0F800750A12 /* Default@2x.png */; };
+		3CCCEB1217B4E0F800750A12 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCEAF617B4E0F800750A12 /* InfoPlist.strings */; };
+		3CCCEB1317B4E0F800750A12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCEAF817B4E0F800750A12 /* main.m */; };
+		3CCCEB1417B4E0F800750A12 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCEAFB17B4E0F800750A12 /* SecondViewController.m */; };
+		3CCCEB1517B4E0F800750A12 /* ThirthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCEAFD17B4E0F800750A12 /* ThirthViewController.m */; };
+		3CCCEB1617B4E0F800750A12 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCEAFF17B4E0F800750A12 /* ViewController.m */; };
+		3CCCEB1717B4E0F800750A12 /* SecondViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCEB0117B4E0F800750A12 /* SecondViewController_iPad.xib */; };
+		3CCCEB1817B4E0F800750A12 /* SecondViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCEB0217B4E0F800750A12 /* SecondViewController_iPhone.xib */; };
+		3CCCEB1917B4E0F800750A12 /* ThirthViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCEB0317B4E0F800750A12 /* ThirthViewController_iPad.xib */; };
+		3CCCEB1A17B4E0F800750A12 /* ThirthViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCEB0417B4E0F800750A12 /* ThirthViewController_iPhone.xib */; };
+		3CCCEB1B17B4E0F800750A12 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCEB0517B4E0F800750A12 /* ViewController_iPad.xib */; };
+		3CCCEB1C17B4E0F800750A12 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCEB0617B4E0F800750A12 /* ViewController_iPhone.xib */; };
+		3CCCEB2017B4E29700750A12 /* ABCustomUINavigationController-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCEB1F17B4E29700750A12 /* ABCustomUINavigationController-Info.plist */; };
+		3CF16BB617930123006E912F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF16BB517930123006E912F /* UIKit.framework */; };
+		3CF16BB817930123006E912F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF16BB717930123006E912F /* Foundation.framework */; };
+		3CF16BBA17930123006E912F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF16BB917930123006E912F /* CoreGraphics.framework */; };
+		3CF16BDC179309B1006E912F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF16BDB179309B1006E912F /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3CCCEAD317B4E0A800750A12 /* NSObject+ABExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ABExtras.h"; sourceTree = "<group>"; };
+		3CCCEAD417B4E0A800750A12 /* NSObject+ABExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ABExtras.m"; sourceTree = "<group>"; };
+		3CCCEAD517B4E0A800750A12 /* UIImageView+ABExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ABExtras.h"; sourceTree = "<group>"; };
+		3CCCEAD617B4E0A800750A12 /* UIImageView+ABExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ABExtras.m"; sourceTree = "<group>"; };
+		3CCCEAD717B4E0A800750A12 /* UINavigationController+ABExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+ABExtras.h"; sourceTree = "<group>"; };
+		3CCCEAD817B4E0A800750A12 /* UINavigationController+ABExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+ABExtras.m"; sourceTree = "<group>"; };
+		3CCCEAD917B4E0A800750A12 /* UIView+ABExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ABExtras.h"; sourceTree = "<group>"; };
+		3CCCEADA17B4E0A800750A12 /* UIView+ABExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ABExtras.m"; sourceTree = "<group>"; };
+		3CCCEADC17B4E0A800750A12 /* CubeNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubeNavigationController.h; sourceTree = "<group>"; };
+		3CCCEADD17B4E0A800750A12 /* CubeNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CubeNavigationController.m; sourceTree = "<group>"; };
+		3CCCEADF17B4E0A800750A12 /* FlipSquaresNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipSquaresNavigationController.h; sourceTree = "<group>"; };
+		3CCCEAE017B4E0A800750A12 /* FlipSquaresNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipSquaresNavigationController.m; sourceTree = "<group>"; };
+		3CCCEAE917B4E0F800750A12 /* ABCustomUINavigationController-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ABCustomUINavigationController-Prefix.pch"; sourceTree = "<group>"; };
+		3CCCEAEA17B4E0F800750A12 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3CCCEAEB17B4E0F800750A12 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3CCCEAED17B4E0F800750A12 /* bg_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_1.jpg; sourceTree = "<group>"; };
+		3CCCEAEE17B4E0F800750A12 /* bg_1_iPad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_1_iPad.jpg; sourceTree = "<group>"; };
+		3CCCEAEF17B4E0F800750A12 /* bg_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_2.jpg; sourceTree = "<group>"; };
+		3CCCEAF017B4E0F800750A12 /* bg_2_iPad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_2_iPad.jpg; sourceTree = "<group>"; };
+		3CCCEAF117B4E0F800750A12 /* bg_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_3.png; sourceTree = "<group>"; };
+		3CCCEAF217B4E0F800750A12 /* bg_3_iPad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_3_iPad.jpg; sourceTree = "<group>"; };
+		3CCCEAF317B4E0F800750A12 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		3CCCEAF417B4E0F800750A12 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		3CCCEAF517B4E0F800750A12 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		3CCCEAF717B4E0F800750A12 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3CCCEAF817B4E0F800750A12 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3CCCEAFA17B4E0F800750A12 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		3CCCEAFB17B4E0F800750A12 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		3CCCEAFC17B4E0F800750A12 /* ThirthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirthViewController.h; sourceTree = "<group>"; };
+		3CCCEAFD17B4E0F800750A12 /* ThirthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirthViewController.m; sourceTree = "<group>"; };
+		3CCCEAFE17B4E0F800750A12 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3CCCEAFF17B4E0F800750A12 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3CCCEB0117B4E0F800750A12 /* SecondViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController_iPad.xib; sourceTree = "<group>"; };
+		3CCCEB0217B4E0F800750A12 /* SecondViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController_iPhone.xib; sourceTree = "<group>"; };
+		3CCCEB0317B4E0F800750A12 /* ThirthViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirthViewController_iPad.xib; sourceTree = "<group>"; };
+		3CCCEB0417B4E0F800750A12 /* ThirthViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirthViewController_iPhone.xib; sourceTree = "<group>"; };
+		3CCCEB0517B4E0F800750A12 /* ViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController_iPad.xib; sourceTree = "<group>"; };
+		3CCCEB0617B4E0F800750A12 /* ViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController_iPhone.xib; sourceTree = "<group>"; };
+		3CCCEB1F17B4E29700750A12 /* ABCustomUINavigationController-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ABCustomUINavigationController-Info.plist"; sourceTree = "<group>"; };
+		3CF16BB217930123006E912F /* ABCustomUINavigationController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ABCustomUINavigationController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CF16BB517930123006E912F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3CF16BB717930123006E912F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3CF16BB917930123006E912F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3CF16BDB179309B1006E912F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3CF16BAF17930123006E912F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CF16BDC179309B1006E912F /* QuartzCore.framework in Frameworks */,
+				3CF16BB617930123006E912F /* UIKit.framework in Frameworks */,
+				3CF16BB817930123006E912F /* Foundation.framework in Frameworks */,
+				3CF16BBA17930123006E912F /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3CCCEAD117B4E0A800750A12 /* CustomUINavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				3CCCEAD217B4E0A800750A12 /* Categories */,
+				3CCCEADB17B4E0A800750A12 /* CubeNavigation */,
+				3CCCEADE17B4E0A800750A12 /* SquaresFlipNavigation */,
+			);
+			path = CustomUINavigationController;
+			sourceTree = "<group>";
+		};
+		3CCCEAD217B4E0A800750A12 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				3CCCEAD317B4E0A800750A12 /* NSObject+ABExtras.h */,
+				3CCCEAD417B4E0A800750A12 /* NSObject+ABExtras.m */,
+				3CCCEAD517B4E0A800750A12 /* UIImageView+ABExtras.h */,
+				3CCCEAD617B4E0A800750A12 /* UIImageView+ABExtras.m */,
+				3CCCEAD717B4E0A800750A12 /* UINavigationController+ABExtras.h */,
+				3CCCEAD817B4E0A800750A12 /* UINavigationController+ABExtras.m */,
+				3CCCEAD917B4E0A800750A12 /* UIView+ABExtras.h */,
+				3CCCEADA17B4E0A800750A12 /* UIView+ABExtras.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		3CCCEADB17B4E0A800750A12 /* CubeNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				3CCCEADC17B4E0A800750A12 /* CubeNavigationController.h */,
+				3CCCEADD17B4E0A800750A12 /* CubeNavigationController.m */,
+			);
+			path = CubeNavigation;
+			sourceTree = "<group>";
+		};
+		3CCCEADE17B4E0A800750A12 /* SquaresFlipNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				3CCCEADF17B4E0A800750A12 /* FlipSquaresNavigationController.h */,
+				3CCCEAE017B4E0A800750A12 /* FlipSquaresNavigationController.m */,
+			);
+			path = SquaresFlipNavigation;
+			sourceTree = "<group>";
+		};
+		3CCCEAE717B4E0F800750A12 /* ABCustomUINavigationControllerExample */ = {
+			isa = PBXGroup;
+			children = (
+				3CCCEB1F17B4E29700750A12 /* ABCustomUINavigationController-Info.plist */,
+				3CCCEAE917B4E0F800750A12 /* ABCustomUINavigationController-Prefix.pch */,
+				3CCCEAEA17B4E0F800750A12 /* AppDelegate.h */,
+				3CCCEAEB17B4E0F800750A12 /* AppDelegate.m */,
+				3CCCEAEC17B4E0F800750A12 /* assets */,
+				3CCCEAF317B4E0F800750A12 /* Default-568h@2x.png */,
+				3CCCEAF417B4E0F800750A12 /* Default.png */,
+				3CCCEAF517B4E0F800750A12 /* Default@2x.png */,
+				3CCCEAF617B4E0F800750A12 /* InfoPlist.strings */,
+				3CCCEAF817B4E0F800750A12 /* main.m */,
+				3CCCEAF917B4E0F800750A12 /* ViewControllers */,
+			);
+			path = ABCustomUINavigationControllerExample;
+			sourceTree = "<group>";
+		};
+		3CCCEAEC17B4E0F800750A12 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				3CCCEAED17B4E0F800750A12 /* bg_1.jpg */,
+				3CCCEAEE17B4E0F800750A12 /* bg_1_iPad.jpg */,
+				3CCCEAEF17B4E0F800750A12 /* bg_2.jpg */,
+				3CCCEAF017B4E0F800750A12 /* bg_2_iPad.jpg */,
+				3CCCEAF117B4E0F800750A12 /* bg_3.png */,
+				3CCCEAF217B4E0F800750A12 /* bg_3_iPad.jpg */,
+			);
+			path = assets;
+			sourceTree = "<group>";
+		};
+		3CCCEAF917B4E0F800750A12 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3CCCEAFA17B4E0F800750A12 /* SecondViewController.h */,
+				3CCCEAFB17B4E0F800750A12 /* SecondViewController.m */,
+				3CCCEAFC17B4E0F800750A12 /* ThirthViewController.h */,
+				3CCCEAFD17B4E0F800750A12 /* ThirthViewController.m */,
+				3CCCEAFE17B4E0F800750A12 /* ViewController.h */,
+				3CCCEAFF17B4E0F800750A12 /* ViewController.m */,
+				3CCCEB0017B4E0F800750A12 /* Views */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3CCCEB0017B4E0F800750A12 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3CCCEB0117B4E0F800750A12 /* SecondViewController_iPad.xib */,
+				3CCCEB0217B4E0F800750A12 /* SecondViewController_iPhone.xib */,
+				3CCCEB0317B4E0F800750A12 /* ThirthViewController_iPad.xib */,
+				3CCCEB0417B4E0F800750A12 /* ThirthViewController_iPhone.xib */,
+				3CCCEB0517B4E0F800750A12 /* ViewController_iPad.xib */,
+				3CCCEB0617B4E0F800750A12 /* ViewController_iPhone.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3CF16BA917930123006E912F = {
+			isa = PBXGroup;
+			children = (
+				3CCCEAD117B4E0A800750A12 /* CustomUINavigationController */,
+				3CCCEAE717B4E0F800750A12 /* ABCustomUINavigationControllerExample */,
+				3CF16BB417930123006E912F /* Frameworks */,
+				3CF16BB317930123006E912F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3CF16BB317930123006E912F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3CF16BB217930123006E912F /* ABCustomUINavigationController.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3CF16BB417930123006E912F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3CF16BDB179309B1006E912F /* QuartzCore.framework */,
+				3CF16BB517930123006E912F /* UIKit.framework */,
+				3CF16BB717930123006E912F /* Foundation.framework */,
+				3CF16BB917930123006E912F /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3CF16BB117930123006E912F /* ABCustomUINavigationController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3CF16BD517930123006E912F /* Build configuration list for PBXNativeTarget "ABCustomUINavigationController" */;
+			buildPhases = (
+				3CF16BAE17930123006E912F /* Sources */,
+				3CF16BAF17930123006E912F /* Frameworks */,
+				3CF16BB017930123006E912F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ABCustomUINavigationController;
+			productName = SquaresFlipNavigationExample;
+			productReference = 3CF16BB217930123006E912F /* ABCustomUINavigationController.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3CF16BAA17930123006E912F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Andrés Brun";
+			};
+			buildConfigurationList = 3CF16BAD17930123006E912F /* Build configuration list for PBXProject "ABCustomUINavigationController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3CF16BA917930123006E912F;
+			productRefGroup = 3CF16BB317930123006E912F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3CF16BB117930123006E912F /* ABCustomUINavigationController */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3CF16BB017930123006E912F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CCCEB0917B4E0F800750A12 /* bg_1.jpg in Resources */,
+				3CCCEB0A17B4E0F800750A12 /* bg_1_iPad.jpg in Resources */,
+				3CCCEB0B17B4E0F800750A12 /* bg_2.jpg in Resources */,
+				3CCCEB0C17B4E0F800750A12 /* bg_2_iPad.jpg in Resources */,
+				3CCCEB0D17B4E0F800750A12 /* bg_3.png in Resources */,
+				3CCCEB0E17B4E0F800750A12 /* bg_3_iPad.jpg in Resources */,
+				3CCCEB0F17B4E0F800750A12 /* Default-568h@2x.png in Resources */,
+				3CCCEB1017B4E0F800750A12 /* Default.png in Resources */,
+				3CCCEB1117B4E0F800750A12 /* Default@2x.png in Resources */,
+				3CCCEB1217B4E0F800750A12 /* InfoPlist.strings in Resources */,
+				3CCCEB1717B4E0F800750A12 /* SecondViewController_iPad.xib in Resources */,
+				3CCCEB1817B4E0F800750A12 /* SecondViewController_iPhone.xib in Resources */,
+				3CCCEB1917B4E0F800750A12 /* ThirthViewController_iPad.xib in Resources */,
+				3CCCEB1A17B4E0F800750A12 /* ThirthViewController_iPhone.xib in Resources */,
+				3CCCEB1B17B4E0F800750A12 /* ViewController_iPad.xib in Resources */,
+				3CCCEB1C17B4E0F800750A12 /* ViewController_iPhone.xib in Resources */,
+				3CCCEB2017B4E29700750A12 /* ABCustomUINavigationController-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3CF16BAE17930123006E912F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CCCEAE117B4E0A800750A12 /* NSObject+ABExtras.m in Sources */,
+				3CCCEAE217B4E0A800750A12 /* UIImageView+ABExtras.m in Sources */,
+				3CCCEAE317B4E0A800750A12 /* UINavigationController+ABExtras.m in Sources */,
+				3CCCEAE417B4E0A800750A12 /* UIView+ABExtras.m in Sources */,
+				3CCCEAE517B4E0A800750A12 /* CubeNavigationController.m in Sources */,
+				3CCCEAE617B4E0A800750A12 /* FlipSquaresNavigationController.m in Sources */,
+				3CCCEB0817B4E0F800750A12 /* AppDelegate.m in Sources */,
+				3CCCEB1317B4E0F800750A12 /* main.m in Sources */,
+				3CCCEB1417B4E0F800750A12 /* SecondViewController.m in Sources */,
+				3CCCEB1517B4E0F800750A12 /* ThirthViewController.m in Sources */,
+				3CCCEB1617B4E0F800750A12 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3CCCEAF617B4E0F800750A12 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3CCCEAF717B4E0F800750A12 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3CF16BD317930123006E912F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Andres Moreno (GEKTAXUSVL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "AF9FBB6F-40DA-4DDC-B334-3C3889D55A43";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3CF16BD417930123006E912F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Andres Moreno (GEKTAXUSVL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "AF9FBB6F-40DA-4DDC-B334-3C3889D55A43";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3CF16BD617930123006E912F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ABCustomUINavigationControllerExample/ABCustomUINavigationController-Prefix.pch";
+				INFOPLIST_FILE = "ABCustomUINavigationControllerExample/ABCustomUINavigationController-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PRODUCT_NAME = ABCustomUINavigationController;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3CF16BD717930123006E912F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ABCustomUINavigationControllerExample/ABCustomUINavigationController-Prefix.pch";
+				INFOPLIST_FILE = "ABCustomUINavigationControllerExample/ABCustomUINavigationController-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PRODUCT_NAME = ABCustomUINavigationController;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3CF16BAD17930123006E912F /* Build configuration list for PBXProject "ABCustomUINavigationController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CF16BD317930123006E912F /* Debug */,
+				3CF16BD417930123006E912F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3CF16BD517930123006E912F /* Build configuration list for PBXNativeTarget "ABCustomUINavigationController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CF16BD617930123006E912F /* Debug */,
+				3CF16BD717930123006E912F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3CF16BAA17930123006E912F /* Project object */;
+}
