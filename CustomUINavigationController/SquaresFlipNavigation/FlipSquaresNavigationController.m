@@ -21,10 +21,6 @@
 #define SQUARE_COLUMNS 8
 #define TIME_ANIMATION 1.0
 
-//IOS7
-#define CURRENT_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
-#define IS_EARLIER_IOS7 ( CURRENT_VERSION < 7.0)
-
 @interface FlipSquaresNavigationController (){
     NSMutableArray *fromViewImagesArray;
     NSMutableArray *toViewImagesArray;

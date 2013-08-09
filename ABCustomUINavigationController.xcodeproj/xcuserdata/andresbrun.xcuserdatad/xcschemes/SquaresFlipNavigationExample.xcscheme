@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3CF16BB117930123006E912F"
-               BuildableName = "SquaresFlipNavigationExample.app"
+               BuildableName = "ABCustomUINavigationController.app"
                BlueprintName = "ABCustomUINavigationController"
                ReferencedContainer = "container:ABCustomUINavigationController.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3CF16BB117930123006E912F"
-            BuildableName = "SquaresFlipNavigationExample.app"
+            BuildableName = "ABCustomUINavigationController.app"
             BlueprintName = "ABCustomUINavigationController"
             ReferencedContainer = "container:ABCustomUINavigationController.xcodeproj">
          </BuildableReference>
@@ -52,7 +52,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3CF16BB117930123006E912F"
-            BuildableName = "SquaresFlipNavigationExample.app"
+            BuildableName = "ABCustomUINavigationController.app"
             BlueprintName = "ABCustomUINavigationController"
             ReferencedContainer = "container:ABCustomUINavigationController.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3CF16BB117930123006E912F"
-            BuildableName = "SquaresFlipNavigationExample.app"
+            BuildableName = "ABCustomUINavigationController.app"
             BlueprintName = "ABCustomUINavigationController"
             ReferencedContainer = "container:ABCustomUINavigationController.xcodeproj">
          </BuildableReference>

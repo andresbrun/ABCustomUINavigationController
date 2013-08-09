@@ -8,6 +8,10 @@
 
 #import "UINavigationController+ABExtras.h"
 
+//IOS7
+#define CURRENT_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
+#define IS_EARLIER_IOS7 ( CURRENT_VERSION < 7.0)
+
 @implementation UINavigationController (ABExtras)
 
 
@@ -25,7 +29,7 @@
         }
     }
     
-    if (![UIApplication sharedApplication].statusBarHidden){
+    if (IS_EARLIER_IOS7 && ![UIApplication sharedApplication].statusBarHidden){
         if (UIInterfaceOrientationIsPortrait(interfaceOrientation)){
             yPosition += [UIApplication sharedApplication].statusBarFrame.size.height;
         }else{
