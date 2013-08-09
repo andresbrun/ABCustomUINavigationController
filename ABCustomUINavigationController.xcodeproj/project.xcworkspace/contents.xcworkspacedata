@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:SquaresFlipNavigationExample.xcodeproj">
+      location = "self:ABCustomUINavigationController.xcodeproj">
    </FileRef>
 </Workspace>
