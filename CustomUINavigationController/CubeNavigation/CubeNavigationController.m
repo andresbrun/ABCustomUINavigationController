@@ -208,7 +208,7 @@
             [toImage.layer setAnchorPoint:CGPointMake(pushingVC?0:1, 0.5)];
             [fromImage.layer setAnchorPoint:CGPointMake(pushingVC?1:0, 0.5)];
             
-            [generalContentView setTransform:CGAffineTransformMakeTranslation(dir*(self.view.frame.size.width)/2.0, 0)];
+            [generalContentView setTransform:CGAffineTransformMakeTranslation(dir*(generalContentView.frame.size.width)/2.0, 0)];
             break;
             
         case CubeAnimationTypeVertical:
@@ -217,7 +217,7 @@
             [toImage.layer setAnchorPoint:CGPointMake(0.5, pushingVC?0:1)];
             [fromImage.layer setAnchorPoint:CGPointMake(0.5, pushingVC?1:0)];
             
-            [generalContentView setTransform:CGAffineTransformMakeTranslation(0, dir*(self.view.frame.size.height-[self calculateYPosition])/2.0)];
+            [generalContentView setTransform:CGAffineTransformMakeTranslation(0, dir*(generalContentView.frame.size.height-[self calculateYPosition])/2.0)];
             break;
             
         default:
@@ -246,11 +246,11 @@
         
         switch (animationType) {
             case CubeAnimationTypeHorizontal:
-                [generalContentView setTransform:CGAffineTransformMakeTranslation(-dir*self.view.frame.size.width/2.0, 0)];
+                [generalContentView setTransform:CGAffineTransformMakeTranslation(-dir*generalContentView.frame.size.width/2.0, 0)];
                 break;
                 
             case CubeAnimationTypeVertical:
-                [generalContentView setTransform:CGAffineTransformMakeTranslation(0, -dir*(self.view.frame.size.height-[self calculateYPosition])/2.0)];
+                [generalContentView setTransform:CGAffineTransformMakeTranslation(0, -dir*(generalContentView.frame.size.height-[self calculateYPosition])/2.0)];
                 break;
                 
             default:
