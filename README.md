@@ -1,4 +1,4 @@
-SquaresFlipNavigation
+ABCustomUINavigationController
 =====================
 
 Class inherate from UINavigationController for overwrite push and pop methods in order to create new transition effects. Actually we have been implemented two transition animations:
