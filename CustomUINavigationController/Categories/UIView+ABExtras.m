@@ -49,7 +49,7 @@
 {
     UIView *shadowView = [[UIView alloc] initWithFrame:self.bounds];
     
-    [shadowView setBackgroundColor:[theColor colorWithAlphaComponent:0.8]];
+    [shadowView setBackgroundColor:theColor];
     
     [self addSubview:shadowView];
     
@@ -72,6 +72,17 @@
     //Fix the position to handle status bar and navigation bar
     float yPosition = [navController calculateYPosition];
     [currentView setFrame:CGRectMake(0, yPosition, currentView.frame.size.width, currentView.frame.size.height)];
+    
+    return currentView;
+}
+
+- (UIView *) viewInNavController: (UINavigationController *) navController
+{
+    //Fix the position to handle status bar and navigation bar
+    float yPosition = [navController calculateYPosition];
+    CGRect rect = CGRectMake(0, yPosition, self.frame.size.width, self.frame.size.height);
+    
+    UIView *currentView = [self resizableSnapshotFromRect:rect withCapInsets:UIEdgeInsetsZero];
     
     return currentView;
 }

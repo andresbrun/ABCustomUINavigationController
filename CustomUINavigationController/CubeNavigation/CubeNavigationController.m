@@ -236,8 +236,8 @@
     [self.view addSubview:generalContentView];
     
     //Create the shadow
-    UIView *fromShadow = [fromImage addOpacityWithColor:[UIColor blackColor]];
-    UIView *toShadow = [toImage addOpacityWithColor:[UIColor blackColor]];
+    UIView *fromShadow = [fromImage addOpacityWithColor:[[UIColor blackColor] colorWithAlphaComponent:0.8]];
+    UIView *toShadow = [toImage addOpacityWithColor:[[UIColor blackColor] colorWithAlphaComponent:0.8]];
     
     [fromShadow setAlpha:0.0];
     [toShadow setAlpha:1.0];
