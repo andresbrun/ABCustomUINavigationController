@@ -1,20 +1,46 @@
-The MIT License (MIT)
+Información de una película
+	Nombre
+	Fecha
+	Escenas
+	Autor + cita
+	ImageLarge para mainscreen
+	ImageMedium para tarjeta
 
-Copyright (c) 2012 Andrés Brun Moreno
+	Frases
+		Autor (Nombre + Images)
+		Cita
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of
-this software and associated documentation files (the "Software"), to deal in
-the Software without restriction, including without limitation the rights to
-use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
-the Software, and to permit persons to whom the Software is furnished to do so,
-subject to the following conditions:
+	Escenas
+		Imagen
+		Descripcion
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Películas
+o	Gladiator
+o	Pulp Fiction
+o	El Padrino
+o	La chaqueta metálica
+	Lo que el viento se llevó
+	CasaBlanca
+	La lista de shindler
+o	Amelie
+	Resorvoir Dog
+	Pretty woman
+o	American History X
+o	El Silencio de los Corderos
+o	El exorcista
+	Saw I
+	Dracula de Bran Stoker
+	La Milla Verde
+o	Snach, Cerdos y Diamantes
+o	Watchmen
+o	Matrix
+o	StarWars
+	300
+	Inception
+	Terminator II
+	Die Hard
+	La Vida es Bella
+	Men In Black
+	
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
-FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
-COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
-IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+

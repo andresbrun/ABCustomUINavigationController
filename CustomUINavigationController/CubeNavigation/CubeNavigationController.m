@@ -54,15 +54,15 @@
         
         UIViewController *currentVC = [self visibleViewController];
         
-        UIImageView *fromImageView = [currentVC.view imageInNavController:self];
+        UIView *fromView = [currentVC.view createSnapshotView];
         
         //Issue with autosizing, we nned to set the frame before take the image
         [viewController.view setFrame:currentVC.view.frame];    //Resize new view manually
-        UIImageView *toImageView = [viewController.view imageInNavController:self];
+        UIView *toView = [viewController.view createSnapshotView];
         
         [currentVC.view setAlpha:0.0];
         
-        [self makeCubeAnimationFrom:fromImageView to:toImageView direction:self.cubeAnimationType withCompletion:^{
+        [self makeCubeAnimationFrom:fromView to:toView direction:self.cubeAnimationType withCompletion:^{
             
             //Do the push
             [super pushViewController:viewController animated:NO];
@@ -84,7 +84,7 @@
         if (animated) {
             UIViewController *currentVC = [self visibleViewController];
             
-            UIImageView *fromImageView = [currentVC.view imageInNavController:self];
+            UIView *fromImageView = [currentVC.view createSnapshotView];
             
             int index = [self.viewControllers indexOfObject:currentVC];
             
@@ -93,7 +93,7 @@
                 //Issue with autosizing, we nned to set the frame before take the image
                 UIViewController *toViewController = [self.viewControllers objectAtIndex:index-1];
                 [toViewController.view setFrame:currentVC.view.frame];    //Resize new view manually
-                UIImageView *toImageView = [toViewController.view imageInNavController:self];
+                UIView *toImageView = [toViewController.view createSnapshotView];
                 
                 [currentVC.view setAlpha:0.0];
                 
@@ -131,13 +131,13 @@
             //Issue with autosizing, we nned to set the frame before take the image
             [rootVC.view setFrame:currentVC.view.frame];    //Resize new view manually
             
-            UIImageView *fromImageView = [currentVC.view imageInNavController:self];
-            UIImageView *toImageView = [rootVC.view imageInNavController:self];
+            UIView *fromView = [currentVC.view createSnapshotView];
+            UIView *toView = [rootVC.view createSnapshotView];
             
             [currentVC.view setAlpha:0.0];
             
             __block NSArray *stackVCs;
-            [self makeCubeAnimationFrom:fromImageView to:toImageView direction:self.cubeAnimationType withCompletion:^{
+            [self makeCubeAnimationFrom:fromView to:toView direction:self.cubeAnimationType withCompletion:^{
                 
                 stackVCs = [super popToRootViewControllerAnimated:NO];
             }];
@@ -164,13 +164,13 @@
             //Issue with autosizing, we nned to set the frame before take the image
             [viewController.view setFrame:currentVC.view.frame];    //Resize new view manually
             
-            UIImageView *fromImageView = [currentVC.view imageInNavController:self];
-            UIImageView *toImageView = [viewController.view imageInNavController:self];
+            UIView *fromView = [currentVC.view createSnapshotView];
+            UIView *toView = [viewController.view createSnapshotView];
             
             [currentVC.view setAlpha:0.0];
             
             __block NSArray *stackVCs;
-            [self makeCubeAnimationFrom:fromImageView to:toImageView direction:self.cubeAnimationType withCompletion:^{
+            [self makeCubeAnimationFrom:fromView to:toView direction:self.cubeAnimationType withCompletion:^{
                 
                 stackVCs = [super popToViewController:viewController animated:NO];
             }];
@@ -190,7 +190,7 @@
 /**
  Function that creates the cube animation transition between fromImage and toImage
  */
-- (void) makeCubeAnimationFrom: (UIImageView *) fromImage to: (UIImageView *) toImage direction: (CubeAnimationType) animationType withCompletion: (void(^)(void))completion
+- (void) makeCubeAnimationFrom: (UIView *) fromImage to: (UIView *) toImage direction: (CubeAnimationType) animationType withCompletion: (void(^)(void))completion
 {
     //We need to calculate the animation direcction
     int dir=pushingVC?1:-1;

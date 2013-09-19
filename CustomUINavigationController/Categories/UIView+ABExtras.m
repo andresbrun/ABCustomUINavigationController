@@ -76,13 +76,9 @@
     return currentView;
 }
 
-- (UIView *) viewInNavController: (UINavigationController *) navController
+- (UIView *) createSnapshotView
 {
-    //Fix the position to handle status bar and navigation bar
-    float yPosition = [navController calculateYPosition];
-    CGRect rect = CGRectMake(0, yPosition, self.frame.size.width, self.frame.size.height);
-    
-    UIView *currentView = [self resizableSnapshotFromRect:rect withCapInsets:UIEdgeInsetsZero];
+    UIView *currentView = [self snapshotViewAfterScreenUpdates:YES];
     
     return currentView;
 }
