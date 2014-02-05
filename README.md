@@ -6,10 +6,10 @@
 ABCustomUINavigationController
 =====================
 
-Class inherate from UINavigationController for overwrite push and pop methods in order to create new transition effects. Actually we have been implemented two transition animations:
+Subclass of UINavigationController for overwriting push and pop methods to create new transitions effects. Currently it has been implemented two transition animations:
 
 ### SquaresFlip 
-The screen is split in squares and change every one for the new controller rotating it. It has two animation variation: 
+The screen is split in squares and each one rotates until showing the new controller. It has two animation variation: 
 - Randomly 
 - Horizontally
 
