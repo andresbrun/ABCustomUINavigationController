@@ -50,3 +50,4 @@ This component need these two frameworks to work:
 ### Cube
 ![alt tag](https://raw.github.com/andresbrun/SquaresFlipNavigation/origin/example_images/example_cube.gif)
 
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/andresbrun/abcustomuinavigationcontroller/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
