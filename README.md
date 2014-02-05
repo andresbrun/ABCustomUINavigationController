@@ -1,3 +1,8 @@
+[![License MIT](https://go-shields.herokuapp.com/license-MIT-blue.png)](https://github.com/andresbrun/ABCustomUINavigationController/blob/master/LICENSE)
+[![Build Platform](https://cocoapod-badges.herokuapp.com/p/ABCustomUINavigationController/badge.png)](https://github.com/andresbrun/ABCustomUINavigationController)
+[![Build Version](https://cocoapod-badges.herokuapp.com/v/ABCustomUINavigationController/badge.png)](https://github.com/andresbrun/ABCustomUINavigationController)
+[![Build Status](https://travis-ci.org/andresbrun/ABCustomUINavigationController.png?branch=master)](https://github.com/andresbrun/ABCustomUINavigationController) 
+
 ABCustomUINavigationController
 =====================
 
