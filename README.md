@@ -18,6 +18,16 @@ The views are showns in differents cube's faces. It has two animation variation:
 - Horizontal 
 - vertical
 
+## Installation with CocoaPods
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like ABCustomUINavigationController in your projects. See the ["Getting Started" guide for more information](https://github.com/AFNetworking/AFNetworking/wiki/Getting-Started-with-AFNetworking).
+
+#### Podfile
+
+```ruby
+pod "ABCustomUINavigationController"
+```
+
 ## Use
 For using that component you only have to copy the SquaresFlipNavigation folder into your project and create the navigation controller as:
 
