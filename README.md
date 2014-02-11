@@ -4,7 +4,6 @@ ABCustomUINavigationController
 [![Build Platform](https://cocoapod-badges.herokuapp.com/p/ABCustomUINavigationController/badge.png)](https://github.com/andresbrun/ABCustomUINavigationController)
 [![Build Version](https://cocoapod-badges.herokuapp.com/v/ABCustomUINavigationController/badge.png)](https://github.com/andresbrun/ABCustomUINavigationController)
 [![Build Status](https://travis-ci.org/andresbrun/ABCustomUINavigationController.png?branch=origin)](https://github.com/andresbrun/ABCustomUINavigationController) 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/andresbrun/abcustomuinavigationcontroller/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 Subclass of UINavigationController for overwriting push and pop methods to create new transitions effects. Currently it has been implemented two transition animations:
 
@@ -20,7 +19,7 @@ The views are showns in differents cube's faces. It has two animation variation:
 
 ## Installation with CocoaPods
 
-[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like ABCustomUINavigationController in your projects. See the ["Getting Started" guide for more information](https://github.com/AFNetworking/AFNetworking/wiki/Getting-Started-with-AFNetworking).
+[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like ABCustomUINavigationController in your projects.
 
 #### Podfile
 
