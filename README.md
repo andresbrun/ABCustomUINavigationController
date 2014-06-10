@@ -1,10 +1,9 @@
+ABCustomUINavigationController
+=====================
 [![License MIT](https://go-shields.herokuapp.com/license-MIT-blue.png)](https://github.com/andresbrun/ABCustomUINavigationController/blob/master/LICENSE)
 [![Build Platform](https://cocoapod-badges.herokuapp.com/p/ABCustomUINavigationController/badge.png)](https://github.com/andresbrun/ABCustomUINavigationController)
 [![Build Version](https://cocoapod-badges.herokuapp.com/v/ABCustomUINavigationController/badge.png)](https://github.com/andresbrun/ABCustomUINavigationController)
-[![Build Status](https://travis-ci.org/andresbrun/ABCustomUINavigationController.png?branch=master)](https://github.com/andresbrun/ABCustomUINavigationController) 
-
-ABCustomUINavigationController
-=====================
+[![Build Status](https://travis-ci.org/andresbrun/ABCustomUINavigationController.png?branch=origin)](https://github.com/andresbrun/ABCustomUINavigationController) 
 
 Subclass of UINavigationController for overwriting push and pop methods to create new transitions effects. Currently it has been implemented two transition animations:
 
@@ -17,6 +16,16 @@ The screen is split in squares and each one rotates until showing the new contro
 The views are showns in differents cube's faces. It has two animation variation: 
 - Horizontal 
 - vertical
+
+## Installation with CocoaPods
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like ABCustomUINavigationController in your projects.
+
+#### Podfile
+
+```ruby
+pod "ABCustomUINavigationController"
+```
 
 ## Use
 For using that component you only have to copy the SquaresFlipNavigation folder into your project and create the navigation controller as:
