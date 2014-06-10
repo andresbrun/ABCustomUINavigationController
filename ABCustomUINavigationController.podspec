@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.author       = { "Andres Brun" => "andresbrunmoreno@gmail.com" }
  
   s.platform     = :ios
-  s.source       = { :git => "https://github.com/andresbrun/ABCustomUINavigationController.git", :tag => "1.1.12 }
+  s.source       = { :git => "https://github.com/andresbrun/ABCustomUINavigationController.git", :tag => "1.1.2" }
  
   s.source_files  = 'CustomUINavigationController/**/*.{h,m}'
  
