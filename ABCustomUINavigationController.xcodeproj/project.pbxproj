@@ -34,7 +34,6 @@
 		3CCCEB1A17B4E0F800750A12 /* ThirthViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCEB0417B4E0F800750A12 /* ThirthViewController_iPhone.xib */; };
 		3CCCEB1B17B4E0F800750A12 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCEB0517B4E0F800750A12 /* ViewController_iPad.xib */; };
 		3CCCEB1C17B4E0F800750A12 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCEB0617B4E0F800750A12 /* ViewController_iPhone.xib */; };
-		3CCCEB2017B4E29700750A12 /* ABCustomUINavigationController-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCEB1F17B4E29700750A12 /* ABCustomUINavigationController-Info.plist */; };
 		3CF16BB617930123006E912F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF16BB517930123006E912F /* UIKit.framework */; };
 		3CF16BB817930123006E912F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF16BB717930123006E912F /* Foundation.framework */; };
 		3CF16BBA17930123006E912F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF16BB917930123006E912F /* CoreGraphics.framework */; };
@@ -259,7 +258,7 @@
 		3CF16BAA17930123006E912F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Andrés Brun";
 			};
 			buildConfigurationList = 3CF16BAD17930123006E912F /* Build configuration list for PBXProject "ABCustomUINavigationController" */;
@@ -300,7 +299,6 @@
 				3CCCEB1A17B4E0F800750A12 /* ThirthViewController_iPhone.xib in Resources */,
 				3CCCEB1B17B4E0F800750A12 /* ViewController_iPad.xib in Resources */,
 				3CCCEB1C17B4E0F800750A12 /* ViewController_iPhone.xib in Resources */,
-				3CCCEB2017B4E29700750A12 /* ABCustomUINavigationController-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
