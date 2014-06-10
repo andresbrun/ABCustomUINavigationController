@@ -334,13 +334,6 @@
  */
 - (NSMutableArray *) sortRandomArray:(NSMutableArray *)array
 {
-    static BOOL seeded = NO;
-    if(!seeded)
-    {
-        seeded = YES;
-        srandom(time(NULL));
-    }
-    
     NSUInteger count = [array count];
     for (NSUInteger i = 0; i < count; ++i) {
         // Select a random element between i and end of array to swap with.

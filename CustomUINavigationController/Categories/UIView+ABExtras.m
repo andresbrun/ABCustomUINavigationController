@@ -40,7 +40,8 @@
     //apply the colors and the gradient to the view
     gradient.colors = colors;
     
-    [self.layer insertSublayer:gradient atIndex:[self.layer.sublayers count]];
+    NSUInteger index = [self.layer.sublayers count];
+    [self.layer insertSublayer:gradient atIndex:index];
     
     return gradient;
 }
