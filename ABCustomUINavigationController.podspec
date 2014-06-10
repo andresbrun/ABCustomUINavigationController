@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
  
   s.name         = "ABCustomUINavigationController"
-  s.version      = "1.0"
+  s.version      = "1.1"
   s.summary      = "Custom UINavigationController. SquaresFlips and Cube effects"
  
   s.description  = <<-DESC
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.author       = { "Andrés Brun Moreno" => "andresbrunmoreno@gmail.com" }
  
   s.platform     = :ios
-  s.source       = { :git => "https://github.com/andresbrun/ABCustomUINavigationController.git", :tag => "1.0" }
+  s.source       = { :git => "https://github.com/andresbrun/ABCustomUINavigationController.git", :tag => "1.1" }
  
   s.source_files  = 'CustomUINavigationController/**/*.{h,m}'
  
