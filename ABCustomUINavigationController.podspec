@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
  
   s.name         = "ABCustomUINavigationController"
-  s.version      = "1.1"
+  s.version      = "1.1.2"
   s.summary      = "Custom UINavigationController. SquaresFlips and Cube effects"
  
   s.description  = <<-DESC
@@ -15,17 +15,16 @@ Pod::Spec.new do |s|
                    DESC
  
   s.homepage     = "https://github.com/andresbrun/ABCustomUINavigationController"
-  s.screenshots  = "https://github.com/andresbrun/ABCustomUINavigationController/blob/origin/example_images/example_full.png"
  
   s.license      = { :type => 'MIT', :file => 'LICENSE.txt' }
-  s.author       = { "Andrés Brun Moreno" => "andresbrunmoreno@gmail.com" }
+  s.author       = { "Andres Brun" => "andresbrunmoreno@gmail.com" }
  
   s.platform     = :ios
-  s.source       = { :git => "https://github.com/andresbrun/ABCustomUINavigationController.git", :tag => "1.1" }
+  s.source       = { :git => "https://github.com/andresbrun/ABCustomUINavigationController.git", :tag => "1.1.12 }
  
   s.source_files  = 'CustomUINavigationController/**/*.{h,m}'
  
-  s.frameworks = 'QuartzCore.framework', 'CoreGraphics.framework'
+  s.frameworks = 'QuartzCore', 'CoreGraphics'
   s.requires_arc = true
  
 end
