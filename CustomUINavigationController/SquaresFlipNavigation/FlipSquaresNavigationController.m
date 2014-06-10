@@ -104,7 +104,7 @@
             
             UIImageView *currentView = [currentVC.view imageInNavController:self];
             
-            int index = [self.viewControllers indexOfObject:currentVC];
+            NSInteger index = [self.viewControllers indexOfObject:currentVC];
             
             if (index>0) {
                 
@@ -214,8 +214,8 @@
     
     //Create the cropped images
     
-    for (int col=0; col<SQUARE_COLUMNS; col++) {
-        for (int row=0; row<SQUARE_ROWS; row++) {
+    for (NSUInteger col=0; col<SQUARE_COLUMNS; col++) {
+        for (NSUInteger row=0; row<SQUARE_ROWS; row++) {
             CGRect currentRect = CGRectMake(row*rowsWidth,col*columnsHeight,rowsWidth,columnsHeight);
             UIView *fromView =[[fromImage createCrop:currentRect] createView];
             UIView *toView =[[toImage createCrop:currentRect] createView];
@@ -240,7 +240,7 @@
     
     float maxDelay=0;
     for (NSNumber *currentPos in orderArray) {
-        int posIndex = [orderArray indexOfObject:currentPos];
+        NSInteger posIndex = [orderArray indexOfObject:currentPos];
         
         UIView *fromViewCrop = [fromViewImagesArray objectAtIndex:[currentPos intValue]];
         UIView *toViewCrop = [toViewImagesArray objectAtIndex:[currentPos intValue]];
@@ -344,8 +344,8 @@
     NSUInteger count = [array count];
     for (NSUInteger i = 0; i < count; ++i) {
         // Select a random element between i and end of array to swap with.
-        int nElements = count - i;
-        int n = (random() % nElements) + i;
+        NSInteger nElements = count - i;
+        NSInteger n = (random() % nElements) + i;
         [array exchangeObjectAtIndex:i withObjectAtIndex:n];
     }
     
@@ -360,8 +360,8 @@
     NSMutableArray *sortedArray = [NSMutableArray array];
     
     //Get an array sort the elements by columns
-    for (int index=0; index<[array count]; index++) {
-        int auxPos = ((index%SQUARE_COLUMNS)*SQUARE_ROWS) + index/SQUARE_COLUMNS;       
+    for (NSInteger index=0; index<[array count]; index++) {
+        NSInteger auxPos = ((index%SQUARE_COLUMNS)*SQUARE_ROWS) + index/SQUARE_COLUMNS;
         [sortedArray addObject:[array objectAtIndex:auxPos]];
     }
     
