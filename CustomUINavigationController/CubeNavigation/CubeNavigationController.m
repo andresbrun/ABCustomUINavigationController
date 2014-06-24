@@ -86,7 +86,7 @@
             
             UIView *fromImageView = [currentVC.view createSnapshotView];
             
-            int index = [self.viewControllers indexOfObject:currentVC];
+            NSInteger index = [self.viewControllers indexOfObject:currentVC];
             
             if (index>0) {
                 
@@ -193,7 +193,7 @@
 - (void) makeCubeAnimationFrom: (UIView *) fromImage to: (UIView *) toImage direction: (CubeAnimationType) animationType withCompletion: (void(^)(void))completion
 {
     //We need to calculate the animation direcction
-    int dir=pushingVC?1:-1;
+    NSUInteger dir=pushingVC?1:-1;
     
     //We create a content view for do the translate animation
     UIView *generalContentView = [[UIView alloc] initWithFrame:self.view.bounds];
