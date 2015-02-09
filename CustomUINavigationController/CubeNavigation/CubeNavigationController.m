@@ -193,7 +193,7 @@
 - (void) makeCubeAnimationFrom: (UIImageView *) fromImage to: (UIImageView *) toImage direction: (CubeAnimationType) animationType withCompletion: (void(^)(void))completion
 {
     //We need to calculate the animation direcction
-    NSUInteger dir=pushingVC?1:-1;
+    NSInteger dir=pushingVC?1:-1;
     
     //We create a content view for do the translate animation
     UIView *generalContentView = [[UIView alloc] initWithFrame:self.view.bounds];
@@ -257,7 +257,7 @@
             default:
                 break;
         }
-        
+
         fromImage.layer.transform = viewFromTransform;
         toImage.layer.transform = CATransform3DIdentity;
         
