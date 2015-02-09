@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
  
   s.name         = "ABCustomUINavigationController"
-  s.version      = "1.1.2"
+  s.version      = "1.1.3"
   s.summary      = "Custom UINavigationController. SquaresFlips and Cube effects"
  
   s.description  = <<-DESC
-                   Subclass of UINavigationController for overwriting push and pop methods to create new transitions effects. Currently it has been implemented two transition animations:
+                   Subclass of UINavigationController that overwrite push and pop methods to create new transitions effects. Currently it has been implemented two transition animations:
  
                     SquaresFlip
                     The screen is split in squares and each one rotates until showing the new controller. It has two animation variation: Randomly and Horizontally
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.author       = { "Andres Brun" => "andresbrunmoreno@gmail.com" }
  
   s.platform     = :ios
-  s.source       = { :git => "https://github.com/andresbrun/ABCustomUINavigationController.git", :tag => "1.1.12 }
+  s.source       = { :git => "https://github.com/andresbrun/ABCustomUINavigationController.git", :tag => "1.1.3" }
  
   s.source_files  = 'CustomUINavigationController/**/*.{h,m}'
  
