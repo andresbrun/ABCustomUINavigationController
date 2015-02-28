@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class BaseControllerAnimatedTransitioningDelegate;
 
 @interface BaseNavigationController : UINavigationController
+
+- (BaseControllerAnimatedTransitioningDelegate *)createAnimatedTransitioningUsed;
 
 @end
