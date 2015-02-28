@@ -11,7 +11,7 @@
 		3CCCEAE217B4E0A800750A12 /* UIImageView+ABExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCEAD617B4E0A800750A12 /* UIImageView+ABExtras.m */; };
 		3CCCEAE317B4E0A800750A12 /* UINavigationController+ABExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCEAD817B4E0A800750A12 /* UINavigationController+ABExtras.m */; };
 		3CCCEAE417B4E0A800750A12 /* UIView+ABExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCEADA17B4E0A800750A12 /* UIView+ABExtras.m */; };
-		3CCCEAE517B4E0A800750A12 /* CubeNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCEADD17B4E0A800750A12 /* CubeNavigationController.m */; };
+		3CCCEAE517B4E0A800750A12 /* CubeAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCEADD17B4E0A800750A12 /* CubeAnimator.m */; };
 		3CCCEAE617B4E0A800750A12 /* FlipSquaresNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCEAE017B4E0A800750A12 /* FlipSquaresNavigationController.m */; };
 		3CCCEB0817B4E0F800750A12 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCEAEB17B4E0F800750A12 /* AppDelegate.m */; };
 		3CCCEB0917B4E0F800750A12 /* bg_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCEAED17B4E0F800750A12 /* bg_1.jpg */; };
@@ -38,6 +38,12 @@
 		3CF16BB817930123006E912F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF16BB717930123006E912F /* Foundation.framework */; };
 		3CF16BBA17930123006E912F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF16BB917930123006E912F /* CoreGraphics.framework */; };
 		3CF16BDC179309B1006E912F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF16BDB179309B1006E912F /* QuartzCore.framework */; };
+		DD970CC61AA11702003CF0C8 /* CubeNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD970CC51AA11702003CF0C8 /* CubeNavigationController.m */; };
+		DDA7D80E1AA103B200265233 /* PixelateNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA7D80D1AA103B200265233 /* PixelateNavigationController.m */; };
+		DDA7D8121AA1061300265233 /* GridBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA7D8111AA1061300265233 /* GridBaseNavigationController.m */; };
+		DDA7D8151AA1076300265233 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA7D8141AA1076300265233 /* BaseNavigationController.m */; };
+		DDA7D8191AA1087D00265233 /* TransitionViewControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA7D8181AA1087D00265233 /* TransitionViewControllerDelegate.m */; };
+		DDA7D81C1AA10AA900265233 /* BaseControllerAnimatedTransitioningDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA7D81B1AA10AA900265233 /* BaseControllerAnimatedTransitioningDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,8 +55,8 @@
 		3CCCEAD817B4E0A800750A12 /* UINavigationController+ABExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+ABExtras.m"; sourceTree = "<group>"; };
 		3CCCEAD917B4E0A800750A12 /* UIView+ABExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ABExtras.h"; sourceTree = "<group>"; };
 		3CCCEADA17B4E0A800750A12 /* UIView+ABExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ABExtras.m"; sourceTree = "<group>"; };
-		3CCCEADC17B4E0A800750A12 /* CubeNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubeNavigationController.h; sourceTree = "<group>"; };
-		3CCCEADD17B4E0A800750A12 /* CubeNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CubeNavigationController.m; sourceTree = "<group>"; };
+		3CCCEADC17B4E0A800750A12 /* CubeAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubeAnimator.h; sourceTree = "<group>"; };
+		3CCCEADD17B4E0A800750A12 /* CubeAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CubeAnimator.m; sourceTree = "<group>"; };
 		3CCCEADF17B4E0A800750A12 /* FlipSquaresNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipSquaresNavigationController.h; sourceTree = "<group>"; };
 		3CCCEAE017B4E0A800750A12 /* FlipSquaresNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipSquaresNavigationController.m; sourceTree = "<group>"; };
 		3CCCEAE917B4E0F800750A12 /* ABCustomUINavigationController-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ABCustomUINavigationController-Prefix.pch"; sourceTree = "<group>"; };
@@ -85,6 +91,18 @@
 		3CF16BB717930123006E912F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3CF16BB917930123006E912F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3CF16BDB179309B1006E912F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DD970CC41AA11702003CF0C8 /* CubeNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubeNavigationController.h; sourceTree = "<group>"; };
+		DD970CC51AA11702003CF0C8 /* CubeNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CubeNavigationController.m; sourceTree = "<group>"; };
+		DDA7D80C1AA103B200265233 /* PixelateNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PixelateNavigationController.h; sourceTree = "<group>"; };
+		DDA7D80D1AA103B200265233 /* PixelateNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PixelateNavigationController.m; sourceTree = "<group>"; };
+		DDA7D8101AA1061300265233 /* GridBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GridBaseNavigationController.h; path = GridBaseNavigation/GridBaseNavigationController.h; sourceTree = "<group>"; };
+		DDA7D8111AA1061300265233 /* GridBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GridBaseNavigationController.m; path = GridBaseNavigation/GridBaseNavigationController.m; sourceTree = "<group>"; };
+		DDA7D8131AA1076300265233 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		DDA7D8141AA1076300265233 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		DDA7D8171AA1087D00265233 /* TransitionViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionViewControllerDelegate.h; sourceTree = "<group>"; };
+		DDA7D8181AA1087D00265233 /* TransitionViewControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionViewControllerDelegate.m; sourceTree = "<group>"; };
+		DDA7D81A1AA10AA900265233 /* BaseControllerAnimatedTransitioningDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseControllerAnimatedTransitioningDelegate.h; sourceTree = "<group>"; };
+		DDA7D81B1AA10AA900265233 /* BaseControllerAnimatedTransitioningDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseControllerAnimatedTransitioningDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,9 +123,8 @@
 		3CCCEAD117B4E0A800750A12 /* CustomUINavigationController */ = {
 			isa = PBXGroup;
 			children = (
+				DDA7D8161AA1077000265233 /* NavigationClasses */,
 				3CCCEAD217B4E0A800750A12 /* Categories */,
-				3CCCEADB17B4E0A800750A12 /* CubeNavigation */,
-				3CCCEADE17B4E0A800750A12 /* SquaresFlipNavigation */,
 			);
 			path = CustomUINavigationController;
 			sourceTree = "<group>";
@@ -130,8 +147,10 @@
 		3CCCEADB17B4E0A800750A12 /* CubeNavigation */ = {
 			isa = PBXGroup;
 			children = (
-				3CCCEADC17B4E0A800750A12 /* CubeNavigationController.h */,
-				3CCCEADD17B4E0A800750A12 /* CubeNavigationController.m */,
+				3CCCEADC17B4E0A800750A12 /* CubeAnimator.h */,
+				3CCCEADD17B4E0A800750A12 /* CubeAnimator.m */,
+				DD970CC41AA11702003CF0C8 /* CubeNavigationController.h */,
+				DD970CC51AA11702003CF0C8 /* CubeNavigationController.m */,
 			);
 			path = CubeNavigation;
 			sourceTree = "<group>";
@@ -232,6 +251,41 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DDA7D80B1AA103B200265233 /* PixelateNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				DDA7D80C1AA103B200265233 /* PixelateNavigationController.h */,
+				DDA7D80D1AA103B200265233 /* PixelateNavigationController.m */,
+			);
+			path = PixelateNavigation;
+			sourceTree = "<group>";
+		};
+		DDA7D80F1AA105D900265233 /* GridBaseNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				DDA7D8101AA1061300265233 /* GridBaseNavigationController.h */,
+				DDA7D8111AA1061300265233 /* GridBaseNavigationController.m */,
+				DDA7D80B1AA103B200265233 /* PixelateNavigation */,
+				3CCCEADE17B4E0A800750A12 /* SquaresFlipNavigation */,
+			);
+			name = GridBaseNavigation;
+			sourceTree = "<group>";
+		};
+		DDA7D8161AA1077000265233 /* NavigationClasses */ = {
+			isa = PBXGroup;
+			children = (
+				DDA7D8131AA1076300265233 /* BaseNavigationController.h */,
+				DDA7D8141AA1076300265233 /* BaseNavigationController.m */,
+				DDA7D8171AA1087D00265233 /* TransitionViewControllerDelegate.h */,
+				DDA7D8181AA1087D00265233 /* TransitionViewControllerDelegate.m */,
+				DDA7D81A1AA10AA900265233 /* BaseControllerAnimatedTransitioningDelegate.h */,
+				DDA7D81B1AA10AA900265233 /* BaseControllerAnimatedTransitioningDelegate.m */,
+				3CCCEADB17B4E0A800750A12 /* CubeNavigation */,
+				DDA7D80F1AA105D900265233 /* GridBaseNavigation */,
+			);
+			name = NavigationClasses;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -310,15 +364,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CCCEAE117B4E0A800750A12 /* NSObject+ABExtras.m in Sources */,
+				DD970CC61AA11702003CF0C8 /* CubeNavigationController.m in Sources */,
 				3CCCEAE217B4E0A800750A12 /* UIImageView+ABExtras.m in Sources */,
 				3CCCEAE317B4E0A800750A12 /* UINavigationController+ABExtras.m in Sources */,
+				DDA7D81C1AA10AA900265233 /* BaseControllerAnimatedTransitioningDelegate.m in Sources */,
+				DDA7D8191AA1087D00265233 /* TransitionViewControllerDelegate.m in Sources */,
 				3CCCEAE417B4E0A800750A12 /* UIView+ABExtras.m in Sources */,
-				3CCCEAE517B4E0A800750A12 /* CubeNavigationController.m in Sources */,
+				3CCCEAE517B4E0A800750A12 /* CubeAnimator.m in Sources */,
+				DDA7D80E1AA103B200265233 /* PixelateNavigationController.m in Sources */,
 				3CCCEAE617B4E0A800750A12 /* FlipSquaresNavigationController.m in Sources */,
 				3CCCEB0817B4E0F800750A12 /* AppDelegate.m in Sources */,
+				DDA7D8151AA1076300265233 /* BaseNavigationController.m in Sources */,
 				3CCCEB1317B4E0F800750A12 /* main.m in Sources */,
 				3CCCEB1417B4E0F800750A12 /* SecondViewController.m in Sources */,
 				3CCCEB1517B4E0F800750A12 /* ThirthViewController.m in Sources */,
+				DDA7D8121AA1061300265233 /* GridBaseNavigationController.m in Sources */,
 				3CCCEB1617B4E0F800750A12 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

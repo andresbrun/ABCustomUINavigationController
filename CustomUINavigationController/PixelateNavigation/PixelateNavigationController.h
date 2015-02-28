@@ -1,5 +1,5 @@
 //
-//  FlipSquaresNavigationController.h
+//  PixelateNavigationController.h
 //  SquaresFlipNavigationExample
 //
 //  Created by Andrés Brun on 7/14/13.
@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "GridBaseNavigationController.h"
 
-@interface FlipSquaresNavigationController : GridBaseNavigationController
+@interface PixelateNavigationController : GridBaseNavigationController
 
 @end

@@ -1,12 +1,12 @@
 ////
-////  FlipSquaresNavigationController.m
+////  PixelateNavigationController.m
 ////  SquaresFlipNavigationExample
 ////
 ////  Created by Andrés Brun on 7/14/13.
 ////  Copyright (c) 2013 Andrés Brun. All rights reserved.
 ////
 //
-//#import "FlipSquaresNavigationController.h"
+//#import "PixelateNavigationController.h"
 //#import <QuartzCore/QuartzCore.h>
 //
 //#import "NSObject+ABExtras.h"
@@ -17,11 +17,11 @@
 //#define ARC4RANDOM_MAX 0x100000000
 //
 ////Configure params
-//#define SQUARE_ROWS 5
-//#define SQUARE_COLUMNS 8
+//#define SQUARE_ROWS 25
+//#define SQUARE_COLUMNS 28
 //#define TIME_ANIMATION 1.0
 //
-//@interface FlipSquaresNavigationController (){
+//@interface PixelateNavigationController () {
 //    NSMutableArray *fromViewImagesArray;
 //    NSMutableArray *toViewImagesArray;
 //    BOOL pushingVC;
@@ -40,30 +40,18 @@
 //
 //@end
 //
-//@implementation FlipSquaresNavigationController
+//@implementation PixelateNavigationController
 //
-//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-//{
+//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 //    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 //    if (self) {
-//        // Custom initialization
 //        self.sortMethod = FSNavSortMethodHorizontal;
 //    }
 //    return self;
 //}
 //
-//- (void)viewDidLoad
-//{
-//    [super viewDidLoad];
-//}
-//
-//- (void)didReceiveMemoryWarning
-//{
-//    [super didReceiveMemoryWarning];
-//}
 //
 //#pragma mark - Overwrite UINavigationController methods
-//
 //-(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 //{
 //    pushingVC=YES;
@@ -71,7 +59,7 @@
 //    if (animated) {
 //        
 //        UIViewController *currentVC = [self visibleViewController];
-//
+//        
 //        UIImageView *fromImageView = [currentVC.view imageInNavController:self];
 //        
 //        //Issue with autosizing, we nned to set the frame before take the image
@@ -84,7 +72,7 @@
 //            
 //            //Do the push
 //            [super pushViewController:viewController animated:NO];
-//
+//            
 //            [currentVC.view setAlpha:1.0];
 //            
 //        }];
@@ -133,7 +121,7 @@
 //    }else{
 //        return [super popViewControllerAnimated:animated];
 //    }
-//
+//    
 //}
 //
 //- (NSArray *)popToRootViewControllerAnimated:(BOOL)animated
@@ -219,7 +207,7 @@
 //            CGRect currentRect = CGRectMake(row*rowsWidth,col*columnsHeight,rowsWidth,columnsHeight);
 //            UIView *fromView =[[fromImage createCrop:currentRect] createView];
 //            UIView *toView =[[toImage createCrop:currentRect] createView];
-//
+//            
 //            [fromViewImagesArray addObject:fromView];
 //            [toViewImagesArray addObject:toView];
 //        }
@@ -229,7 +217,7 @@
 //    for (UIView *currentView in fromViewImagesArray) {
 //        [self.view addSubview:currentView];
 //    }
-//        
+//    
 //    //Create a array with all the number and unsort after
 //    NSMutableArray *orderArray = [NSMutableArray array];
 //    for (int i=0; i<[toViewImagesArray count]; i++) {
@@ -244,33 +232,19 @@
 //        
 //        UIView *fromViewCrop = [fromViewImagesArray objectAtIndex:[currentPos intValue]];
 //        UIView *toViewCrop = [toViewImagesArray objectAtIndex:[currentPos intValue]];
-//    
+//        
 //        //we "order" the delays for sort the animation in time
 //        float ratio = posIndex/([orderArray count]*1.0);
 //        float delay = [self getRandomFloat01]*TIME_ANIMATION*0.4*ratio + TIME_ANIMATION*0.3*ratio;//Random + Fix -> MAX 70% of TIME_ANIMATION
-//        //NSLog(@"PosIndex: %d Element: %d delay: %f", posIndex, [currentPos intValue], delay);
+//
 //        maxDelay = MAX(delay, maxDelay);
 //        [self performBlock:^{
-//            
-//            CAGradientLayer *fromGradient = [fromViewCrop addLinearGradientWithColor:[UIColor blackColor] transparentToOpaque:YES];
-//            CAGradientLayer *toGradient = [fromViewCrop addLinearGradientWithColor:[UIColor blackColor] transparentToOpaque:YES];
-//            
-//            [fromGradient setOpacity:1.0];
-//            [toGradient setOpacity:0.0];
 //            [UIView animateWithDuration:TIME_ANIMATION*0.3 animations:^{
-//                [fromGradient setOpacity:0.0];
-//                [toGradient setOpacity:1.0];
+//                [fromViewCrop setAlpha:0.0];
+//                [toViewCrop setAlpha:1.0];
 //            }];
-//            
-//            [UIView transitionFromView:[fromViewCrop viewWithTag:TAG_IMAGE_VIEW]
-//                                toView:[toViewCrop viewWithTag:TAG_IMAGE_VIEW]
-//                              duration:TIME_ANIMATION*0.3
-//                               options:options
-//                            completion:^(BOOL finished) {
-//                                
-//                            }];
+//
 //        } afterDelay:delay];
-//        
 //    }
 //    
 //    //Perform the completion when the animation is finished. Calculate that with the 30% remain of TIME_ANIMATION
@@ -280,19 +254,17 @@
 //        
 //        completion();
 //    } afterDelay:maxDelay+TIME_ANIMATION*0.5];
-//
+//    
 //}
 //
 //
 //#pragma mark - Auxiliar methods
-//- (float) getRandomFloat01
-//{
+//- (float) getRandomFloat01 {
 //    return ((double)arc4random() / ARC4RANDOM_MAX);
 //}
 //
 //
-//- (void) releaseImagesArray
-//{
+//- (void) releaseImagesArray {
 //    //Clean the others views
 //    for (UIImageView *currentView in fromViewImagesArray) {
 //        [[currentView viewWithTag:TAG_IMAGE_VIEW] removeFromSuperview];
@@ -312,8 +284,7 @@
 //}
 //
 //#pragma mark - Sort Array methods
-//- (NSMutableArray *)shuffleArray: (NSMutableArray *)array
-//{
+//- (NSMutableArray *)shuffleArray: (NSMutableArray *)array {
 //    switch (self.sortMethod) {
 //        case FSNavSortMethodRandom:{
 //            array=[self sortRandomArray:array];
@@ -332,8 +303,7 @@
 ///**
 // Sort the elements randomly
 // */
-//- (NSMutableArray *) sortRandomArray:(NSMutableArray *)array
-//{
+//- (NSMutableArray *) sortRandomArray:(NSMutableArray *)array {
 //    NSUInteger count = [array count];
 //    for (NSUInteger i = 0; i < count; ++i) {
 //        // Select a random element between i and end of array to swap with.
@@ -348,8 +318,7 @@
 ///**
 // Sort the elements for colums
 // */
-//- (NSMutableArray *) sortFrom: (BOOL) leftToRight array: (NSMutableArray *) array
-//{
+//- (NSMutableArray *) sortFrom: (BOOL) leftToRight array: (NSMutableArray *) array {
 //    NSMutableArray *sortedArray = [NSMutableArray array];
 //    
 //    //Get an array sort the elements by columns
