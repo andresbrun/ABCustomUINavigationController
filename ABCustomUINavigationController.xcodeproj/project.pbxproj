@@ -44,6 +44,11 @@
 		DD3C77711AA257A500D425B1 /* GridBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3C77651AA257A500D425B1 /* GridBaseNavigationController.m */; };
 		DD3C77721AA257A500D425B1 /* PixelateNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3C77681AA257A500D425B1 /* PixelateNavigationController.m */; };
 		DD3C77731AA257A500D425B1 /* FlipSquaresNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3C776B1AA257A500D425B1 /* FlipSquaresNavigationController.m */; };
+		DD3C77791AA259F000D425B1 /* GridBaseAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3C77781AA259F000D425B1 /* GridBaseAnimator.m */; };
+		DD3C777C1AA25A8200D425B1 /* PixelateGridAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3C777B1AA25A8200D425B1 /* PixelateGridAnimator.m */; };
+		DD3C77831AA25CD200D425B1 /* NSArrayMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3C77821AA25CD200D425B1 /* NSArrayMatrix.m */; };
+		DD3C77891AA261D300D425B1 /* NSNumber+ABGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3C77881AA261D300D425B1 /* NSNumber+ABGenerator.m */; };
+		DD3C77931AA3192400D425B1 /* FlipSquaresGridAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3C77921AA3192400D425B1 /* FlipSquaresGridAnimator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +108,16 @@
 		DD3C77681AA257A500D425B1 /* PixelateNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PixelateNavigationController.m; sourceTree = "<group>"; };
 		DD3C776A1AA257A500D425B1 /* FlipSquaresNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipSquaresNavigationController.h; sourceTree = "<group>"; };
 		DD3C776B1AA257A500D425B1 /* FlipSquaresNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipSquaresNavigationController.m; sourceTree = "<group>"; };
+		DD3C77771AA259F000D425B1 /* GridBaseAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridBaseAnimator.h; sourceTree = "<group>"; };
+		DD3C77781AA259F000D425B1 /* GridBaseAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridBaseAnimator.m; sourceTree = "<group>"; };
+		DD3C777A1AA25A8200D425B1 /* PixelateGridAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PixelateGridAnimator.h; sourceTree = "<group>"; };
+		DD3C777B1AA25A8200D425B1 /* PixelateGridAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PixelateGridAnimator.m; sourceTree = "<group>"; };
+		DD3C77811AA25CD200D425B1 /* NSArrayMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArrayMatrix.h; sourceTree = "<group>"; };
+		DD3C77821AA25CD200D425B1 /* NSArrayMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayMatrix.m; sourceTree = "<group>"; };
+		DD3C77871AA261D300D425B1 /* NSNumber+ABGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+ABGenerator.h"; sourceTree = "<group>"; };
+		DD3C77881AA261D300D425B1 /* NSNumber+ABGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+ABGenerator.m"; sourceTree = "<group>"; };
+		DD3C77911AA3192400D425B1 /* FlipSquaresGridAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipSquaresGridAnimator.h; sourceTree = "<group>"; };
+		DD3C77921AA3192400D425B1 /* FlipSquaresGridAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipSquaresGridAnimator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +138,7 @@
 		3CCCEAD117B4E0A800750A12 /* CustomUINavigationController */ = {
 			isa = PBXGroup;
 			children = (
+				DD3C77801AA25CA300D425B1 /* Classes */,
 				DD3C77571AA257A500D425B1 /* NavigationClasses */,
 				3CCCEAD217B4E0A800750A12 /* Categories */,
 			);
@@ -234,12 +250,12 @@
 		DD3C77571AA257A500D425B1 /* NavigationClasses */ = {
 			isa = PBXGroup;
 			children = (
-				DD3C77581AA257A500D425B1 /* BaseControllerAnimatedTransitioningDelegate.h */,
-				DD3C77591AA257A500D425B1 /* BaseControllerAnimatedTransitioningDelegate.m */,
 				DD3C775A1AA257A500D425B1 /* BaseNavigationController.h */,
 				DD3C775B1AA257A500D425B1 /* BaseNavigationController.m */,
 				DD3C775C1AA257A500D425B1 /* BaseNavigationControllerDelegate.h */,
 				DD3C775D1AA257A500D425B1 /* BaseNavigationControllerDelegate.m */,
+				DD3C77581AA257A500D425B1 /* BaseControllerAnimatedTransitioningDelegate.h */,
+				DD3C77591AA257A500D425B1 /* BaseControllerAnimatedTransitioningDelegate.m */,
 				DD3C775E1AA257A500D425B1 /* CubeNavigation */,
 				DD3C77631AA257A500D425B1 /* GridBaseNavigation */,
 			);
@@ -262,6 +278,8 @@
 			children = (
 				DD3C77641AA257A500D425B1 /* GridBaseNavigationController.h */,
 				DD3C77651AA257A500D425B1 /* GridBaseNavigationController.m */,
+				DD3C77771AA259F000D425B1 /* GridBaseAnimator.h */,
+				DD3C77781AA259F000D425B1 /* GridBaseAnimator.m */,
 				DD3C77661AA257A500D425B1 /* PixelateNavigation */,
 				DD3C77691AA257A500D425B1 /* SquaresFlipNavigation */,
 			);
@@ -273,6 +291,8 @@
 			children = (
 				DD3C77671AA257A500D425B1 /* PixelateNavigationController.h */,
 				DD3C77681AA257A500D425B1 /* PixelateNavigationController.m */,
+				DD3C777A1AA25A8200D425B1 /* PixelateGridAnimator.h */,
+				DD3C777B1AA25A8200D425B1 /* PixelateGridAnimator.m */,
 			);
 			path = PixelateNavigation;
 			sourceTree = "<group>";
@@ -282,8 +302,21 @@
 			children = (
 				DD3C776A1AA257A500D425B1 /* FlipSquaresNavigationController.h */,
 				DD3C776B1AA257A500D425B1 /* FlipSquaresNavigationController.m */,
+				DD3C77911AA3192400D425B1 /* FlipSquaresGridAnimator.h */,
+				DD3C77921AA3192400D425B1 /* FlipSquaresGridAnimator.m */,
 			);
 			path = SquaresFlipNavigation;
+			sourceTree = "<group>";
+		};
+		DD3C77801AA25CA300D425B1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DD3C77811AA25CD200D425B1 /* NSArrayMatrix.h */,
+				DD3C77821AA25CD200D425B1 /* NSArrayMatrix.m */,
+				DD3C77871AA261D300D425B1 /* NSNumber+ABGenerator.h */,
+				DD3C77881AA261D300D425B1 /* NSNumber+ABGenerator.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,21 +398,26 @@
 			files = (
 				DD3C77731AA257A500D425B1 /* FlipSquaresNavigationController.m in Sources */,
 				DD3C776F1AA257A500D425B1 /* CubeAnimator.m in Sources */,
+				DD3C77931AA3192400D425B1 /* FlipSquaresGridAnimator.m in Sources */,
 				3CCCEAE117B4E0A800750A12 /* NSObject+ABExtras.m in Sources */,
 				DD3C776D1AA257A500D425B1 /* BaseNavigationController.m in Sources */,
+				DD3C77891AA261D300D425B1 /* NSNumber+ABGenerator.m in Sources */,
 				3CCCEAE217B4E0A800750A12 /* UIImageView+ABExtras.m in Sources */,
 				DD3C776E1AA257A500D425B1 /* BaseNavigationControllerDelegate.m in Sources */,
+				DD3C77831AA25CD200D425B1 /* NSArrayMatrix.m in Sources */,
 				3CCCEAE317B4E0A800750A12 /* UINavigationController+ABExtras.m in Sources */,
 				3CCCEAE417B4E0A800750A12 /* UIView+ABExtras.m in Sources */,
 				3CCCEB0817B4E0F800750A12 /* AppDelegate.m in Sources */,
 				DD3C77711AA257A500D425B1 /* GridBaseNavigationController.m in Sources */,
 				DD3C77721AA257A500D425B1 /* PixelateNavigationController.m in Sources */,
+				DD3C77791AA259F000D425B1 /* GridBaseAnimator.m in Sources */,
 				DD3C77701AA257A500D425B1 /* CubeNavigationController.m in Sources */,
 				3CCCEB1317B4E0F800750A12 /* main.m in Sources */,
 				DD3C776C1AA257A500D425B1 /* BaseControllerAnimatedTransitioningDelegate.m in Sources */,
 				3CCCEB1417B4E0F800750A12 /* SecondViewController.m in Sources */,
 				3CCCEB1517B4E0F800750A12 /* ThirthViewController.m in Sources */,
 				3CCCEB1617B4E0F800750A12 /* ViewController.m in Sources */,
+				DD3C777C1AA25A8200D425B1 /* PixelateGridAnimator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

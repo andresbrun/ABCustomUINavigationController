@@ -16,7 +16,7 @@
  */
 - (CAGradientLayer *)addLinearGradientWithColor:(UIColor *)theColor transparentToOpaque:(BOOL)transparentToOpaque;
 /**
- Methot that capture a image from that view
+ Method that capture a image from that view
  */
 - (UIImageView *) imageInNavController: (UINavigationController *) navController;
 - (UIView *) createSnapshotView;
@@ -24,5 +24,20 @@
  Method that adds a view with color in that view
  */
 - (UIView *)addOpacityWithColor:(UIColor *)theColor;
+
+/**
+ Method that generate a new view adding self as subview
+ */
+- (UIView *)embedView;
+
+/**
+ Method that return the embedded view if exists
+ */
+- (UIView *)getEmbeddedView;
+
+/**
+ Method that generate a new view by cropping an area
+ */
+- (UIView *)viewByCroppingInRect:(CGRect)rect;
 
 @end

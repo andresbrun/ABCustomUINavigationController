@@ -12,13 +12,13 @@
 
 @interface UIImageView (ABExtras)
 
-/**
- Methot that create a crop image from that imageView
- */
-- (UIImageView *) createCrop: (CGRect) crop;
-/**
- Method that crates a view that contains that ImageView
- */
-- (UIView *)createView;
+///**
+// Methot that create a crop image from that imageView
+// */
+//- (UIImageView *) createCrop: (CGRect) crop;
+///**
+// Method that crates a view that contains that ImageView
+// */
+//- (UIView *)createView;
 
 @end

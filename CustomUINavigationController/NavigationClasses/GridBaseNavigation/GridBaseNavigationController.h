@@ -7,12 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseControllerAnimatedTransitioningDelegate.h"
+#import "BaseNavigationController.h"
 
-typedef enum {FSNavSortMethodRandom, FSNavSortMethodHorizontal} FSNavSortMethod;
-
-@interface GridBaseNavigationController : BaseControllerAnimatedTransitioningDelegate
-
-@property (nonatomic, assign) FSNavSortMethod sortMethod;
+@interface GridBaseNavigationController : BaseNavigationController
 
 @end

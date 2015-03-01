@@ -9,6 +9,8 @@
 #import "UIView+ABExtras.h"
 #import "UINavigationController+ABExtras.h"
 
+const NSInteger TAG_EMBEDDED_VIEW = 999;
+
 @implementation UIView (ABExtras)
 
 - (CAGradientLayer *)addLinearGradientWithColor:(UIColor *)theColor transparentToOpaque:(BOOL)transparentToOpaque
@@ -55,6 +57,24 @@
     [self addSubview:shadowView];
     
     return shadowView;
+}
+
+- (UIView *)embedView
+{
+    UIView *newView = [[UIView alloc] initWithFrame:self.frame];
+    [self setTag:TAG_EMBEDDED_VIEW];
+    [self setFrame:self.bounds];
+    [newView addSubview:self];
+    
+    return newView;
+}
+
+- (UIView *)getEmbeddedView {
+    return [self viewWithTag:TAG_EMBEDDED_VIEW];
+}
+
+- (UIView *)viewByCroppingInRect:(CGRect)rect {
+    return [self resizableSnapshotViewFromRect:rect afterScreenUpdates:YES withCapInsets:UIEdgeInsetsZero];
 }
 
 - (UIImageView *) imageInNavController: (UINavigationController *) navController
