@@ -12,7 +12,6 @@ typedef void (^NSObjectPerformBlock)(id userObject);
 
 @interface NSObject (ABExtras)
 - (void)performBlock:(void (^)(void))block afterDelay:(NSTimeInterval)delay;
-- (void)performAfterDelay:(float)delay thisBlock:(void (^)(BOOL finished))completion;
 - (void)performBlockInBackground:(NSObjectPerformBlock)performBlock completion:(NSObjectPerformBlock)completionBlock userObject:(id)userObject;
 
 @end

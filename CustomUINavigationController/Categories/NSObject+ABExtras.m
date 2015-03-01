@@ -13,29 +13,10 @@
 - (void)performBlock:(void (^)(void))block
           afterDelay:(NSTimeInterval)delay
 {
-    block = [block copy];
-    [self performSelector:@selector(fireBlockAfterDelay:)
-               withObject:block
-               afterDelay:delay];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        block();
+    });
 }
-
-- (void)fireBlockAfterDelay:(void (^)(void))block {
-    block();
-}
-
-- (void)performAfterDelay:(float)delay thisBlock:(void (^)(BOOL finished))completion{
-    
-    [UIView animateWithDuration:delay
-                     animations: ^{
-                         
-                     }completion:^(BOOL finished) {
-                         
-                         if (completion) {
-                             completion(finished);
-                         }
-                     }];
-}
-
 
 - (void)performBlockInBackground:(NSObjectPerformBlock)performBlock completion:(NSObjectPerformBlock)completionBlock userObject:(id)userObject
 {
