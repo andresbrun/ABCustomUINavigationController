@@ -8,22 +8,21 @@
 
 #import "PixelateGridAnimator.h"
 
-#import "UIView+ABExtras.h"
-#import "NSNumber+ABGenerator.h"
-#import "NSArrayMatrix.h"
-#import "NSObject+ABExtras.h"
-
 @implementation PixelateGridAnimator
 
 - (NSUInteger)rowsNumber {
-    return 25;
+    return 20;
 }
 
 - (NSUInteger)columnsNumber {
-    return 28;
+    return 30;
 }
 
 - (void)animateFromCellView:(UIView *)fromCell toCellView:(UIView *)toCell inTime:(NSTimeInterval)time {
+    
+    [toCell setAlpha:0.0];
+    [self.containerView addSubview:toCell];
+    
     [UIView animateWithDuration:time animations:^{
         [fromCell setAlpha:0.0];
         [toCell setAlpha:1.0];

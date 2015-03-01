@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "ViewController.h"
+
 #import "FlipSquaresNavigationController.h"
 #import "CubeNavigationController.h"
 #import "PixelateNavigationController.h"
@@ -21,9 +22,9 @@
 
     self.viewController = [[ViewController alloc] initViewController];
     
-    self.window.rootViewController = [[CubeNavigationController alloc] initWithRootViewController:self.viewController];
+//    self.window.rootViewController = [[CubeNavigationController alloc] initWithRootViewController:self.viewController];
 //    self.window.rootViewController = [[FlipSquaresNavigationController alloc] initWithRootViewController:self.viewController];
-//    self.window.rootViewController = [[PixelateNavigationController alloc] initWithRootViewController:self.viewController];
+    self.window.rootViewController = [[PixelateNavigationController alloc] initWithRootViewController:self.viewController];
     
     [self.window makeKeyAndVisible];
     

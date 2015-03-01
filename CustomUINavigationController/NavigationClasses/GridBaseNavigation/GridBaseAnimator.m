@@ -14,8 +14,8 @@
 #import "NSNumber+ABGenerator.h"
 
 @interface GridBaseAnimator ()
-@property(nonatomic, strong) NSMutableArray *fromViewImagesArray;
-@property(nonatomic, strong) NSMutableArray *toViewImagesArray;
+@property(nonatomic, strong) NSMutableArray *fromGridCellViewArray;
+@property(nonatomic, strong) NSMutableArray *toGridCellViewArray;
 
 @property(nonatomic,strong) NSArrayMatrix *orderMatrix;
 
@@ -25,11 +25,11 @@
 @implementation GridBaseAnimator
 
 - (NSUInteger)rowsNumber {
-    return 25;
+    return 5;
 }
 
 - (NSUInteger)columnsNumber {
-    return 28;
+    return 5;
 }
 
 - (void)animateWithCompletion:(void (^)(void))completion {
@@ -37,13 +37,14 @@
     
     [self setUpOrderMatrix];
     
-    [self createGridViews];
-    [self addFromGridViewsToContainer];
-    
-    CGFloat maxDelay = [self doAnimation];
-    
-    [self finishAnimationWithDelay:maxDelay];
-    
+    // Need to do this in order to get a proper snapshot, otherwise I get an empty view.
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self createGridViews];
+        [self addFromGridViewsToContainer];
+        [self hideSourceView];
+        [self doAnimation];
+        [self finishAnimation];
+    });
 }
 
 - (void)setUpOrderMatrix {
@@ -69,16 +70,20 @@
 }
 
 - (void)createGridViews {
-    self.fromViewImagesArray = [NSMutableArray array];
-    self.toViewImagesArray = [NSMutableArray array];
+    self.fromGridCellViewArray = [NSMutableArray array];
+    self.toGridCellViewArray = [NSMutableArray array];
     
     [self.orderMatrix iterateOverElementsWithBlock:^(NSUInteger row, NSUInteger col) {
         CGRect croppedRect = [self gridCellRectForRow:row column:col];
         UIView *fromViewCrop = [[self.fromView viewByCroppingInRect:croppedRect] embedView];
         UIView *toViewCrop = [[self.toView viewByCroppingInRect:croppedRect] embedView];
         
-        [self.fromViewImagesArray addObject:fromViewCrop];
-        [self.toViewImagesArray addObject:toViewCrop];
+        [fromViewCrop setFrame:croppedRect];
+        [toViewCrop setFrame:croppedRect];
+
+        [self.fromGridCellViewArray addObject:fromViewCrop];
+        [self.toGridCellViewArray addObject:toViewCrop];
+        
     }];
 }
 
@@ -92,27 +97,33 @@
     return croppedRect;
 }
 
+- (void)hideSourceView {
+    [self.fromView setHidden:YES];
+}
+
+- (void)restoreSourceView {
+    [self.fromView setHidden:NO];
+}
+
 - (void)addFromGridViewsToContainer {
-    for (UIView *currentView in self.fromViewImagesArray) {
+    for (UIView *currentView in self.fromGridCellViewArray) {
         [self.containerView addSubview:currentView];
     }
 }
 
-- (CGFloat)doAnimation {
-    float maxDelay=0;
+- (void)doAnimation {
+    float cellAnimationTime = self.animationDuration*0.3;
+    
     for (NSNumber *currentPos in self.orderMatrix.elements) {
         NSInteger posIndex = [self.orderMatrix.elements indexOfObject:currentPos];
-        UIView *fromViewCrop = [self.fromViewImagesArray objectAtIndex:[currentPos intValue]];
-        UIView *toViewCrop = [self.toViewImagesArray objectAtIndex:[currentPos intValue]];
+        UIView *fromViewCrop = [self.fromGridCellViewArray objectAtIndex:[currentPos intValue]];
+        UIView *toViewCrop = [self.toGridCellViewArray objectAtIndex:[currentPos intValue]];
         NSTimeInterval delay = [self calculateDelayForIndex:posIndex];
         
-        maxDelay = MAX(delay, maxDelay);
         [self performBlock:^{
-            [self animateFromCellView:fromViewCrop toCellView:toViewCrop inTime:self.animationDuration*0.3];
+            [self animateFromCellView:fromViewCrop toCellView:toViewCrop inTime:cellAnimationTime];
         } afterDelay:delay];
     }
-    
-    return maxDelay;
 }
 
 - (NSTimeInterval)calculateDelayForIndex:(NSUInteger)posIndex {
@@ -128,23 +139,23 @@
     NSAssert(YES, @"This methos has to be inherated in order to get some animation");
 }
 
-- (void)finishAnimationWithDelay:(CGFloat)maxDelay {
-    NSTimeInterval safesDelay = maxDelay+self.animationDuration*0.5;
-    //Perform the completion when the animation is finished. Calculate that with the 50% remain of TIME_ANIMATION
+- (void)finishAnimation {
     [self performBlock:^{
+        [self.fromView setAlpha:1.0];
         [self releaseImagesArray];
+        [self restoreSourceView];
         self.completionBlock();
-    } afterDelay:safesDelay];
+    } afterDelay:self.animationDuration];
 }
 
 #pragma mark - Auxiliar methods
 - (void) releaseImagesArray {
     //Clean the others views
-    for (UIImageView *currentView in self.fromViewImagesArray) {
+    for (UIImageView *currentView in self.fromGridCellViewArray) {
         [[currentView getEmbeddedView] removeFromSuperview];
         [currentView removeFromSuperview];
     }
-    for (UIImageView *currentView in self.toViewImagesArray) {
+    for (UIImageView *currentView in self.toGridCellViewArray) {
         [UIView animateWithDuration:0.1 animations:^{
             [currentView setAlpha:0.0];
         }completion:^(BOOL finished) {
@@ -153,7 +164,7 @@
         }];
     }
     
-    [self.fromViewImagesArray removeAllObjects];
+    [self.fromGridCellViewArray removeAllObjects];
 }
 
 @end

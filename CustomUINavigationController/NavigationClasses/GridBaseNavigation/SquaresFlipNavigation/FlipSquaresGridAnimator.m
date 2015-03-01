@@ -9,15 +9,10 @@
 #import "FlipSquaresGridAnimator.h"
 #import "UIView+ABExtras.h"
 
-@interface FlipSquaresGridAnimator ()
-@property(nonatomic, strong) CAGradientLayer *fromGradient;
-@property(nonatomic, strong) CAGradientLayer *toGradient;
-@end
-
 @implementation FlipSquaresGridAnimator
 
 - (NSUInteger)columnsNumber {
-    return 8;
+    return 6;
 }
 
 - (NSUInteger)rowsNumber {
@@ -25,24 +20,19 @@
 }
  
 -(void)animateFromCellView:(UIView *)fromCell toCellView:(UIView *)toCell inTime:(NSTimeInterval)time {
-    self.fromGradient = [fromCell addLinearGradientWithColor:[UIColor blackColor] transparentToOpaque:YES];
-    self.toGradient = [toCell addLinearGradientWithColor:[UIColor blackColor] transparentToOpaque:YES];
+    CAGradientLayer *fromGradient = [fromCell addLinearGradientWithColor:[UIColor blackColor] transparentToOpaque:YES];
+    CAGradientLayer *toGradient = [toCell addLinearGradientWithColor:[UIColor blackColor] transparentToOpaque:YES];
     
-    [self animateLighting:self.fromGradient darking:self.toGradient inTime:time];
+    [self animateLighting:fromGradient darking:toGradient inTime:time];
     
     [UIView transitionFromView:[fromCell getEmbeddedView]
                         toView:[toCell getEmbeddedView]
                       duration:time
                        options:[self optionsFromFlip]
                     completion:^(BOOL finished) {
-                        [self removeShadowGradients];
+                        [fromGradient removeFromSuperlayer];
+                        [toGradient removeFromSuperlayer];
                     }];
-
-}
-
-- (void) removeShadowGradients {
-    [self.fromGradient removeFromSuperlayer];
-    [self.toGradient removeFromSuperlayer];
 }
 
 - (void) animateLighting:(CAGradientLayer *)fromGradient darking:(CAGradientLayer *)toGradient inTime:(NSTimeInterval)time {

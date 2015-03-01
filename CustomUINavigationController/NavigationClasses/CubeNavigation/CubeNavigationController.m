@@ -12,7 +12,6 @@
 @implementation CubeNavigationController
 
 - (BaseControllerAnimatedTransitioningDelegate *)createAnimatedTransitioningUsed {
-    // TODO: configure here the animator
     return [CubeAnimator new];
 }
 
