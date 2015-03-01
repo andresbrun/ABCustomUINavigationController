@@ -12,7 +12,9 @@
 @implementation FlipSquaresNavigationController
 
 - (BaseControllerAnimatedTransitioningDelegate *)createAnimatedTransitioningUsed {
-    return [FlipSquaresGridAnimator new];
+    FlipSquaresGridAnimator *animator = [FlipSquaresGridAnimator new];
+    [animator setSortMethod:ScanningSortMethodHorizontal];
+    return animator;
 }
 
 @end

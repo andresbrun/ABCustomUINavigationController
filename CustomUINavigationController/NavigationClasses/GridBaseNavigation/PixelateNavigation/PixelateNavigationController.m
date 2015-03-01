@@ -12,7 +12,9 @@
 @implementation PixelateNavigationController
 
 - (BaseControllerAnimatedTransitioningDelegate *)createAnimatedTransitioningUsed {
-    return [PixelateGridAnimator new];
+    PixelateGridAnimator *animator = [PixelateGridAnimator new];
+    [animator setSortMethod:ScanningSortMethodHorizontal];
+    return animator;
 }
 
 @end

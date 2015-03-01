@@ -23,8 +23,8 @@
     self.viewController = [[ViewController alloc] initViewController];
     
 //    self.window.rootViewController = [[CubeNavigationController alloc] initWithRootViewController:self.viewController];
-//    self.window.rootViewController = [[FlipSquaresNavigationController alloc] initWithRootViewController:self.viewController];
-    self.window.rootViewController = [[PixelateNavigationController alloc] initWithRootViewController:self.viewController];
+    self.window.rootViewController = [[FlipSquaresNavigationController alloc] initWithRootViewController:self.viewController];
+//    self.window.rootViewController = [[PixelateNavigationController alloc] initWithRootViewController:self.viewController];
     
     [self.window makeKeyAndVisible];
     
