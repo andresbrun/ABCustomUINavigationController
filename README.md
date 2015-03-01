@@ -8,7 +8,12 @@ ABCustomUINavigationController
 Subclass of UINavigationController for overwriting push and pop methods to create new transitions effects. Currently it has been implemented two transition animations:
 
 ### SquaresFlip 
-The screen is split in squares and each one rotates until showing the new controller. It has two animation variation: 
+The screen is split into squares and each one rotates until showing the new controller. It has two animation variations: 
+- Randomly 
+- Horizontally
+
+### Pixelate 
+The screen is split into pixels and each one fadeout displaying next view. It has two animation variations: 
 - Randomly 
 - Horizontally
 
@@ -38,7 +43,7 @@ or
     #import "CubeNavigationController.h"
     [[CubeNavigationController alloc] initWithRootViewController:self.viewController];
   
-and pushing and pop normally with navigation methods:
+and pushing and pop as usual using commons methods like:
 
     - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
     - (UIViewController *)popViewControllerAnimated:(BOOL)animated
