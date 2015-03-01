@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GridBaseNavigationController.h"
+#import "BaseNavigationController.h"
 
-@interface PixelateNavigationController : GridBaseNavigationController
+@interface PixelateNavigationController : BaseNavigationController
 
 @end

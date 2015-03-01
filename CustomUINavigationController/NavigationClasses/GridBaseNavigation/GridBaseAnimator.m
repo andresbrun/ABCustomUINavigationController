@@ -8,10 +8,11 @@
 
 #import "GridBaseAnimator.h"
 
-#import "NSArrayMatrix.h"
 #import "UIView+ABExtras.h"
 #import "NSObject+ABExtras.h"
 #import "NSNumber+ABGenerator.h"
+
+#import "NSArrayMatrix.h"
 
 @interface GridBaseAnimator ()
 @property(nonatomic, strong) NSMutableArray *fromGridCellViewArray;
@@ -164,14 +165,13 @@
 }
 
 - (void)finishAnimation {
-    [self releaseImagesArray];
+    [self removeCellViews];
     [self restoreSourceView];
     self.completionBlock();
 }
 
 #pragma mark - Auxiliar methods
-- (void) releaseImagesArray {
-    //Clean the others views
+- (void) removeCellViews {
     for (UIImageView *currentView in self.fromGridCellViewArray) {
         [[currentView getEmbeddedView] removeFromSuperview];
         [currentView removeFromSuperview];
@@ -186,6 +186,7 @@
     }
     
     [self.fromGridCellViewArray removeAllObjects];
+    [self.toGridCellViewArray removeAllObjects];
 }
 
 @end

@@ -8,10 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^NSObjectPerformBlock)(id userObject);
-
 @interface NSObject (ABExtras)
+
 - (void)performBlock:(void (^)(void))block afterDelay:(NSTimeInterval)delay;
-- (void)performBlockInBackground:(NSObjectPerformBlock)performBlock completion:(NSObjectPerformBlock)completionBlock userObject:(id)userObject;
 
 @end

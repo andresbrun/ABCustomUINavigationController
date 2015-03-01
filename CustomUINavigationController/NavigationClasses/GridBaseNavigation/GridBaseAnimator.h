@@ -16,8 +16,8 @@ typedef enum {
 @interface GridBaseAnimator : BaseControllerAnimatedTransitioningDelegate
 
 @property (nonatomic, assign) ScanningSortMethod sortMethod;
-@property (nonatomic, assign) NSUInteger rowsNumber;
-@property (nonatomic, assign) NSUInteger columnsNumber;
+@property (nonatomic, assign, readonly) NSUInteger rowsNumber;
+@property (nonatomic, assign, readonly) NSUInteger columnsNumber;
 
 - (void)animateFromCellView:(UIView *)fromCell
                  toCellView:(UIView *)toCell

@@ -7,7 +7,6 @@
 //
 
 #import "UIView+ABExtras.h"
-#import "UINavigationController+ABExtras.h"
 
 const NSInteger TAG_EMBEDDED_VIEW = 999;
 
@@ -42,7 +41,7 @@ const NSInteger TAG_EMBEDDED_VIEW = 999;
     //apply the colors and the gradient to the view
     gradient.colors = colors;
     
-    NSUInteger index = [self.layer.sublayers count];
+    unsigned index = (unsigned)[self.layer.sublayers count];
     [self.layer insertSublayer:gradient atIndex:index];
     
     return gradient;
@@ -75,26 +74,6 @@ const NSInteger TAG_EMBEDDED_VIEW = 999;
 
 - (UIView *)viewByCroppingInRect:(CGRect)rect {
     return [self resizableSnapshotViewFromRect:rect afterScreenUpdates:YES withCapInsets:UIEdgeInsetsZero];
-}
-
-- (UIImageView *) imageInNavController: (UINavigationController *) navController
-{
-    [self.layer setContentsScale:[[UIScreen mainScreen] scale]];
-    
-    UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.opaque, 1.0);
-    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
-    
-    CGContextSetInterpolationQuality(UIGraphicsGetCurrentContext(), kCGInterpolationHigh);
-    UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    UIImageView *currentView = [[UIImageView alloc] initWithImage: img];
-    
-    //Fix the position to handle status bar and navigation bar
-    float yPosition = [navController calculateYPosition];
-    [currentView setFrame:CGRectMake(0, yPosition, currentView.frame.size.width, currentView.frame.size.height)];
-    
-    return currentView;
 }
 
 - (UIView *) createSnapshotView

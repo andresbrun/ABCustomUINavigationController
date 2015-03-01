@@ -15,11 +15,12 @@
  Method that adds a gradient sublayer inthat view
  */
 - (CAGradientLayer *)addLinearGradientWithColor:(UIColor *)theColor transparentToOpaque:(BOOL)transparentToOpaque;
+
 /**
- Method that capture a image from that view
+ Create an snapshot view of the current view
  */
-- (UIImageView *) imageInNavController: (UINavigationController *) navController;
 - (UIView *) createSnapshotView;
+
 /**
  Method that adds a view with color in that view
  */

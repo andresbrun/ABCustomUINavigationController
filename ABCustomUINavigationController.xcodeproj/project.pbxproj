@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3CCCEAE117B4E0A800750A12 /* NSObject+ABExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCEAD417B4E0A800750A12 /* NSObject+ABExtras.m */; };
-		3CCCEAE217B4E0A800750A12 /* UIImageView+ABExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCEAD617B4E0A800750A12 /* UIImageView+ABExtras.m */; };
-		3CCCEAE317B4E0A800750A12 /* UINavigationController+ABExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCEAD817B4E0A800750A12 /* UINavigationController+ABExtras.m */; };
 		3CCCEAE417B4E0A800750A12 /* UIView+ABExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCEADA17B4E0A800750A12 /* UIView+ABExtras.m */; };
 		3CCCEB0817B4E0F800750A12 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCEAEB17B4E0F800750A12 /* AppDelegate.m */; };
 		3CCCEB0917B4E0F800750A12 /* bg_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCEAED17B4E0F800750A12 /* bg_1.jpg */; };
@@ -41,7 +39,6 @@
 		DD3C776E1AA257A500D425B1 /* BaseNavigationControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3C775D1AA257A500D425B1 /* BaseNavigationControllerDelegate.m */; };
 		DD3C776F1AA257A500D425B1 /* CubeAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3C77601AA257A500D425B1 /* CubeAnimator.m */; };
 		DD3C77701AA257A500D425B1 /* CubeNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3C77621AA257A500D425B1 /* CubeNavigationController.m */; };
-		DD3C77711AA257A500D425B1 /* GridBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3C77651AA257A500D425B1 /* GridBaseNavigationController.m */; };
 		DD3C77721AA257A500D425B1 /* PixelateNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3C77681AA257A500D425B1 /* PixelateNavigationController.m */; };
 		DD3C77731AA257A500D425B1 /* FlipSquaresNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3C776B1AA257A500D425B1 /* FlipSquaresNavigationController.m */; };
 		DD3C77791AA259F000D425B1 /* GridBaseAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3C77781AA259F000D425B1 /* GridBaseAnimator.m */; };
@@ -54,10 +51,6 @@
 /* Begin PBXFileReference section */
 		3CCCEAD317B4E0A800750A12 /* NSObject+ABExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ABExtras.h"; sourceTree = "<group>"; };
 		3CCCEAD417B4E0A800750A12 /* NSObject+ABExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ABExtras.m"; sourceTree = "<group>"; };
-		3CCCEAD517B4E0A800750A12 /* UIImageView+ABExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ABExtras.h"; sourceTree = "<group>"; };
-		3CCCEAD617B4E0A800750A12 /* UIImageView+ABExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ABExtras.m"; sourceTree = "<group>"; };
-		3CCCEAD717B4E0A800750A12 /* UINavigationController+ABExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+ABExtras.h"; sourceTree = "<group>"; };
-		3CCCEAD817B4E0A800750A12 /* UINavigationController+ABExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+ABExtras.m"; sourceTree = "<group>"; };
 		3CCCEAD917B4E0A800750A12 /* UIView+ABExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ABExtras.h"; sourceTree = "<group>"; };
 		3CCCEADA17B4E0A800750A12 /* UIView+ABExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ABExtras.m"; sourceTree = "<group>"; };
 		3CCCEAE917B4E0F800750A12 /* ABCustomUINavigationController-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ABCustomUINavigationController-Prefix.pch"; sourceTree = "<group>"; };
@@ -102,8 +95,6 @@
 		DD3C77601AA257A500D425B1 /* CubeAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CubeAnimator.m; sourceTree = "<group>"; };
 		DD3C77611AA257A500D425B1 /* CubeNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubeNavigationController.h; sourceTree = "<group>"; };
 		DD3C77621AA257A500D425B1 /* CubeNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CubeNavigationController.m; sourceTree = "<group>"; };
-		DD3C77641AA257A500D425B1 /* GridBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridBaseNavigationController.h; sourceTree = "<group>"; };
-		DD3C77651AA257A500D425B1 /* GridBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridBaseNavigationController.m; sourceTree = "<group>"; };
 		DD3C77671AA257A500D425B1 /* PixelateNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PixelateNavigationController.h; sourceTree = "<group>"; };
 		DD3C77681AA257A500D425B1 /* PixelateNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PixelateNavigationController.m; sourceTree = "<group>"; };
 		DD3C776A1AA257A500D425B1 /* FlipSquaresNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipSquaresNavigationController.h; sourceTree = "<group>"; };
@@ -150,10 +141,6 @@
 			children = (
 				3CCCEAD317B4E0A800750A12 /* NSObject+ABExtras.h */,
 				3CCCEAD417B4E0A800750A12 /* NSObject+ABExtras.m */,
-				3CCCEAD517B4E0A800750A12 /* UIImageView+ABExtras.h */,
-				3CCCEAD617B4E0A800750A12 /* UIImageView+ABExtras.m */,
-				3CCCEAD717B4E0A800750A12 /* UINavigationController+ABExtras.h */,
-				3CCCEAD817B4E0A800750A12 /* UINavigationController+ABExtras.m */,
 				3CCCEAD917B4E0A800750A12 /* UIView+ABExtras.h */,
 				3CCCEADA17B4E0A800750A12 /* UIView+ABExtras.m */,
 			);
@@ -276,8 +263,6 @@
 		DD3C77631AA257A500D425B1 /* GridBaseNavigation */ = {
 			isa = PBXGroup;
 			children = (
-				DD3C77641AA257A500D425B1 /* GridBaseNavigationController.h */,
-				DD3C77651AA257A500D425B1 /* GridBaseNavigationController.m */,
 				DD3C77771AA259F000D425B1 /* GridBaseAnimator.h */,
 				DD3C77781AA259F000D425B1 /* GridBaseAnimator.m */,
 				DD3C77661AA257A500D425B1 /* PixelateNavigation */,
@@ -402,13 +387,10 @@
 				3CCCEAE117B4E0A800750A12 /* NSObject+ABExtras.m in Sources */,
 				DD3C776D1AA257A500D425B1 /* BaseNavigationController.m in Sources */,
 				DD3C77891AA261D300D425B1 /* NSNumber+ABGenerator.m in Sources */,
-				3CCCEAE217B4E0A800750A12 /* UIImageView+ABExtras.m in Sources */,
 				DD3C776E1AA257A500D425B1 /* BaseNavigationControllerDelegate.m in Sources */,
 				DD3C77831AA25CD200D425B1 /* NSArrayMatrix.m in Sources */,
-				3CCCEAE317B4E0A800750A12 /* UINavigationController+ABExtras.m in Sources */,
 				3CCCEAE417B4E0A800750A12 /* UIView+ABExtras.m in Sources */,
 				3CCCEB0817B4E0F800750A12 /* AppDelegate.m in Sources */,
-				DD3C77711AA257A500D425B1 /* GridBaseNavigationController.m in Sources */,
 				DD3C77721AA257A500D425B1 /* PixelateNavigationController.m in Sources */,
 				DD3C77791AA259F000D425B1 /* GridBaseAnimator.m in Sources */,
 				DD3C77701AA257A500D425B1 /* CubeNavigationController.m in Sources */,

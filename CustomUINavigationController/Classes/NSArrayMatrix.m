@@ -41,9 +41,6 @@
 }
 
 #pragma mark - Random methods
-/**
- Sort the elements randomly
- */
 - (void)randomize {
     NSUInteger count = [self.elements count];
     for (NSUInteger i = 0; i < count; ++i) {
