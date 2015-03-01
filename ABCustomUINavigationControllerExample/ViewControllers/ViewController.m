@@ -17,8 +17,7 @@
 
 @implementation ViewController
 
-- (id)initViewController
-{
+- (id)initViewController {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         self = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
     } else {
@@ -28,27 +27,17 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     [self.navigationController setNavigationBarHidden:YES];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (BOOL)shouldAutorotate
-{
+- (BOOL)shouldAutorotate {
     return NO;
 }
 
--(NSUInteger)supportedInterfaceOrientations
-{
+-(NSUInteger)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskAll;
 }
 

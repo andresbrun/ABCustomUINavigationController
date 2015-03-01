@@ -7,11 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseNavigationController.h"
 
-typedef enum {FSNavSortMethodRandom, FSNavSortMethodHorizontal} FSNavSortMethod;
-
-@interface FlipSquaresNavigationController : UINavigationController
-
-@property (nonatomic, assign) FSNavSortMethod sortMethod;
+@interface FlipSquaresNavigationController : BaseNavigationController
 
 @end
