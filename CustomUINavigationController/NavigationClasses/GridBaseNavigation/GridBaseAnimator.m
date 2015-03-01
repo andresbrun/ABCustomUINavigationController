@@ -16,8 +16,7 @@
 @interface GridBaseAnimator ()
 @property(nonatomic, strong) NSMutableArray *fromGridCellViewArray;
 @property(nonatomic, strong) NSMutableArray *toGridCellViewArray;
-
-@property(nonatomic,strong) NSArrayMatrix *orderMatrix;
+@property(nonatomic, strong) NSArrayMatrix *orderMatrix;
 
 @property (nonatomic,copy)void (^completionBlock)();
 @end
@@ -36,15 +35,43 @@
     self.completionBlock = completion;
     
     [self setUpOrderMatrix];
+    [self startOperationsToAnimate];
+}
+
+- (void)startOperationsToAnimate {
+    NSInvocationOperation *createGridOperation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(createGridViews) object:nil];
+    [createGridOperation setQualityOfService:NSQualityOfServiceBackground];
     
-    // Need to do this in order to get a proper snapshot, otherwise I get an empty view.
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self createGridViews];
-        [self addFromGridViewsToContainer];
-        [self hideSourceView];
-        [self doAnimation];
-        [self finishAnimation];
-    });
+    NSInvocationOperation *prepareEnvironmentOperation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(prepareEnvironment) object:nil];
+    [prepareEnvironmentOperation setQualityOfService:NSQualityOfServiceBackground];
+    [prepareEnvironmentOperation addDependency:createGridOperation];
+    
+    NSInvocationOperation *animateOperation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(animate) object:nil];
+    [animateOperation setQualityOfService:NSQualityOfServiceUserInteractive];
+    [animateOperation addDependency:prepareEnvironmentOperation];
+    
+    [[NSOperationQueue mainQueue] addOperations:@[createGridOperation, prepareEnvironmentOperation, animateOperation] waitUntilFinished:NO];
+}
+
+- (void)createGridViews {
+    self.fromGridCellViewArray = [NSMutableArray array];
+    self.toGridCellViewArray = [NSMutableArray array];
+    
+    [self.orderMatrix iterateOverElementsWithBlock:^(NSUInteger row, NSUInteger col) {
+        CGRect croppedRect = [self gridCellRectForRow:row column:col];
+
+        UIView *fromViewCrop = [self createCellForView:self.fromView withRect:croppedRect];
+        UIView *toViewCrop = [self createCellForView:self.toView withRect:croppedRect];
+
+        [self.fromGridCellViewArray addObject:fromViewCrop];
+        [self.toGridCellViewArray addObject:toViewCrop];
+    }];
+}
+
+- (UIView *) createCellForView:(UIView *)view withRect:(CGRect)croppedRect {
+    UIView *viewCropped = [[view viewByCroppingInRect:croppedRect] embedView];
+    [viewCropped setFrame:croppedRect];
+    return viewCropped;
 }
 
 - (void)setUpOrderMatrix {
@@ -54,12 +81,23 @@
     [self shuffleOrderMatrix];
 }
 
+- (void)prepareEnvironment {
+    [self addFromGridViewsToContainer];
+    [self hideSourceView];
+}
+
+- (void)animate {
+    [self doAnimationWithCompletion:^{
+        [self finishAnimation];
+    }];
+}
+
 - (void)shuffleOrderMatrix {
     switch (self.sortMethod) {
-        case FSNavSortMethodRandom:
+        case ScanningSortMethodRandom:
             [self.orderMatrix randomize];
             break;
-        case FSNavSortMethodHorizontal:
+        case ScanningSortMethodHorizontal:
             if (self.presenting) {
                 [self.orderMatrix sortRightScanning];
             } else {
@@ -69,29 +107,11 @@
     }
 }
 
-- (void)createGridViews {
-    self.fromGridCellViewArray = [NSMutableArray array];
-    self.toGridCellViewArray = [NSMutableArray array];
-    
-    [self.orderMatrix iterateOverElementsWithBlock:^(NSUInteger row, NSUInteger col) {
-        CGRect croppedRect = [self gridCellRectForRow:row column:col];
-        UIView *fromViewCrop = [[self.fromView viewByCroppingInRect:croppedRect] embedView];
-        UIView *toViewCrop = [[self.toView viewByCroppingInRect:croppedRect] embedView];
-        
-        [fromViewCrop setFrame:croppedRect];
-        [toViewCrop setFrame:croppedRect];
-
-        [self.fromGridCellViewArray addObject:fromViewCrop];
-        [self.toGridCellViewArray addObject:toViewCrop];
-        
-    }];
-}
-
 - (CGRect)gridCellRectForRow:(NSUInteger)row column:(NSUInteger)column {
     float rowsWidth = self.fromView.frame.size.width / self.orderMatrix.rows;
     float columnsHeight = self.fromView.frame.size.height / self.orderMatrix.columns;
-    CGRect croppedRect = CGRectMake(row*rowsWidth,
-                                    column*columnsHeight,
+    CGRect croppedRect = CGRectMake(row * rowsWidth,
+                                    column * columnsHeight,
                                     rowsWidth,
                                     columnsHeight);
     return croppedRect;
@@ -111,7 +131,7 @@
     }
 }
 
-- (void)doAnimation {
+- (void)doAnimationWithCompletion:(void(^)(void))completion {
     float cellAnimationTime = self.animationDuration*0.3;
     
     for (NSNumber *currentPos in self.orderMatrix.elements) {
@@ -124,6 +144,10 @@
             [self animateFromCellView:fromViewCrop toCellView:toViewCrop inTime:cellAnimationTime];
         } afterDelay:delay];
     }
+    
+    [self performBlock:^{
+        completion();
+    } afterDelay:self.animationDuration];
 }
 
 - (NSTimeInterval)calculateDelayForIndex:(NSUInteger)posIndex {
@@ -140,12 +164,9 @@
 }
 
 - (void)finishAnimation {
-    [self performBlock:^{
-        [self.fromView setAlpha:1.0];
-        [self releaseImagesArray];
-        [self restoreSourceView];
-        self.completionBlock();
-    } afterDelay:self.animationDuration];
+    [self releaseImagesArray];
+    [self restoreSourceView];
+    self.completionBlock();
 }
 
 #pragma mark - Auxiliar methods
