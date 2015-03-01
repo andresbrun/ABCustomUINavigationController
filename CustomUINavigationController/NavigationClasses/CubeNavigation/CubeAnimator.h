@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseControllerAnimatedTransitioningDelegate.h"
 
-typedef enum {CubeAnimationTypeHorizontal, CubeAnimationTypeVertical} CubeAnimationType;
+typedef enum {
+    CubeAnimationTypeHorizontal,
+    CubeAnimationTypeVertical
+} CubeAnimationType;
 
-@interface CubeNavigationController : UINavigationController
+@interface CubeAnimator : BaseControllerAnimatedTransitioningDelegate
 
 @property (nonatomic, assign) CubeAnimationType cubeAnimationType;
 
