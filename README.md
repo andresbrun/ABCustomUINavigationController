@@ -60,7 +60,7 @@ This component need these two frameworks to work:
 ## Examples
 
 ### SquaresFlip
-![alt tag](https://raw.github.com/andresbrun/SquaresFlipNavigation/origin/example_images/example.gif)
+![alt tag](https://raw.githubusercontent.com/andresbrun/ABCustomUINavigationController/master/example_images/example.gif)
 ### Cube
-![alt tag](https://raw.github.com/andresbrun/SquaresFlipNavigation/origin/example_images/example_cube.gif)
+![alt tag](https://raw.githubusercontent.com/andresbrun/ABCustomUINavigationController/master/example_images/example_cube.gif)
 
