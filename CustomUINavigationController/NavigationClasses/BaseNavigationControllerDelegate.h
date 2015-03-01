@@ -13,6 +13,7 @@
 
 - (instancetype)initWithAnimatedTransitioning:(BaseControllerAnimatedTransitioningDelegate *)animatedTransitioningUsed;
 
+@property (weak) id<UINavigationControllerDelegate> forwardDelegate;
 @property (nonatomic, strong) BaseControllerAnimatedTransitioningDelegate *transitionDelegate;
 
 @end

@@ -10,7 +10,7 @@
 #import "BaseNavigationControllerDelegate.h"
 
 @interface BaseNavigationController ()
-@property (nonatomic, strong) id<UINavigationControllerDelegate> navigationDelegate;
+@property (nonatomic, strong) BaseNavigationControllerDelegate *navigationDelegate;
 @end
 
 @implementation BaseNavigationController
@@ -25,8 +25,13 @@
 }
 
 - (void)setDelegate:(id<UINavigationControllerDelegate>)delegate {
-    [super setDelegate:delegate];
-    //TODO: forward delegate. Bypassing BaseNavigationControllerDelegate
+    if (!self.delegate) {
+        [super setDelegate:delegate];
+    }
+    
+    if (delegate!=self.delegate) {
+        [self.navigationDelegate setForwardDelegate: delegate];
+    }
 }
 
 - (BaseControllerAnimatedTransitioningDelegate *)createAnimatedTransitioningUsed {
