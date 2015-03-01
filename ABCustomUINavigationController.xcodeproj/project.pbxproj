@@ -44,8 +44,8 @@
 		DD3C77791AA259F000D425B1 /* GridBaseAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3C77781AA259F000D425B1 /* GridBaseAnimator.m */; };
 		DD3C777C1AA25A8200D425B1 /* PixelateGridAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3C777B1AA25A8200D425B1 /* PixelateGridAnimator.m */; };
 		DD3C77831AA25CD200D425B1 /* NSArrayMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3C77821AA25CD200D425B1 /* NSArrayMatrix.m */; };
-		DD3C77891AA261D300D425B1 /* NSNumber+ABGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3C77881AA261D300D425B1 /* NSNumber+ABGenerator.m */; };
 		DD3C77931AA3192400D425B1 /* FlipSquaresGridAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3C77921AA3192400D425B1 /* FlipSquaresGridAnimator.m */; };
+		DD909A2C1AA3671600A79883 /* NSNumber+ABGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = DD909A2B1AA3671600A79883 /* NSNumber+ABGenerator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,10 +105,10 @@
 		DD3C777B1AA25A8200D425B1 /* PixelateGridAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PixelateGridAnimator.m; sourceTree = "<group>"; };
 		DD3C77811AA25CD200D425B1 /* NSArrayMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArrayMatrix.h; sourceTree = "<group>"; };
 		DD3C77821AA25CD200D425B1 /* NSArrayMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayMatrix.m; sourceTree = "<group>"; };
-		DD3C77871AA261D300D425B1 /* NSNumber+ABGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+ABGenerator.h"; sourceTree = "<group>"; };
-		DD3C77881AA261D300D425B1 /* NSNumber+ABGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+ABGenerator.m"; sourceTree = "<group>"; };
 		DD3C77911AA3192400D425B1 /* FlipSquaresGridAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipSquaresGridAnimator.h; sourceTree = "<group>"; };
 		DD3C77921AA3192400D425B1 /* FlipSquaresGridAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipSquaresGridAnimator.m; sourceTree = "<group>"; };
+		DD909A2A1AA3671600A79883 /* NSNumber+ABGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+ABGenerator.h"; sourceTree = "<group>"; };
+		DD909A2B1AA3671600A79883 /* NSNumber+ABGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+ABGenerator.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +139,8 @@
 		3CCCEAD217B4E0A800750A12 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				DD909A2A1AA3671600A79883 /* NSNumber+ABGenerator.h */,
+				DD909A2B1AA3671600A79883 /* NSNumber+ABGenerator.m */,
 				3CCCEAD317B4E0A800750A12 /* NSObject+ABExtras.h */,
 				3CCCEAD417B4E0A800750A12 /* NSObject+ABExtras.m */,
 				3CCCEAD917B4E0A800750A12 /* UIView+ABExtras.h */,
@@ -298,8 +300,6 @@
 			children = (
 				DD3C77811AA25CD200D425B1 /* NSArrayMatrix.h */,
 				DD3C77821AA25CD200D425B1 /* NSArrayMatrix.m */,
-				DD3C77871AA261D300D425B1 /* NSNumber+ABGenerator.h */,
-				DD3C77881AA261D300D425B1 /* NSNumber+ABGenerator.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -386,10 +386,10 @@
 				DD3C77931AA3192400D425B1 /* FlipSquaresGridAnimator.m in Sources */,
 				3CCCEAE117B4E0A800750A12 /* NSObject+ABExtras.m in Sources */,
 				DD3C776D1AA257A500D425B1 /* BaseNavigationController.m in Sources */,
-				DD3C77891AA261D300D425B1 /* NSNumber+ABGenerator.m in Sources */,
 				DD3C776E1AA257A500D425B1 /* BaseNavigationControllerDelegate.m in Sources */,
 				DD3C77831AA25CD200D425B1 /* NSArrayMatrix.m in Sources */,
 				3CCCEAE417B4E0A800750A12 /* UIView+ABExtras.m in Sources */,
+				DD909A2C1AA3671600A79883 /* NSNumber+ABGenerator.m in Sources */,
 				3CCCEB0817B4E0F800750A12 /* AppDelegate.m in Sources */,
 				DD3C77721AA257A500D425B1 /* PixelateNavigationController.m in Sources */,
 				DD3C77791AA259F000D425B1 /* GridBaseAnimator.m in Sources */,
