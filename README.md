@@ -36,7 +36,7 @@ pod "ABCustomUINavigationController"
 For using that component you only have to copy the SquaresFlipNavigation folder into your project and create the navigation controller as:
 
 ```objective-c
-import "FlipSquaresNavigationController.h"
+#import "FlipSquaresNavigationController.h"
 [[FlipSquaresNavigationController alloc] initWithRootViewController:self.viewController];
 ```
 
