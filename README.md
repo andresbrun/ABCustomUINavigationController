@@ -35,22 +35,31 @@ pod "ABCustomUINavigationController"
 ## Use
 For using that component you only have to copy the SquaresFlipNavigation folder into your project and create the navigation controller as:
 
-    import "FlipSquaresNavigationController.h"
-    [[FlipSquaresNavigationController alloc] initWithRootViewController:self.viewController];
-    
+```objective-c
+import "FlipSquaresNavigationController.h"
+[[FlipSquaresNavigationController alloc] initWithRootViewController:self.viewController];
+```
+
 or
 
-    #import "CubeNavigationController.h"
-    [[CubeNavigationController alloc] initWithRootViewController:self.viewController];
-  
+```objective-c
+#import "CubeNavigationController.h"
+[[CubeNavigationController alloc] initWithRootViewController:self.viewController];
+```
+
 and pushing and pop as usual using commons methods like:
 
-    - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
-    - (UIViewController *)popViewControllerAnimated:(BOOL)animated
-    - (NSArray *)popToRootViewControllerAnimated:(BOOL)animated
-    - (NSArray *)popToViewController:(UIViewController *)viewController animated:(BOOL)animated
+```objective-c
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
+- (UIViewController *)popViewControllerAnimated:(BOOL)animated
+- (NSArray *)popToRootViewControllerAnimated:(BOOL)animated
+- (NSArray *)popToViewController:(UIViewController *)viewController animated:(BOOL)animated
+```
 
-It works with every screen size in iPhone and iPad. Also it supports rotations. And it supports Statusbar, NavigationBar and NavigationToolbar.
+## Features
+- Supports every screen size. iPhone and iPad.
+- Supports rotation.
+- Support status bar, navigation bar and navigation toolbar.
 
 ## Requirements
 This component need these two frameworks to work:
