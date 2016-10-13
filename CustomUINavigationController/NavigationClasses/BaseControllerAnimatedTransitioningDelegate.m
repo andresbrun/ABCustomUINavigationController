@@ -16,9 +16,7 @@
 }
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
-    self.toView = [transitionContext viewForKey:UITransitionContextToViewKey];
-    self.fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
-    self.containerView = [transitionContext containerView];
+    [self captureViewsInContext:transitionContext];
     
     self.toView.frame = self.containerView.frame;
     
@@ -29,7 +27,7 @@
 }
 
 - (void)setFinalStateForTransitionContext:(id <UIViewControllerContextTransitioning>)transitionContext {
-    UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     [fromVC.view setFrame:[transitionContext finalFrameForViewController:fromVC]];
     
     UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
@@ -44,6 +42,18 @@
 
 - (NSTimeInterval)animationDuration {
     return 1;
+}
+
+- (void)captureViewsInContext:(id <UIViewControllerContextTransitioning>)transitionContext {
+    if ([transitionContext respondsToSelector:@selector(viewForKey:)]) {
+        self.toView = [transitionContext viewForKey:UITransitionContextToViewKey];
+        self.fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
+    } else {
+        self.toView = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey].view;
+        self.fromView = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey].view;
+    }
+    
+    self.containerView = [transitionContext containerView];
 }
 
 @end
