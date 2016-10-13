@@ -9,6 +9,7 @@
 #import "GridBaseAnimator.h"
 
 #import "UIView+ABExtras.h"
+#import "UIImage+ABExtras.h"
 #import "NSObject+ABExtras.h"
 #import "NSNumber+ABGenerator.h"
 
@@ -58,21 +59,22 @@
     self.fromGridCellViewArray = [NSMutableArray array];
     self.toGridCellViewArray = [NSMutableArray array];
     
+    UIImage *fromImageView = [self.fromView createImageView];
+    UIImage *toImageView = [self.toView createImageView];
+    
     [self.orderMatrix iterateOverElementsWithBlock:^(NSUInteger row, NSUInteger col) {
         CGRect croppedRect = [self gridCellRectForRow:row column:col];
 
-        UIView *fromViewCrop = [self createCellForView:self.fromView withRect:croppedRect];
-        UIView *toViewCrop = [self createCellForView:self.toView withRect:croppedRect];
+        UIView *fromViewCrop = [self createCellForView:fromImageView withRect:croppedRect];
+        UIView *toViewCrop = [self createCellForView:toImageView withRect:croppedRect];
 
         [self.fromGridCellViewArray addObject:fromViewCrop];
         [self.toGridCellViewArray addObject:toViewCrop];
     }];
 }
 
-- (UIView *) createCellForView:(UIView *)view withRect:(CGRect)croppedRect {
-    UIView *viewCropped = [[view viewByCroppingInRect:croppedRect] embedView];
-    [viewCropped setFrame:croppedRect];
-    return viewCropped;
+- (UIView *) createCellForView:(UIImage *)image withRect:(CGRect)croppedRect {
+    return [[image imageViewByCroppingInRect: croppedRect] embedView];
 }
 
 - (void)setUpOrderMatrix {
@@ -161,7 +163,7 @@
 }
 
 -(void)animateFromCellView:(UIView *)fromCell toCellView:(UIView *)toCell inTime:(NSTimeInterval)time {
-    NSAssert(YES, @"This methos has to be inherated in order to get some animation");
+    NSAssert(YES, @"This method has to be inherated in order to get some animation");
 }
 
 - (void)finishAnimation {

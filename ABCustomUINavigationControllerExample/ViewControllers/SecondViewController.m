@@ -16,8 +16,7 @@
 
 @implementation SecondViewController
 
-- (id)initViewController
-{
+- (id)initViewController {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         self = [[SecondViewController alloc] initWithNibName:@"SecondViewController_iPhone" bundle:nil];
     } else {
@@ -27,27 +26,14 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (BOOL)shouldAutorotate
-{
+- (BOOL)shouldAutorotate {
     return YES;
 }
 
--(NSUInteger)supportedInterfaceOrientations
-{
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskAll;
 }
+
 
 - (IBAction)popViewController:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];

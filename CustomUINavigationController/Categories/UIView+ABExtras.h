@@ -12,7 +12,7 @@
 @interface UIView (ABExtras)
 
 /**
- Method that adds a gradient sublayer inthat view
+ Method that adds a gradient sublayer in that view
  */
 - (CAGradientLayer *)addLinearGradientWithColor:(UIColor *)theColor transparentToOpaque:(BOOL)transparentToOpaque;
 
@@ -20,6 +20,11 @@
  Create an snapshot view of the current view
  */
 - (UIView *) createSnapshotView;
+
+/**
+ Create an snapshot UIImage 
+ */
+- (UIImage *) createImageView;
 
 /**
  Method that adds a view with color in that view

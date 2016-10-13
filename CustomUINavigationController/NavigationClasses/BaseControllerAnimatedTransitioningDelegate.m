@@ -20,6 +20,8 @@
     self.fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
     self.containerView = [transitionContext containerView];
     
+    self.toView.frame = self.containerView.frame;
+    
     [self animateWithCompletion:^{
         [self setFinalStateForTransitionContext:transitionContext];
         [transitionContext completeTransition:YES];

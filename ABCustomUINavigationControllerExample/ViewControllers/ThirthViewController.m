@@ -15,8 +15,7 @@
 
 @implementation ThirthViewController
 
-- (id)initViewController
-{
+- (id)initViewController {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         self = [[ThirthViewController alloc] initWithNibName:@"ThirthViewController_iPhone" bundle:nil];
     } else {
@@ -26,41 +25,24 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (BOOL)shouldAutorotate
-{
+- (BOOL)shouldAutorotate {
     return YES;
 }
 
--(NSUInteger)supportedInterfaceOrientations
-{
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskAll;
 }
 
-- (IBAction)popViewController:(id)sender
-{
+- (IBAction)popViewController:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction)popToFirstViewController:(id)sender
-{
+- (IBAction)popToFirstViewController:(id)sender {
     ViewController *firstVC = [self.navigationController.viewControllers objectAtIndex:0];
     [self.navigationController popToViewController:firstVC animated:YES];
 }
 
-- (IBAction)popToRootViewController:(id)sender
-{
+- (IBAction)popToRootViewController:(id)sender {
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 

@@ -76,6 +76,17 @@ const NSInteger TAG_EMBEDDED_VIEW = 999;
     return [self resizableSnapshotViewFromRect:rect afterScreenUpdates:YES withCapInsets:UIEdgeInsetsZero];
 }
 
+- (UIImage *) createImageView {
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.opaque, [UIScreen mainScreen].scale);
+    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return img;
+}
+
 - (UIView *) createSnapshotView
 {
     UIView *currentView = [self snapshotViewAfterScreenUpdates:YES];
