@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
  
   s.name         = "ABCustomUINavigationController"
-  s.version      = "1.2.1"
+  s.version      = "1.2.2"
   s.summary      = "Custom UINavigationController. SquaresFlips and Cube effects"
  
   s.description  = <<-DESC
